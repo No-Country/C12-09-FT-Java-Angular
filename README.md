@@ -10,8 +10,6 @@
 
 
 ## Conocé nuestro equipo💻: 
-<br>
-
 ### PM
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U05C4LT739V-fdd980df5c72-48" width=50>| 
 |:-:|
