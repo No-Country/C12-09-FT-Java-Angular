@@ -1,0 +1,24 @@
+# Carpetas y archivos específicos de Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Carpetas y archivos específicos de IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+/out/
+
+# Carpeta específica de Spring Boot
+/target/
+
+# Carpeta específica de Angular
+/dist/
+
+# Archivos generados por IDEs y compiladores
+*.class
+*.jar
+*.war
+*.ear
+.DS_Store
