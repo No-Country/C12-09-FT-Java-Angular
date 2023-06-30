@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import {HomeComponent} from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeadComponent } from './head/head.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './auth/register/register.component'
 
 
 
@@ -12,7 +13,8 @@ import { FooterComponent } from './footer/footer.component'
     HomeComponent,
     NavbarComponent,
     HeadComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule
