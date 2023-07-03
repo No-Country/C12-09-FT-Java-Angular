@@ -11,10 +11,12 @@ import { CarouselProductComponent } from './shared/carousel-product/carousel-pro
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './home/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: "register", component: RegisterComponent}
 ];
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ const routes: Routes = [
     CarouselComponent,
     CarouselProductComponent,
     CarouselSponsorComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
