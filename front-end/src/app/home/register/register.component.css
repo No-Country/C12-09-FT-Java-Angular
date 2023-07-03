@@ -13,7 +13,7 @@ p {
   line-height: 28.13px;
   color: #000000;
 }
-.ancho{
+.anchoForm{
   width: 493px;
   height: 113px;
   top: 645px;
@@ -44,7 +44,7 @@ button{
     font-size: 19px;
     line-height: 28.13px;
   }
-  .ancho{
+  .anchoForm{
     width: 308.630126953125px;
     height: 66px;
     top: 189px;
