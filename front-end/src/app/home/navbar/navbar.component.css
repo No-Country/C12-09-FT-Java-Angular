@@ -1,0 +1,50 @@
+.barra-de-busqueda {
+    padding: 10px 10px;
+    border-radius: 25px;
+    margin: 10px 10px;
+    border: none;
+    width: 665px;
+}
+
+.barra-de-busqueda {
+    background-image: url(../../../assets/busqueda.svg);
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 25px;
+}
+
+.logo {
+    margin-left: auto;
+}
+
+.logo-img {
+    max-height: 56px;
+}
+
+.boton {
+    border-radius: 25px;
+    margin: 10px 10px;
+    border: 2px solid white;
+}
+
+.icono {
+    max-height: 25px;
+}
+
+.carrito {
+    border: none;
+}
+
+.nav-link {
+    color: #FFF;
+    font-size: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-left: 30px;
+}
+
+nav {
+    margin-top: 50px;
+}
