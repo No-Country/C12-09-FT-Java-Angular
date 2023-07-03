@@ -13,6 +13,25 @@ p {
   line-height: 28.13px;
   color: #000000;
 }
+label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#000000;
+
+}
+input{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
 .anchoForm{
   width: 493px;
   height: 113px;
@@ -35,14 +54,22 @@ button{
 /******Responsive******/
 @media (max-width: 575.98px){
   h4{
-    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 19px;
     letter-spacing: 0em;
+    text-align: left;
+
   }
   p{
-    font-weight: 400px;
-    font-size: 19px;
-    line-height: 28.13px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+
   }
   .anchoForm{
     width: 308.630126953125px;
@@ -53,15 +80,16 @@ button{
     border: 0.6196531653404236px;
   }
   label{
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    font-weight: 400;
     line-height: 14px;
     letter-spacing: 0em;
-    text-align: left;
+
   }
   input{
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
