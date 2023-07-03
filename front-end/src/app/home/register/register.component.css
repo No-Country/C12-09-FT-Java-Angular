@@ -15,7 +15,7 @@ p {
 }
 label{
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 13px;
   letter-spacing: 0em;
@@ -25,7 +25,7 @@ label{
 }
 input{
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 12px;
   letter-spacing: 0em;
