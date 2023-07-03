@@ -5,7 +5,6 @@ h4{
   font-weight: 700;
   line-height: 32px;
   letter-spacing: 0em;
-
 }
 p {
   font-family: 'Roboto', sans-serif;
@@ -21,16 +20,12 @@ p {
   left: 471px;
   border-radius: 20px;
   border: 1px #000000;
-
 }
 button{
-
   border-radius: 25.200000762939453px;
   background: #000000;
   box-shadow: 0px 4px 10px 0px #00000040;
   color: #F7FC00;
-
-
 }
 .button-register:hover {
   background-color: #00000040; /* Cambia el color de fondo al pasar el mouse */
@@ -43,13 +38,11 @@ button{
     font-size: 18px;
     line-height: 19px;
     letter-spacing: 0em;
-
   }
   p{
     font-weight: 400px;
     font-size: 19px;
     line-height: 28.13px;
-
   }
   .ancho{
     width: 308.630126953125px;
@@ -58,7 +51,6 @@ button{
     left: 38.85888671875px;
     border-radius: 12.39306354522705px;
     border: 0.6196531653404236px;
-
   }
   label{
     font-size: 12px;
@@ -66,7 +58,6 @@ button{
     line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
-
   }
   input{
     font-size: 12px;
@@ -74,11 +65,10 @@ button{
     line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
-
   }
   .button-register{
     border-radius: 25.399999618530273px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 19px;
     letter-spacing: 0em;
