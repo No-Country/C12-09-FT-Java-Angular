@@ -11,16 +11,16 @@ import { CarouselProductComponent } from './shared/carousel-product/carousel-pro
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< Updated upstream
-=======
 import { RegisterComponent } from './home/register/register.component';
 import { ProfileComnent } from './home/profile/profile.component';
 import { CategoriesComponent } from './home/categories/categories.component';
->>>>>>> Stashed changes
+import { RegisterComponent } from './home/register/register.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: "register", component: RegisterComponent}
 ];
 @NgModule({
   declarations: [
@@ -32,14 +32,10 @@ const routes: Routes = [
     CarouselComponent,
     CarouselProductComponent,
     CarouselSponsorComponent,
-<<<<<<< Updated upstream
-    LoginComponent
-=======
     LoginComponent,
     RegisterComponent,
     ProfileComnent,
     CategoriesComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
