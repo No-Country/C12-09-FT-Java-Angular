@@ -1,0 +1,23 @@
+
+
+.row  {
+    width: 1200px;
+    height: 2200px;
+    background: black;
+
+}
+
+/* .image {} */
+
+@media screen and (max-width: 400px) {
+   
+
+    .row  {
+        width: 1200px;
+        height: 100px;
+        background: black;
+
+    }
+
+  
+}
