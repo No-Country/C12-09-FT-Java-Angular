@@ -11,6 +11,8 @@ import { CarouselProductComponent } from './shared/carousel-product/carousel-pro
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { PrevDirective } from './prev.directive';
+import { NextDirective } from './next.directive';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,7 +28,9 @@ const routes: Routes = [
     CarouselComponent,
     CarouselProductComponent,
     CarouselSponsorComponent,
-    LoginComponent
+    LoginComponent,
+    PrevDirective,
+    NextDirective
   ],
   imports: [
     BrowserModule,

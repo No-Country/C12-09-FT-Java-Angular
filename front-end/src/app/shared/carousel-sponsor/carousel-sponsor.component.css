@@ -1,0 +1,43 @@
+.marcas{
+    padding: 20px;
+}
+.slider-wrap{
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+}
+.slider-main{
+    position: absolute;
+    width: 1000%;
+}
+
+.item{
+    display: inline-block;
+    width: 312px;
+    height: 150px;
+    background: yellow;
+    position: relative;
+    margin: 1px;
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.prev{
+    position: absolute;
+    left:33px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.next{
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
