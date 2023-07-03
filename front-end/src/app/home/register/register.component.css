@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+h4{
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400px;
+  font-size: 24px;
+  line-height: 28.13px;
+  color: #000000;
+}
+label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:#000000;
+
+}
+input{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+.anchoForm{
+  width: 493px;
+  height: 113px;
+  top: 645px;
+  left: 471px;
+  border-radius: 20px;
+  border: 1px #000000;
+}
+button{
+  border-radius: 25.200000762939453px;
+  background: #000000;
+  box-shadow: 0px 4px 10px 0px #00000040;
+  color: #F7FC00;
+}
+.button-register:hover {
+  background-color: #00000040; /* Cambia el color de fondo al pasar el mouse */
+  color: #F7FC00; /* Cambia el color del texto al pasar el mouse */
+}
+
+/******Responsive******/
+@media (max-width: 575.98px){
+  h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+  p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  }
+  .anchoForm{
+    width: 308.630126953125px;
+    height: 66px;
+    top: 189px;
+    left: 38.85888671875px;
+    border-radius: 12.39306354522705px;
+    border: 0.6196531653404236px;
+  }
+  label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0em;
+
+  }
+  input{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .button-register{
+    border-radius: 25.399999618530273px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+}
+@media (min-width: 768px) {}
+
+ /*X-Small devices (portrait phones, less than 576px)*/
+ @media (max-width: 575.98px) {}
+
+ /*Small devices (landscape phones, less than 768px)*/
+ @media (max-width: 767.98px) {}
+
+ /* Medium devices (tablets, less than 992px)*/
+ @media (max-width: 991.98px) {}
+
+ /* Large devices (desktops, less than 1200px)*/
+ @media (max-width: 1199.98px) {}
+
+ /*X-Large devices (large desktops, less than 1400px)*/
+ @media (max-width: 1399.98px) {}
