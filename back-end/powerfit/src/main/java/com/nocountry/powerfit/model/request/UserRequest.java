@@ -10,8 +10,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserRequest {
+    private Long id;
     private String address;
-    private Integer postalCode;
+    private Long postalCode;
     private String city;
     private String password;
     private String email;
