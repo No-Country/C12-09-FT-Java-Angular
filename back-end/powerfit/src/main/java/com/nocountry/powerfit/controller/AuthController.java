@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/vq/auth")
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
