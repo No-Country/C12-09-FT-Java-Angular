@@ -12,6 +12,8 @@ import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-spo
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './home/register/register.component';
+import { ProfileComponent } from './home/profile/profile.component';
+import { CategoriesComponent } from './home/categories/categories.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +31,8 @@ const routes: Routes = [
     CarouselProductComponent,
     CarouselSponsorComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CategoriesComponent,ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,10 @@ const routes: Routes = [
     HomeComponent,
     NavbarComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    RegisterComponent,
+    CategoriesComponent
   ],
   bootstrap: [AppComponent]
 })
