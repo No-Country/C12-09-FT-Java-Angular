@@ -5,7 +5,7 @@ import com.nocountry.powerfit.model.exception.UserAlreadyExistException;
 import com.nocountry.powerfit.model.mapper.UserMapper;
 import com.nocountry.powerfit.model.request.UserRequest;
 import com.nocountry.powerfit.model.response.UserResponse;
-import com.nocountry.powerfit.repository.UserRepository;
+import com.nocountry.powerfit.repository.IUserRepository;
 import com.nocountry.powerfit.service.abstraction.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import javax.persistence.EntityNotFoundException;
 @RequiredArgsConstructor
 public class UserServiceImp implements UserService {
 
-    private final UserRepository userRepository;
+    private final IUserRepository userRepository;
     private final UserMapper userMapper;
 
     @Override
