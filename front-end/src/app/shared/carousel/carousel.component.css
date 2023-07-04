@@ -7,7 +7,7 @@
     justify-content: center;
     background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
     width: 1007px;
-    height: 272px;
+    height: 202px;
     top: 413px;
     /* background-color: aquamarine;
     padding: 5px;
@@ -36,7 +36,7 @@
 
     margin-right: 200px;
     text-align: left;
-    font-family: calibri;
+    font-family: Roboto,  sans-serif;
     font-size: 44px;
     color: #FFFFFF;
 
@@ -88,8 +88,8 @@
         display: flex;
         flex-direction: row;
 
-        width: 250px;
-        height: 120px;
+        width: 150px;
+        height: 100px;
         top: 127.4453125px;
         left: -64px;
 
@@ -103,8 +103,8 @@
         align-items:center;
         justify-content: start;
         margin: 5px;
-        width: 150px;
-        height: 100px;
+        width: 50px;
+        height: 90px;
         font-weight: 200px;
   
 
@@ -116,7 +116,7 @@
     .flex-container div h1 {
         
         
-        width: 90px;
+        width: 50px;
         height: 50px;
         margin: 1px;
         margin-top: 10px;
@@ -127,7 +127,7 @@
     }
     .flex-container div button {
 
-        width: 100px;
+        width: 50px;
         height: 24px;
         margin: 1px;
         /* margin-right: 160px; */
