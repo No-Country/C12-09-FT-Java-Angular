@@ -1,9 +1,11 @@
-
+.body-container{
+    background: black;
+}
 
 .row  {
-    width: 1200px;
+    width: 1280px;
     height: 2200px;
-    background: black;
+    /* background: black; */
 
 }
 
@@ -13,7 +15,7 @@
    
 
     .row  {
-        width: 1200px;
+        width: 400px;
         height: 100px;
         background: black;
 
