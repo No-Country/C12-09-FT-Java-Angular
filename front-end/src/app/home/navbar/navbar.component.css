@@ -1,3 +1,7 @@
+header{
+    background-color: black;
+}
+
 .barra-de-busqueda {
     padding: 10px 10px;
     border-radius: 25px;
@@ -11,10 +15,11 @@
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 25px;
+    margin: 49px;
 }
 
 .logo {
-    margin-left: auto;
+    margin-left: 79px;
 }
 
 .logo-img {
@@ -46,5 +51,7 @@
 }
 
 nav {
-    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
