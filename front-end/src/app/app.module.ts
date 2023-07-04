@@ -1,21 +1,55 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageModule } from './components/page.module';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { BodyComponent } from './home/body/body.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { CarouselComponent } from './shared/carousel/carousel.component';
+import { CarouselProductComponent } from './shared/carousel-product/carousel-product.component';
+import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
+import { LoginComponent } from './home/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './home/register/register.component';
+import { ProfileComnent } from './home/profile/profile.component';
+import { CategoriesComponent } from './home/categories/categories.component';
+import { RegisterComponent } from './home/register/register.component';
 
 
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: "register", component: RegisterComponent}
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    BodyComponent,
+    FooterComponent,
+    CarouselComponent,
+    CarouselProductComponent,
+    CarouselSponsorComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComnent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
-    PageModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes, { useHash: false }),
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    RouterModule,
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    BodyComponent,
+    FooterComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.card {
+  flex: 0 0 18rem;
+  margin-right: 10px;
+}
