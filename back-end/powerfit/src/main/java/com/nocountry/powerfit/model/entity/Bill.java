@@ -1,9 +1,11 @@
 package com.nocountry.powerfit.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDateTime;
 
 @Builder
 @Getter
@@ -20,5 +22,6 @@ public class Bill {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
     //private Cart cart;
-    //private Date date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime date;
 }
