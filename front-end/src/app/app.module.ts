@@ -12,16 +12,20 @@ import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-spo
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './home/register/register.component';
-import { ProfileComnent } from './home/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './home/categories/categories.component';
-import { RegisterComponent } from './home/register/register.component';
-
+import { ProfileComponent } from './home/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: "register", component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +38,16 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComnent,
-    CategoriesComponent
+    CategoriesComponent,ProfileComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, { useHash: false }),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     RouterModule,
@@ -48,7 +55,9 @@ const routes: Routes = [
     HomeComponent,
     NavbarComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   bootstrap: [AppComponent]
 })
