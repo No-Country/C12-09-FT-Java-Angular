@@ -1,34 +1,14 @@
-header{
+header {
     background-color: black;
 }
 
-.barra-de-busqueda {
-    padding: 10px 10px;
-    border-radius: 25px;
-    margin: 10px 10px;
-    border: none;
-    width: 665px;
-}
-
-.barra-de-busqueda {
-    background-image: url(../../../assets/busqueda.svg);
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 25px;
-    margin: 49px;
-}
-
-.logo {
-    margin-left: 79px;
-}
-
 .logo-img {
-    max-height: 56px;
+    max-height: 40px;
 }
 
 .boton {
     border-radius: 25px;
-    margin: 10px 10px;
+    margin: 5px 5px;
     border: 2px solid white;
 }
 
@@ -50,8 +30,65 @@ header{
     padding-left: 30px;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 768px) {
+    .barra-de-busqueda {
+        padding: 5px 5px;
+        border-radius: 25px;
+        margin: 5px 5px;
+        border: none;
+        width: 250px;
+        background-image: url(../../../assets/busqueda.svg);
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 25px;
+    }
+
+    .logo-img {
+        max-height: 30px;
+    }
+
+    .navbar-nav.ml-auto {
+        justify-content: flex-end;
+      }
+
+
+    .boton {
+        font-size: 14px;
+      }
+
+}
+
+
+
+@media (min-width: 769px) {
+    .barra-de-busqueda {
+        padding: 10px 10px;
+        border-radius: 25px;
+        margin: 10px 10px;
+        border: none;
+        width: 665px;
+        background-image: url(../../../assets/busqueda.svg);
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 25px;
+    }
+
+    .logo-img {
+        max-height: 56px;
+        margin-left: 40px;
+    }
+
+    .boton {
+        border-radius: 25px;
+        margin: 10px 10px;
+        border: 2px solid white;
+    }
+
+    .icono {
+        max-height: 25px;
+    }
+
+    .carrito {
+        border: none;
+    }
 }

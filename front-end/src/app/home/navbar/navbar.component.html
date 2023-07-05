@@ -1,60 +1,62 @@
 <header>
   <div class="container-fluid">
     <div class="row">
-      <nav class="navbar navbar-expand-lg w-100">
-        <!-- Logo -->
-        <a class="navbar-brand logo" href="#">
-          <img src="../../../assets/Logo_1.png" alt="Logo" class="logo-img">
-        </a>
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg">
 
-        <!-- Botón de colapso en dispositivos móviles -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <!-- Botón de colapso en dispositivos móviles -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <!-- Contenido de la barra de navegación -->
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <!-- Barra de búsqueda -->
-          <form class="form-inline my-2 my-lg-0 ml-auto">
-            <div class="search-container">
-              <input class="form-control mr-sm-2 barra-de-busqueda" type="search" placeholder="Buscar"
-                aria-label="Buscar">
-            </div>
-          </form>
+          <!-- Logo -->
+          <a class="navbar-brand d-flex justify-content-right logo" href="#">
+            <img src="../../../assets/Logo_1.png" alt="Logo" class="logo-img">
+          </a>
 
           <!-- Botones de cuenta y carrito -->
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="d-grid gap-2 d-md-flex">
             <button class="boton btn btn-outline-light"><img src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"
                 class="icono"> Mi cuenta</button>
             <button class="carrito btn btn-outline-light ml-2"><img src="../../../assets/carrito.svg" alt="carrito"
                 class="icono"></button>
           </div>
-        </div>
-      </nav>
-    </div>
+
+          <!-- Barra de búsqueda -->
+          <div class="col-12 d-flex justify-content-center">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="barra-de-busqueda mr-sm-2 barra-de-busqueda" type="search" placeholder="Buscar"
+                aria-label="Buscar">
+            </form>
+          </div>
 
 
-    <!-- Categorías -->
-    <div>
-      <div class="row mt-6">
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Suplementos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Equipamientos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Indumentaria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Descuentos</a>
-          </li>
-        </ul>
+
+          <!-- Contenido de la barra de navegación -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!-- Categorías -->
+            <div class="col-12 d-flex justify-content-center">
+              <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Suplementos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Equipamientos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Indumentaria</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Descuentos</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </div>
