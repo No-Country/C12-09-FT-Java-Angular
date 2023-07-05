@@ -27,7 +27,7 @@ public class Product {
     private String description;
     @NotNull(message = "You must specify the price")
     @Min(value = 0, message = "The minimum price is 0")
-    private Double price;
+    private double price;
     private boolean stock;
     @Min(value = 0, message = "The quantity must be a positive number")
     private Integer quantity;
@@ -36,17 +36,18 @@ public class Product {
     @JoinColumn(name = "user_id")
     private User user; //confirmar si agregamos lista de productos a User (un usuario puede tener muchos productos)
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private Category category;
+    private Category category;*/
 
+    @JoinColumn()
     @ManyToOne(fetch = FetchType.EAGER)
     private Cart cart;
 
-    @OneToMany(fetch = FetchType.LAZY,
+    /*@OneToMany(fetch = FetchType.LAZY,
             mappedBy = "product", // falta agregar objeto product a la clase Image
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private List<Image> images;
+    private List<Image> images;*/
 
 }
