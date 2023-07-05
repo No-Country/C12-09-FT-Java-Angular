@@ -32,12 +32,12 @@ public class Product {
     @Min(value = 0, message = "The quantity must be a positive number")
     private Integer quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "category_id")
+//    private Category category;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Cart cart;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    private Cart cart;
 
 //    @OneToMany(fetch = FetchType.LAZY,
 //            mappedBy = "product", // falta agregar objeto product a la clase Image
