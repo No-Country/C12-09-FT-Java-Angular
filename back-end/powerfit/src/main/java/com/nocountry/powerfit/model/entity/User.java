@@ -37,7 +37,7 @@ public class User /*implements UserDetails*/ {
     private String lastName;
 
     @NotBlank(message = "Email cannot be empty.")
-    @NotEmpty(message = "Email can't be null")
+    @NotEmpty(message = "Email can't be null.")
     @NonNull
     @Email
     private String email;

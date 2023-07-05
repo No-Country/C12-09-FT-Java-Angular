@@ -30,7 +30,7 @@ public class Cart {
     private double total;
 
     @CreationTimestamp
-    @Column(name = "registration", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime created;
 }
