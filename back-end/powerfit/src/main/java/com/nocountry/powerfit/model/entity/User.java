@@ -37,7 +37,7 @@ public class User /*implements UserDetails*/ {
     private String lastName;
 
     @NotBlank(message = "Email cannot be empty.")
-    @NotEmpty(message = "Email can't be null")
+    @NotEmpty(message = "Email can't be null.")
     @NonNull
     @Email
     private String email;
@@ -56,15 +56,15 @@ public class User /*implements UserDetails*/ {
 
     private String city;
 
-    private Integer postalCode;
+    private Long postalCode;
 
     private Date created;
 
-    /*@JoinColumn(name="cart_id")
+    @JoinColumn(name = "cart_id")
     @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    /*@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Bill> bill = new ArrayList<>();
 
     @JoinColumn(name="image_id")

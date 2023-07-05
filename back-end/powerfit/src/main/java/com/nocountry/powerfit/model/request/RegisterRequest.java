@@ -17,27 +17,27 @@ import javax.validation.constraints.Size;
 @Setter
 public class RegisterRequest {
 
-    //@NonNull
-    //@NotEmpty(message = "Name can't be empty")
+    @NonNull
+    @NotEmpty(message = "Name can't be empty")
     @NotBlank(message = "Name can't be empty.")
     private String name;
 
-    //@NonNull
-    //@NotEmpty(message = "lastName can't be empty")
+    @NonNull
+    @NotEmpty(message = "lastName can't be empty")
     @NotBlank(message = "lastName can't be empty.")
     private String lastName;
 
-    //@NonNull
-    //@NotEmpty(message = "Phone number can't be empty")
+    @NonNull
+    @NotEmpty(message = "Phone number can't be empty")
     @NotBlank(message = "Phone number can't be empty.")
     private String phoneNumber;
 
-    //@NonNull
-    //@NotEmpty(message = "the full name can't be null")
+    @NonNull
+    @NotEmpty(message = "the full name can't be null")
     @Email(message = "Email should have a valid format")
     @NotBlank(message = "Email cannot be empty.")
     private String email;
-    //@NonNull
+    @NonNull
     @NotBlank(message = "Password cannot be empty.")
     @Size(min = 8, max = 250, message = "Password should have at least 8 characters")
     private String password;
