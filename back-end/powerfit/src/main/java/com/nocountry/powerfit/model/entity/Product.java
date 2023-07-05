@@ -35,7 +35,7 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user; //confirmar si agregamos lista de productos a User (un usuario puede tener muchos productos)
-
+/*
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
@@ -48,5 +48,5 @@ public class Product {
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<Image> images;
-
+*/
 }
