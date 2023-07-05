@@ -1,25 +1,18 @@
-package com.nocountry.powerfit.model.entity;
+package com.nocountry.powerfit.model.request;
 
 import lombok.*;
 
-import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Builder
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "products")
-public class Product {
+@Getter
+@Setter
+public class ProductRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
     private Long id;
     @NotEmpty(message = "Name cannot be empty")
     private String name;
@@ -27,18 +20,13 @@ public class Product {
     private String description;
     @NotNull(message = "You must specify the price")
     @Min(value = 0, message = "The minimum price is 0")
-    private Double price;
+    private double price;
     private boolean stock;
     @Min(value = 0, message = "The quantity must be a positive number")
     private Integer quantity;
+    @NotNull(message = "Id cannot by null")
+    private Long categoryId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Cart cart;
-
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    private List<Image> carrousel;
 }
