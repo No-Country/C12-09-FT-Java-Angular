@@ -1,6 +1,5 @@
 package com.nocountry.powerfit.model.mapper;
 
-import com.nocountry.powerfit.model.mapper.;
 import com.nocountry.powerfit.model.entity.Image;
 import com.nocountry.powerfit.model.response.ImageResponse;
 import org.springframework.stereotype.Component;
