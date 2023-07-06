@@ -10,7 +10,8 @@
   </div>
   <div class="ml-auto">
     <div class="d-flex">
-      <button class="btn btn-primary account-button">Cuenta</button>
+      <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Mi Cuenta</button>
+            <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRAR SESION</button>
       <button class="btn btn-primary cart-button">Carrito</button>
     </div>
   </div>
