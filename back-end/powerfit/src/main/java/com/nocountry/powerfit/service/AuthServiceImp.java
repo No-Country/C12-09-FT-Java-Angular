@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
-
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImp implements AuthService {
