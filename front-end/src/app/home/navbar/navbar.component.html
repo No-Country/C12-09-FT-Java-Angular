@@ -19,9 +19,13 @@
         </form>
         <!-- Botones de cuenta y carrito -->
         <div class="d-flex flex-row-reverse">
-          <button class="boton btn btn-outline-light boton">
+          <button class="boton btn btn-outline-light boton" (click)="login()" *ngIf="!isLogged">
             <img src="../../../assets/mi-cuenta.svg" alt="mi-cuenta" class="icono">
             Mi cuenta
+          </button>
+          <button class="boton btn btn-outline-light boton" (click)="onLogOut()" *ngIf="isLogged">
+            <img src="../../../assets/mi-cuenta.svg" alt="mi-cuenta" class="icono">
+            Cerrar Sesion
           </button>
           <button class="carrito btn btn-outline-light ml-2">
             <img src="../../../assets/carrito.svg" alt="carrito" class="icono">
