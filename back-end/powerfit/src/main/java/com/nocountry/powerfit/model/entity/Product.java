@@ -33,8 +33,11 @@ public class Product {
     private Integer quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private Category category;
+
+    @Column(name = "category_id", nullable = false)
+    private Long categoryId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Cart cart;
