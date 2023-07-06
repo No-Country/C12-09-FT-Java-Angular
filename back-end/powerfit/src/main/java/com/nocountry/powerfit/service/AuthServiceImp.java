@@ -59,7 +59,7 @@ public class AuthServiceImp implements AuthService {
     @Override
     public User create(RegisterRequest request) throws AttributeException {
         if(IUserRepository.existsByEmail(request.getEmail()))
-            throw new AttributeException("email already in use");
+            throw new AttributeException("Email is already in use");
         return IUserRepository.save(userMapper.mapTo(request));
     }
 

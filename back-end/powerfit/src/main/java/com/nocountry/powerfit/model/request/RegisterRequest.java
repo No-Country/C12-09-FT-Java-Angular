@@ -23,6 +23,7 @@ public class RegisterRequest {
     private String lastName;
 
     @NonNull
+    @Pattern(regexp = "\\d{10}", message = "Please enter a valid phone number")
     @NotEmpty(message = "Phone number can't be empty")
     @NotBlank(message = "Phone number can't be empty.")
     private String phoneNumber;
@@ -32,6 +33,7 @@ public class RegisterRequest {
     @Email(message = "Email should have a valid format")
     @NotBlank(message = "Email cannot be empty.")
     private String email;
+
     @NotNull(message = "{password.error}")
     @NotBlank(message = "{password.error}")
     @Size(min = 8, max = 250, message = "Password should have at least 8 characters")

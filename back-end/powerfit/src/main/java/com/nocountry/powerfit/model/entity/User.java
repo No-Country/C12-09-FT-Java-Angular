@@ -48,7 +48,6 @@ public class User /*implements UserDetails*/ {
     @Size(min = 8, max = 250, message = "Password should have at least 8 characters")
     private String password;
 
-    @Pattern(regexp = "\\d{10}", message = "Please enter a valid phone number")
     @NotNull(message = "Phone number can't be empty")
     @NotEmpty(message = "Phone number can't be empty")
     @NotBlank(message = "Phone number can't be empty.")

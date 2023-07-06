@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.io.IOException;
@@ -37,8 +38,19 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
     @PostMapping("/create")
-    public ResponseEntity<MessageDto> create(@Valid @RequestBody RegisterRequest request) throws AttributeException {
-        User userEntity = authService.create(request);
-        return ResponseEntity.ok(new MessageDto(HttpStatus.OK, "user " + userEntity.getEmail() + " have been created"));
+    public ResponseEntity<?> create(@Valid @RequestBody RegisterRequest request, BindingResult bindingResult) throws AttributeException {
+        if (bindingResult.hasErrors()) {
+            String errorMessage = bindingResult.getFieldErrors()
+                    .stream()
+                    .map(error -> error.getDefaultMessage())
+                    .reduce("", (accumulator, message) -> accumulator + " " + message);
+            return ResponseEntity.badRequest().body(errorMessage.trim());
+        }
+        try {
+            User userEntity = authService.create(request);
+            return ResponseEntity.ok(new MessageDto(HttpStatus.OK, "User " + userEntity.getEmail() + " has been created"));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
+        }
     }
 }
