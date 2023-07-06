@@ -10,7 +10,7 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CarouselProductComponent } from './shared/carousel-product/carousel-product.component';
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, Validators } from '@angular/forms';
 import { RegisterComponent } from './home/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -48,6 +48,7 @@ const routes: Routes = [
     ToastrModule.forRoot(), // ToastrModule added
     AppRoutingModule,
     HttpClientModule,
+
   ],
   providers: [
     RouterModule,
