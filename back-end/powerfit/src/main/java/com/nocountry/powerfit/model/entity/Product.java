@@ -33,28 +33,13 @@ public class Product {
     private Integer quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
-<<<<<<< HEAD
-    @JoinColumn(name = "user_id")
-    private User user; //confirmar si agregamos lista de productos a User (un usuario puede tener muchos productos)
-/*
-    @ManyToOne(fetch = FetchType.LAZY)
-=======
->>>>>>> develop
     @JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Cart cart;
 
-<<<<<<< HEAD
-    @OneToMany(fetch = FetchType.LAZY,
-            mappedBy = "product", // falta agregar objeto product a la clase Image
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<Image> images;
-*/
-=======
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Image> carrousel;
->>>>>>> develop
+
 }
