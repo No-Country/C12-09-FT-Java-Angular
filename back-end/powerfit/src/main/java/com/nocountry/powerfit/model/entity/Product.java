@@ -41,4 +41,5 @@ public class Product {
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private List<Image> carrousel;
+
 }

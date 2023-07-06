@@ -18,13 +18,13 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class AuthServiceImp implements AuthService {
 
-    private final IUserRepository userRepository;
+    private final IUserRepository IUserRepository;
     private final UserMapper userMapper;
     private final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImp.class);
     //private final AuthenticationManager
 
     private User getUser(String email){
-        User user = userRepository.findByEmail(email);
+        User user = IUserRepository.findByEmail(email);
         if(user == null /*|| !user.isEnabled()*/){
             throw new InvalidCredentialsException("Invalid email or password");
         }
@@ -32,11 +32,11 @@ public class AuthServiceImp implements AuthService {
     }
     @Override
     public AuthResponse register(RegisterRequest registerRequest) throws IOException {
-        boolean isUserExists = userRepository.findByEmail(registerRequest.getEmail()) != null;
+        boolean isUserExists = IUserRepository.findByEmail(registerRequest.getEmail()) != null;
         if(isUserExists){
             throw new UserAlreadyExistException("Email is already in use");
         }
-        User createUser = userRepository.save(userMapper.RegisterToDto(registerRequest));
+        User createUser = IUserRepository.save(userMapper.RegisterToDto(registerRequest));
         //JWT implementar
         AuthResponse response = userMapper.dtoToEntity(createUser);
         return response;
