@@ -14,8 +14,6 @@ import javax.validation.constraints.*;
 @Setter
 public class RegisterRequest {
 
-    @NonNull
-    @NotEmpty(message = "Name can't be empty")
     @NotBlank(message = "Name can't be empty.")
     private String name;
 

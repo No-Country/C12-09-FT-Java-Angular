@@ -1,6 +1,7 @@
 package com.nocountry.powerfit.service;
 
 import com.nocountry.powerfit.model.entity.User;
+import com.nocountry.powerfit.model.exception.AttributeException;
 import com.nocountry.powerfit.model.exception.InvalidCredentialsException;
 import com.nocountry.powerfit.model.mapper.UserMapper;
 import com.nocountry.powerfit.model.request.LoginRequest;
@@ -14,6 +15,9 @@ import org.slf4j.LoggerFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImp implements AuthService {
@@ -50,6 +54,13 @@ public class AuthServiceImp implements AuthService {
         AuthResponse mapper = userMapper.dtoToEntity(user);
         //JWT
         return mapper;
+    }
+
+    @Override
+    public User create(RegisterRequest request) throws AttributeException {
+        if(IUserRepository.existsByEmail(request.getEmail()))
+            throw new AttributeException("email already in use");
+        return IUserRepository.save(userMapper.mapTo(request));
     }
 
     /*private void authenticate(LoginRequest loginRequest){

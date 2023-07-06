@@ -1,8 +1,11 @@
 package com.nocountry.powerfit.controller;
 
+import com.nocountry.powerfit.model.entity.User;
+import com.nocountry.powerfit.model.exception.AttributeException;
 import com.nocountry.powerfit.model.request.LoginRequest;
 import com.nocountry.powerfit.model.request.RegisterRequest;
 import com.nocountry.powerfit.model.response.AuthResponse;
+import com.nocountry.powerfit.model.response.MessageDto;
 import com.nocountry.powerfit.service.abstraction.AuthService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -32,5 +35,10 @@ public class AuthController {
     private ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request){
         AuthResponse response = authService.login(request);
         return ResponseEntity.ok(response);
+    }
+    @PostMapping("/create")
+    public ResponseEntity<MessageDto> create(@Valid @RequestBody RegisterRequest request) throws AttributeException {
+        User userEntity = authService.create(request);
+        return ResponseEntity.ok(new MessageDto(HttpStatus.OK, "user " + userEntity.getEmail() + " have been created"));
     }
 }
