@@ -11,12 +11,16 @@ import { CarouselProductComponent } from './shared/carousel-product/carousel-pro
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { PrevDirective } from './prev.directive';
-import { NextDirective } from './next.directive';
+import { RegisterComponent } from './home/register/register.component';
+import { ProfileComnent } from './home/profile/profile.component';
+import { CategoriesComponent } from './home/categories/categories.component';
+import { RegisterComponent } from './home/register/register.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: "register", component: RegisterComponent}
 ];
 @NgModule({
   declarations: [
@@ -29,8 +33,9 @@ const routes: Routes = [
     CarouselProductComponent,
     CarouselSponsorComponent,
     LoginComponent,
-    PrevDirective,
-    NextDirective
+    RegisterComponent,
+    ProfileComnent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
