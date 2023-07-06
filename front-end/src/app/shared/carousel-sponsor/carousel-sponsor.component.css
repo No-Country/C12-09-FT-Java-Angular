@@ -1,0 +1,130 @@
+
+ 
+
+.marcas{
+    
+    padding: 20px;
+    width: 1275px;
+    background: yellow;
+}
+
+.slider-wrap{
+    position: relative;
+    overflow: hidden;
+    height: 110px;
+}
+.slider-main{
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    width: 1000%;
+    
+    animation: slide 2s  linear infinite;
+    -webkit-animation: slide 10s linear infinite;
+    width: calc(212px*8);
+}
+
+.item{
+    display: inline-block;
+    /* display: flex; */
+    width: 312px;
+    margin-right: 10px;
+    height: 150px;
+    position: relative;
+    margin: 0;
+}
+
+
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.prev{
+    position: absolute;
+    left:33px;
+    top: 50%;
+    background: yellow;
+    transform: translate(-50%, -50%);
+}
+.next{
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    background: yellow;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes slide{
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-212px*8));
+        transform: translateX(calc(-212px*8));
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    .marcas{
+        padding: 10px;
+    }
+    .slider-wrap{
+        position: relative;
+        overflow: hidden;
+        height: 100px;
+    }
+    .slider-main{
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+    
+    }
+    
+    .item{
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position:relative;
+        margin: 0;
+    }
+    
+    .text{
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    .prev{
+   
+        margin-bottom: 250px;
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        left:10px;
+        top: 30%;
+        background: yellow;
+        transform: translate(-50%, -50%);
+    }
+    .next{
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        background: yellow;
+        transform: translate(-50%, -50%);
+    }
+    
+
+} 
