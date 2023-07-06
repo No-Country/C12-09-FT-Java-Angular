@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nocountry.powerfit.PowerfitApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 137.973 s - in com.nocountry.powerfit.PowerfitApplicationTests
