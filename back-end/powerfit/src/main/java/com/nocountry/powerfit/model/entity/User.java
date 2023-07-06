@@ -5,10 +5,7 @@ import lombok.*;
 //import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -26,28 +23,33 @@ public class User /*implements UserDetails*/ {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Name must only contain letters")
+    @Size(min = 1, max = 10, message = "Please enter a valid name")
+    @NotNull(message = "Name can't be null")
     @NotBlank(message = "A name is required")
     @NotEmpty(message = "Name can't be null")
     private String name;
 
-    @NonNull
-    @NotBlank(message = "a last name is Required")
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Last name must only contain letters")
+    @Size(min = 1, max = 10, message = "Please enter a valid last name")
+    @NotNull(message = "Last name can't be null")
+    @NotBlank(message = "A last name is Required")
     @NotEmpty(message = "Last name can't be null")
     private String lastName;
 
     @NotBlank(message = "Email cannot be empty.")
-    @NotEmpty(message = "Email can't be null")
-    @NonNull
-    @Email
+    @NotEmpty(message = "Email can't be null.")
+    @NotNull(message = "Email can't be null.")
+    @Email(message = "Ingresa un correo electronico válido")
     private String email;
 
-    @NonNull
-    @NotBlank(message = "Password cannot be empty.")
+    @NotNull(message = "{password.error}")
+    @NotBlank(message = "{password.error}")
     @Size(min = 8, max = 250, message = "Password should have at least 8 characters")
     private String password;
 
-    @NonNull
+    @Pattern(regexp = "\\d{10}", message = "Please enter a valid phone number")
+    @NotNull(message = "Phone number can't be empty")
     @NotEmpty(message = "Phone number can't be empty")
     @NotBlank(message = "Phone number can't be empty.")
     private String phoneNumber;

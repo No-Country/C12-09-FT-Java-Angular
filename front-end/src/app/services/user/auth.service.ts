@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthResponse } from 'src/app/model/auth-response';
 import { UserDto } from 'src/app/model/user-dto';
 import { environment } from 'src/environments/environment';
 
@@ -13,8 +14,8 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public register(userDto: UserDto): Observable<any>{
-    return this.httpClient.post<any>(this.authURL + 'register', userDto);
+  public register(userDto: UserDto): Observable<AuthResponse>{
+    return this.httpClient.post<AuthResponse>(this.authURL + 'register', userDto);
   }
 
 
