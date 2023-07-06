@@ -6,7 +6,7 @@ import com.nocountry.powerfit.model.mapper.UserMapper;
 import com.nocountry.powerfit.model.request.LoginRequest;
 import com.nocountry.powerfit.model.request.RegisterRequest;
 import com.nocountry.powerfit.model.response.AuthResponse;
-import com.nocountry.powerfit.repository.IUserRepository;
+import com.nocountry.powerfit.repository.UserRepository;
 import com.nocountry.powerfit.service.abstraction.AuthService;
 import com.nocountry.powerfit.model.exception.UserAlreadyExistException;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class AuthServiceImp implements AuthService {
 
-    private final IUserRepository userRepository;
+    private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final Logger LOGGER = LoggerFactory.getLogger(AuthServiceImp.class);
     //private final AuthenticationManager
