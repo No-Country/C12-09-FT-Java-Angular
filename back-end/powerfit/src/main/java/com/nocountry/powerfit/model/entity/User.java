@@ -23,15 +23,11 @@ public class User /*implements UserDetails*/ {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Name must only contain letters")
-    @Size(min = 1, max = 10, message = "Please enter a valid name")
     @NotNull(message = "Name can't be null")
     @NotBlank(message = "A name is required")
     @NotEmpty(message = "Name can't be null")
     private String name;
 
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Last name must only contain letters")
-    @Size(min = 1, max = 10, message = "Please enter a valid last name")
     @NotNull(message = "Last name can't be null")
     @NotBlank(message = "A last name is Required")
     @NotEmpty(message = "Last name can't be null")
@@ -43,12 +39,8 @@ public class User /*implements UserDetails*/ {
     @Email(message = "Ingresa un correo electronico válido")
     private String email;
 
-    @NotNull(message = "{password.error}")
-    @NotBlank(message = "{password.error}")
-    @Size(min = 8, max = 250, message = "Password should have at least 8 characters")
     private String password;
 
-    @Pattern(regexp = "\\d{10}", message = "Please enter a valid phone number")
     @NotNull(message = "Phone number can't be empty")
     @NotEmpty(message = "Phone number can't be empty")
     @NotBlank(message = "Phone number can't be empty.")

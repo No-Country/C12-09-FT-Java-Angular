@@ -5,11 +5,14 @@ import com.nocountry.powerfit.model.request.RegisterRequest;
 import com.nocountry.powerfit.model.request.UserRequest;
 import com.nocountry.powerfit.model.response.AuthResponse;
 import com.nocountry.powerfit.model.response.UserResponse;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+
+@Builder
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
@@ -59,6 +62,16 @@ public class UserMapper {
                 .city(updateRequest.getCity())
                 .address(updateRequest.getAddress())
                 .phoneNumber(updateRequest.getPhoneNumber())
+                .build();
+    }
+
+    public User mapTo(RegisterRequest request) {
+        return User.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .lastName(request.getLastName())
+                .password(request.getPassword())
+                .phoneNumber(request.getPhoneNumber())
                 .build();
     }
 }
