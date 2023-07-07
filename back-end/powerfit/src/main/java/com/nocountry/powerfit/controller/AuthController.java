@@ -38,7 +38,7 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
     @PostMapping("/create")
-    public ResponseEntity<?> create(@Valid @RequestBody RegisterRequest request, BindingResult bindingResult) throws AttributeException {
+    public ResponseEntity<?> create(@Valid @RequestBody RegisterRequest request, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             String errorMessage = bindingResult.getFieldErrors()
                     .stream()

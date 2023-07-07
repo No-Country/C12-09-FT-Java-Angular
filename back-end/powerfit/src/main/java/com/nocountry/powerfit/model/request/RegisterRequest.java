@@ -14,10 +14,14 @@ import javax.validation.constraints.*;
 @Setter
 public class RegisterRequest {
 
+    @Pattern(regexp = "^[A-Za-z]+$", message = "Name must only contain letters")
+    @Size(min = 1, max = 10, message = "Please enter a valid name")
     @NotBlank(message = "Name can't be empty.")
     private String name;
 
     @NonNull
+    @Pattern(regexp = "^[A-Za-z]+$", message = "LastName must only contain letters")
+    @Size(min = 1, max = 10, message = "Please enter a valid name")
     @NotEmpty(message = "lastName can't be empty")
     @NotBlank(message = "lastName can't be empty.")
     private String lastName;
