@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent}
+
 ];
 
 @NgModule({
@@ -38,7 +39,7 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent,ProfileComponent
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
