@@ -24,10 +24,10 @@ public class ProductMapper {
                 .name(product.getName())
                 .description(product.getDescription())
                 .stock(product.isStock())
-                .category(product.getCategory().getName())
-                .imgList(product.getCarrousel().stream()
-                        .map(imageMapper::imageToDto)
-                        .collect(Collectors.toList()))
+                //.category(product.getCategory().getName())
+                //.imgList(product.getCarrousel().stream()
+                        //.map(imageMapper::imageToDto)
+                        //.collect(Collectors.toList()))
                 .build();
     }
 
