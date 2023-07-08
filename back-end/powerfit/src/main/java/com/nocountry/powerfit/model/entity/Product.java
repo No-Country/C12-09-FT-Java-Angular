@@ -19,7 +19,6 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
     private Long id;
     @NotEmpty(message = "Name cannot be empty")
     private String name;
@@ -32,14 +31,15 @@ public class Product {
     @Min(value = 0, message = "The quantity must be a positive number")
     private Integer quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", insertable = false, updatable = false)
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
-    @Column(name = "category_id", nullable = false)
+    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
     private Long categoryId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
     private Cart cart;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
