@@ -5,11 +5,15 @@ import com.nocountry.powerfit.model.request.RegisterRequest;
 import com.nocountry.powerfit.model.request.UserRequest;
 import com.nocountry.powerfit.model.response.AuthResponse;
 import com.nocountry.powerfit.model.response.UserResponse;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Date;
+
+@Builder
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
@@ -38,7 +42,7 @@ public class UserMapper {
     public UserResponse dtoToEntityUser(User user) {
         return UserResponse.builder()
                 .id(user.getId())
-                .city(user.getCity())
+                //.city(user.getCity())
                 .address(user.getAddress())
                 .name(user.getName())
                 .phoneNumber(user.getPhoneNumber())
@@ -56,9 +60,20 @@ public class UserMapper {
                 .name(updateRequest.getName())
                 .lastName(updateRequest.getLastName())
                 .postalCode(updateRequest.getPostalCode())
-                .city(updateRequest.getCity())
+                //.city(updateRequest.getCity())
                 .address(updateRequest.getAddress())
                 .phoneNumber(updateRequest.getPhoneNumber())
+                .document(updateRequest.getDocument())
+                .build();
+    }
+
+    public User mapTo(RegisterRequest request) {
+        return User.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .lastName(request.getLastName())
+                .password(request.getPassword())
+                .phoneNumber(request.getPhoneNumber())
                 .build();
     }
 }

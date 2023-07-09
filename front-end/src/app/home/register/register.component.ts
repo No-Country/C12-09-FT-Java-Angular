@@ -33,12 +33,12 @@ export class RegisterComponent implements OnInit {
     }
     this.authService.register(dto).subscribe(
       data =>{
-        this.toastr.success(data.name + data.lastName, 'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
+        this.toastr.success(data.message, 'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
         this.router.navigate(['/login']);
       },
       err =>{
         console.log(err);
-        this.toastr.error(err.error.message, 'Error', { timeOut: 8000, positionClass: positionClass});
+        this.toastr.error(err.error, 'Error', { timeOut: 8000, positionClass: positionClass});
       }
     )
 

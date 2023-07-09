@@ -1,4 +1,5 @@
 
+ 
 
 .marcas{
     
@@ -10,23 +11,30 @@
 .slider-wrap{
     position: relative;
     overflow: hidden;
-    height: 150px;
+    height: 110px;
 }
 .slider-main{
+    display: flex;
+    flex-direction: row;
+
     position: absolute;
     width: 1000%;
-    animation: slide 15s forwards alternate ease-in-out;
+    
+    animation: slide 2s  linear infinite;
+    -webkit-animation: slide 10s linear infinite;
+    width: calc(212px*8);
 }
 
 .item{
     display: inline-block;
+    /* display: flex; */
     width: 312px;
-    margin-right: 80px;
+    margin-right: 10px;
     height: 150px;
-    /* background: yellow; */
     position: relative;
     margin: 0;
 }
+
 
 .text{
     position: absolute;
@@ -53,17 +61,16 @@
 }
 
 @keyframes slide{
-    0%{margin-left: 0%;}
-    20%{margin-left: 0%;}
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-212px*8));
+        transform: translateX(calc(-212px*8));
+    }
 
-    25%{ margin-left: -100%;}
-    45%{ margin-left: -100%;}
 
-    50%{ margin-left: -200%;}
-    70%{ margin-left: -200%;}
-
-    75%{ margin-left: -300%;}
-    95%{ margin-left: -300%;}
 }
 
 @media screen and (max-width: 400px) {
@@ -120,4 +127,4 @@
     }
     
 
-}
+} 
