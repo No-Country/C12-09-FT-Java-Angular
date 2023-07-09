@@ -17,10 +17,12 @@ import java.time.LocalDateTime;
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bills_id")
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+
     //private Cart cart;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime date;

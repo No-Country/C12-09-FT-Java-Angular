@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     const dto = new UserDto(this.name, this.lastName, this.phoneNumber, this.email, this.password);
     const positionClass = window.innerWidth <= 575.98 ? 'toast-top-center' : 'toast-top-right';
     if(dto.password !== this.confirmPassword){
-      this.toastr.error('Error','las contraseñas no coinciden', { timeOut: 8000, positionClass: positionClass });
+      this.toastr.error('Error','Las contraseñas no coinciden', { timeOut: 8000, positionClass: positionClass });
       return;
     }
     this.authService.register(dto).subscribe(

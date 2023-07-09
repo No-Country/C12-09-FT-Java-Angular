@@ -1,0 +1,46 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="card mb-3  sizeCard" style="max-width: 900px;">
+      <div class="row g-0 d-flex align-items-center">
+        <div class="col-md-4 col-lg-6 mx-auto">
+          <img src="assets/Advanced_Whey_Protein.png" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8 col-lg-6 mx-auto d-flex  mt-4 colCenter">
+          <div class="card-body ">
+            <h5 class="card-title">Card title</h5>
+            <p>$9600</p>
+            <div class="input-group input-group-sm centerGroup">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-warning" (click)="decrement()"><</button>
+              </span>
+              <input type="text" class="form-control form-control-sm text-center bg-warning-subtle" [value]="quantity" id="quantity" readonly style="max-width: 40px;">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-warning me-2" (click)="increment()">></button>
+              </span>
+              <button type="button" class="btn btn-dark text-warning rounded botonPago">Agregar al carrito</button>
+            </div>
+
+            <div class="btn-group" *ngIf="asCategoryClothing()">
+              <button type="button" class="btn btn-primary">S</button>
+              <button type="button" class="btn btn-primary">M</button>
+              <button type="button" class="btn btn-primary">L</button>
+              <button type="button" class="btn btn-primary">XL</button>
+            </div>
+            <h6 class="card-title mt-3">Descripcion del producto</h6>
+            <p class="card-text">This is a wider card with supporting text below.</p>
+            <h6>Envios</h6>
+            <p>Moto mensajería CABA ($1500).
+              Envíos a todo el país a través de Mercado Envíos.
+            </p>
+            <h6>Medios de pago</h6>
+            <p>Tarjetas de crédito
+              Tarjetas de debito
+              Mercado pago
+              Transferencias
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

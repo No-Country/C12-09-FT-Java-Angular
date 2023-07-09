@@ -18,12 +18,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import { DetailComponent } from './home/product/detail/detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'detail', component: DetailComponent}
 
 ];
 
@@ -39,7 +41,8 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

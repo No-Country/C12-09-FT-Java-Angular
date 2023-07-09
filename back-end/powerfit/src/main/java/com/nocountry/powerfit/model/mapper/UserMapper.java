@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Date;
 
 @Builder
 @Component
@@ -41,7 +42,7 @@ public class UserMapper {
     public UserResponse dtoToEntityUser(User user) {
         return UserResponse.builder()
                 .id(user.getId())
-                .city(user.getCity())
+                //.city(user.getCity())
                 .address(user.getAddress())
                 .name(user.getName())
                 .phoneNumber(user.getPhoneNumber())
@@ -59,9 +60,10 @@ public class UserMapper {
                 .name(updateRequest.getName())
                 .lastName(updateRequest.getLastName())
                 .postalCode(updateRequest.getPostalCode())
-                .city(updateRequest.getCity())
+                //.city(updateRequest.getCity())
                 .address(updateRequest.getAddress())
                 .phoneNumber(updateRequest.getPhoneNumber())
+                //.document(updateRequest.getDocument())
                 .build();
     }
 
