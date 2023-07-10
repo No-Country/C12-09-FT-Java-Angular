@@ -23,7 +23,7 @@ public class ProductMapper {
                 .price(product.getPrice())
                 .name(product.getName())
                 .description(product.getDescription())
-                .stock(product.isStock())
+                .stock(product.getStock())
                 .category(product.getCategory().getName())
                 .imgList(product.getCarrousel().stream()
                         .map(imageMapper::imageToDto)
@@ -38,7 +38,7 @@ public class ProductMapper {
                 .cart(null)
                 .categoryId(request.getCategoryId())
                 .price(request.getPrice())
-                .stock(request.isStock())
+                .stock(request.getStock())
                 .build();
     }
 
@@ -52,7 +52,7 @@ public class ProductMapper {
             productResponse.setDescription(p.getDescription());
             productResponse.setCategory(p.getCategory().getName());
             productResponse.setPrice(p.getPrice());
-            productResponse.setStock(p.isStock());
+            productResponse.setStock(p.getStock());
             productResponse.setImgList(p.getCarrousel().stream().map(
                             imageMapper::imageToDto)
                     .collect(Collectors.toList()));

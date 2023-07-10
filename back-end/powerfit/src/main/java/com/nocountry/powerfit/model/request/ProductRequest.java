@@ -21,9 +21,9 @@ public class ProductRequest {
     @NotNull(message = "You must specify the price")
     @Min(value = 0, message = "The minimum price is 0")
     private double price;
-    private boolean stock;
-    @Min(value = 0, message = "The quantity must be a positive number")
-    private Integer quantity;
+    @NotNull(message = "You must specify the stock")
+    @Min(value = 0, message = "The stock must be a positive number")
+    private Integer stock;
     @NotNull(message = "Id cannot by null")
     private Long categoryId;
 
