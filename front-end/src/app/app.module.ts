@@ -18,6 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
+import { PromocionesComponent } from './shared/promociones/promociones.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,7 +40,7 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent,ProfileComponent
+    CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent
   ],
   imports: [
     BrowserModule,
