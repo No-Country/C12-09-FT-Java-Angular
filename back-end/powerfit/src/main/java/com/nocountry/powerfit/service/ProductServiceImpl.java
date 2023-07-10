@@ -84,7 +84,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public ProductResponse getById(Long id) {
         Product product = IProductRepository.findById(id).orElseThrow();
-        if (!product.isStock()) {
+        if (product.getStock() == 0) {
             throw new EntityNotFoundException("Product not found or deleted");
         }
         return productMapper.entityToDto(product);
@@ -92,7 +92,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public List<ProductResponse> getAll() {
-        return IProductRepository.findAll().stream().filter(p -> p.isStock()).map(productMapper::entityToDto).collect(Collectors.toList());
+        return IProductRepository.findAll().stream().filter(p -> p.getStock() != 0).map(productMapper::entityToDto).collect(Collectors.toList());
 
     }
 
