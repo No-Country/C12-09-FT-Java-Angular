@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild,AfterViewInit, Input, OnDestroy } from '@angular/core';
+import { listaProductos } from 'src/app/data/datos';
 
-interface ImageSlider {
-  id:number;
-  src:string
-  title:string;
-  subtitle:string;
-}
+
 @Component({
   selector: 'app-carousel-sponsor',
   templateUrl: './carousel-sponsor.component.html',
   styleUrls: ['./carousel-sponsor.component.css']
 })
 export class CarouselSponsorComponent {
+ 
 
-  // lista
+
 
   constructor(){}
 

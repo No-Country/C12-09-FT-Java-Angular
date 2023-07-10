@@ -88,8 +88,8 @@
         display: flex;
         flex-direction: row;
 
-        width: 150px;
-        height: 100px;
+        width: 342px;
+        height: 150px;
         top: 127.4453125px;
         left: -64px;
 
@@ -103,7 +103,7 @@
         align-items: center;
         justify-content: start;
         margin: 5px;
-        width: 50px;
+        width: 250px;
         height: 90px;
         font-weight: 200px;
 
@@ -116,11 +116,17 @@
     .flex-container div h1 {
 
 
-        width: 50px;
+        width: 110px;
         height: 50px;
         margin: 1px;
-        margin-top: 10px;
-        font-size: 14px;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Michroma;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
 
 
 
@@ -152,4 +158,25 @@
 
     }
 
+}
+
+
+@media screen and( max-width:1920) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 1007px;
+        height: 572px;
+        top: 413px;
+        /* background-color: aquamarine;
+        padding: 5px;
+        border: 2px solid black; */
+    }
+    
+    
 }
