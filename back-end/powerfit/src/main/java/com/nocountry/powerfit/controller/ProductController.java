@@ -1,6 +1,7 @@
 package com.nocountry.powerfit.controller;
 
 import com.nocountry.powerfit.model.entity.Product;
+import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
 import com.nocountry.powerfit.repository.IProductRepository;
@@ -27,31 +28,31 @@ public class ProductController {
     @Autowired
     private IProductService iProductService;
 
-//    @ApiOperation(value = "Registration of a product", notes = "Returns product created")
-//    @PostMapping("/add")
-//    public ResponseEntity<ProductResponse> uploadFiles(
-//            @RequestParam(value="postimages", required = false) List<MultipartFile> postImage ,
-//            @RequestPart(value ="product", required = true) ProductRequest request) {
-//        return ResponseEntity.status(HttpStatus.CREATED).body(iProductService.add(postImage, request));
-//
-//    }
+    @ApiOperation(value = "Registro de un producto", notes = "Retorna producto creado")
+    @PostMapping("/add")
+    public ResponseEntity<ProductResponse> uploadFiles(
+            @RequestParam(value="postimages", required = false) List<MultipartFile> postImage ,
+            @RequestPart(value ="product", required = true) ProductRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(iProductService.add(postImage, request));
+
+    }
 
     @GetMapping("/all")
-    @ApiOperation(value = "Find all products ", notes = "Returns list products")
+    @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos")
     public ResponseEntity<List<ProductResponse>> getAll() {
         List<ProductResponse> response = iProductService.getAll();
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping("/{id}")
-    @ApiOperation(value = "Find by id ", notes = "Returns one Product")
-    public ResponseEntity<?> getById(@PathVariable Long id) {
+    @ApiOperation(value = "Busca por id", notes = "Retorna un producto")
+    public ResponseEntity<?> getById(@PathVariable Long id) throws ResourceNotFoundException {
         ProductResponse response = iProductService.getById(id);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "Find by id and delete ", notes = "Returns http 204")
+    @ApiOperation(value = "Busca por el id para eliminar registro ", notes = "Retorna http 204, no content")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         iProductService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
