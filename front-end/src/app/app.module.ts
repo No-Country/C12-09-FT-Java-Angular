@@ -21,6 +21,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
+import { CartComponent } from './home/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,7 +45,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
-    DetailComponent
+    DetailComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
