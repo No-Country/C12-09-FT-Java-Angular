@@ -12,7 +12,7 @@ import java.util.List;
 public interface IProductRepository extends JpaRepository<Product, Long> {
 
     List<Product> findByName(String name);
-    List<Product> findByCategory(Category category);
+    List<Product> findByCategory(String name);
 
 //    @Query("SELECT p FROM Product p WHERE LOWER(p.title) LIKE %:productName%")
 //    List<Product> findBySimilarName(@Param("productName") String productName);

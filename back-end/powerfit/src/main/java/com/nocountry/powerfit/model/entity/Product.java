@@ -35,12 +35,15 @@ public class Product {
     @Min(value = 0, message = "El stock debe ser un numero positivo, minimo 0")
     private Integer stock;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+//    @ManyToOne
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+//
+//    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
+//    private Long categoryId;
 
-    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
-    private Long categoryId;
+    @NotNull(message = "Debe especificar una categoría")
+    private String category;
 
     @ManyToOne
     @JoinColumn(name = "cart_id")

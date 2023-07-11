@@ -57,7 +57,7 @@ public class ProductServiceImpl implements IProductService {
             /*new product*/
             Product product = productMapper.dtoToProduct(request, userResponse);
             product.setCarrousel(imageService.imagesPost(postImage));
-            product.setCategory(categoryService.findById(request.getCategoryId()));
+            product.setCategory(categoryService.getByName(request.getCategory()).toString());
 
 //            add image
             Product pCreated= IProductRepository.save(product);
@@ -68,7 +68,7 @@ public class ProductServiceImpl implements IProductService {
 
     }
 
-    public List<ProductResponse> getProductForCategory(Category name) throws ResourceNotFoundException {
+    public List<ProductResponse> getProductForCategory(String name) throws ResourceNotFoundException {
         List<Product> products = IProductRepository.findByCategory(name);
         if(products.isEmpty()){
             throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + name);
