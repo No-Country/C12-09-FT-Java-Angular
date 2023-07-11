@@ -1,0 +1,68 @@
+footer{
+  background-color: #F7FC00;
+}
+.container h2{
+  color: #000;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.container a, .container p{
+  display: block;
+  color: #000;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.container a:hover{
+  color: rgb(121, 121, 121);
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "contact   redbox " "Payments  shipping ";
+}
+.contactbox{
+  grid-area: contact;
+  margin-top: 17px;
+}
+.redbox{
+  grid-area: redbox;
+  margin-top: 17px;
+}
+.Payments{
+  grid-area: Payments;
+  margin-top: 17px;
+}
+.shipping{
+  grid-area: shipping;
+  margin-top: 17px;
+}
+@media screen and (width > 680px){
+  .container{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-areas: "contact Payments shipping redbox";
+  }
+  .container h2{
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .container a, .container p{
+    color: #000;
+    font-size: 24px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

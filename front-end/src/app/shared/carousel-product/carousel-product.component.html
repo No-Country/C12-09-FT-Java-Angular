@@ -1,8 +1,48 @@
-<div class="card" style="width: 18rem;">
-  <img src="assets/producto1.png" class="card-img-top" alt="Nombre del producto">
-  <div class="card-body">
-    <h5 class="card-title">Nombre del producto</h5>
-    <p class="card-text">Precio</p>
-    <a href="#" class="btn btn-primary">Comprar</a>
+
+
+<section class="marcas grid-container" >
+  <div class="container-fluid">
+    <div class="slider-wrap " #myContainer>
+       <div class="slider-main sidebar" #mySlider>
+        <div class="item card" >
+          <img src="assets/producto1.png"  class="card-img-top img-thumbnail" alt="Nombre del producto">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del producto1</h5>
+            <p class="card-title">Precio</p>
+            <a href="#" class=" button-compra btn btn-warning"> Comprar</a>
+          </div>
+         </div>
+         <div class=" item card" > 
+          <img src="assets/producto5.png" class="card-img-top img-thumbnail" alt="Nombre del producto">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del producto2</h5>
+            <p class="card-title">Precio</p>
+            <a href="#" class="button-compra btn btn-warning ">Comprar</a>
+          </div>
+        </div>
+        <div class=" item card" >
+          <img src="assets/producto3.png" class="card-img-top img-thumbnail" alt="Nombre del producto">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del producto3</h5>
+            <p class="card-title">Precio</p>
+            <a href="#" class="button-compra btn btn-warning ">Comprar</a>
+          </div>
+        </div>
+        <div class="  item card" >
+          <img src="assets/producto4.png" class="card-img-top img-thumbnail" alt="Nombre del producto">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del producto4</h5>
+            <p class="card-title">Precio</p>
+            <a href="#" class="button-compra btn btn-warning ">Comprar</a>
+          </div>
+        </div>  
+       </div>
+       <div class="button-area">
+           <button type="button" class="prev btn btn-light" (click)="setBack()"  #buttonLeft><i class="fa-solid fa-angle-left"></i></button>
+           <button type="button" class="next btn btn-light" (click)="setNext()" #buttonRight><i class="fa-solid fa-angle-right"></i> </button>
+       </div>
+    </div>
   </div>
-</div>
+</section> 
+
+

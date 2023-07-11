@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild,AfterViewInit, Input, OnDestroy } from '@angular/core';
+import { listaProductos } from 'src/app/data/datos';
+
 
 @Component({
   selector: 'app-carousel-sponsor',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel-sponsor.component.css']
 })
 export class CarouselSponsorComponent {
+ 
+
+
+
+  constructor(){}
+
+  ngOnInit():void{
+
+  }
+
+
+  
 
 }
