@@ -13,4 +13,5 @@ public interface CategoryService {
     List<Category> getAllCategory();
     CategoryResponse getByName(String name);
     CategoryResponse updateCategory(CategoryRequest request);
+    Category findById(Long categoryId);
 }
