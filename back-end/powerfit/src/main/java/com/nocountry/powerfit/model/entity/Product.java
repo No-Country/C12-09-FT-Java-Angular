@@ -20,16 +20,20 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotEmpty(message = "Name cannot be empty")
     private String name;
+
     @NotEmpty(message = "Description cannot be empty")
     private String description;
+
     @NotNull(message = "You must specify the price")
     @Min(value = 0, message = "The minimum price is 0")
     private Double price;
-    private boolean stock;
-    @Min(value = 0, message = "The quantity must be a positive number")
-    private Integer quantity;
+
+    @NotNull(message = "You must specify the stock")
+    @Min(value = 0, message = "The stock must be a positive number")
+    private Integer stock;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
