@@ -24,6 +24,4 @@ public class Category {
     @Pattern(regexp = "^[A-Za-z]+$", message = "Por favor ingrese un nombre válido a la categoría")
     private String name;
 
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
 }
