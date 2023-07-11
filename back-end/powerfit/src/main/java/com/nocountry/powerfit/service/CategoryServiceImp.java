@@ -70,4 +70,9 @@ public class CategoryServiceImp implements CategoryService {
         return response;
 
     }
+
+    @Override
+    public Category findById(Long categoryId) {
+        return categoryRepository.getReferenceById(categoryId);
+    }
 }

@@ -1,9 +1,9 @@
 package com.nocountry.powerfit.model.mapper;
 
 import com.nocountry.powerfit.model.entity.Product;
-import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
+import com.nocountry.powerfit.model.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +31,7 @@ public class ProductMapper {
                 .build();
     }
 
-    public Product dtoToProduct(ProductRequest request, User user) {
+    public Product dtoToProduct(ProductRequest request, UserResponse user) {
         return Product.builder()
                 .description(request.getDescription())
                 .name(request.getName())
