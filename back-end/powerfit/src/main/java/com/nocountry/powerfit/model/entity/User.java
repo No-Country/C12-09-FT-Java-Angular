@@ -30,8 +30,8 @@ public class User /*implements UserDetails*/ {
     @NotNull(message = "Name can't be null")
     private String name;
 
-    @Pattern(regexp = "\\d{10}", message = "Por favor ingrese un documento válido")
-    private Long document;
+    //@Pattern(regexp = "\\d{10}", message = "Por favor ingrese un documento válido")
+    //private Long document;
 
     @Pattern(regexp = "^[A-Za-z]+$", message = "Please enter a last name")
     @Size(max = 15, message = "Please enter a valid last name")

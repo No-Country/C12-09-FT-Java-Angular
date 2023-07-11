@@ -37,11 +37,13 @@
   .body-container {
     background: black;
     width: 400px;
+
 }
 
     .row {
         width: 400px;
-        height: 300px;
+        height: 400px;
+        background: black;
 
     }
 

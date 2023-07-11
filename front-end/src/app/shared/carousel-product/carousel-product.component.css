@@ -120,25 +120,167 @@
   .slider-main {
     position: relative;
     display: inline-block;
-    width: 150px;
-    height: 220px;
-    bottom: 10px;
-    margin-right: 500px;
- 
-    display: grid;
-        grid-template-columns: repeat(3, 1fr) repeat(2, 0);
-        grid-template-rows: 1fr repeat(3, 0);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
+    width: 300px;
+    height: 350px;
+    left: 20px;
+
+    margin-right: 500px;    
+      display: grid;
+      grid-template-columns: repeat(1, 0.5fr) 0;
+      grid-template-rows: repeat(2, 1fr) 0;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      justify-content: safe;    
 
   }
 
   .slider-wrap {
-    width: 350px;
-    height: 260px;
+    width: 400px;
+    height: 360px;
+    margin-right: 100px;
+    right: 30px;
+  }
+
+  .item {
+
+    display: flex;
+    flex-direction: column;
+
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          width: 120px;
+          height: 145px;
+          bottom: 3px;
+          left: 11px;
+
+  }
+
+
+  .card-img-top {
+
+    background: #F0F1D3;
+    width: 41px;
+    height: 41px;
+    margin-top: 20px;
+    left: 152px;
+
+
+
+  }
+
+  .card-body {
+    width: 80px;
+    height: 25px;
+    margin-right: 10px;
+    margin-bottom: 65px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 3px;
+    justify-content: center;
+    /* font-weight: 10px;
+    line-height: 10px;
+    letter-spacing: 0em; */
+
+
+
+  }
+
+  .card-title {
+    display: inline-block;
+
+    width: 86px;
+    height: 10px;
+    margin-right: 64px;
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 200;
+    line-height: 14px;
+    text-align: start;
+
+
+  }
+
+  .button-compra {
+    width: 51px;
+    height: 30px;
+    border-radius: 5.177227973937988px;
+    border: 0.4930693209171295px;
+    font-family: Roboto;
+    font-size: 6px;
+    font-weight: 60px;
+    line-height: 10px;
+    text-align: start;
+    margin-right: 80px;
+    background-color: yellow;
+
+
+  }
+
+  .marcas {
+
+    padding: 10px;
+    width: 475px;
+
+  }
+
+  .prev {
+
+    visibility: hidden;
+    /* position: absolute;
+    left: 33px;
+    top: 50%;
+    background: white;
+    transform: translate(-50%, -50%); */
+  }
+
+  .next {
+
+    visibility: hidden;
+    /* position: absolute;
+    right: 1px;
+    top: 10%;
+    background: white;
+    transform: translate(-50%, -50%); */
+  }
+
+
+}
+
+
+@media (min-width: 400px) and (max-width: 575px) {
+   
+  .grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+      "header main sidebar ";
+  }
+
+  .slider-main {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 350px;
+    bottom: 10px;
+    margin-right: 500px;    
+      display: grid;
+      grid-template-columns: repeat(1, 0.5fr) 0;
+      grid-template-rows: repeat(2, 1fr) 0;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      justify-content: safe;
+      background: blueviolet;
+    
+
+  }
+
+  .slider-wrap {
+    width: 500px;
+    height: 560px;
     margin-right: 200px;
-
-
+    display: inline-block;
 
   }
 
@@ -151,8 +293,8 @@
           justify-content: center;
           align-items: center;
           align-content: center;
-          width: 80px;
-          height: 203px;
+          width: 150px;
+          height: 233px;
           top: 41;
           left: 11px;
 
@@ -162,8 +304,8 @@
   .card-img-top {
 
     background: #F0F1D3;
-    width: 61px;
-    height: 51px;
+    width: 81px;
+    height: 81px;
     top: 422px;
     left: 152px;
 
@@ -246,6 +388,54 @@
     transform: translate(-50%, -50%); */
   }
 
+}
+
+@media (min-width: 600px) and (max-width: 695px) {
+
+
+
+}
+@media (min-width: 700px) and (max-width: 790px) {
+
+
+}
+@media (min-width: 800px) and (max-width: 898px) {
+
+
+
+}
+@media (min-width: 900px) and (max-width: 990px) {
+
+ 
 
 }
 
+@media (min-width: 992px) and (max-width: 1190px) {
+
+
+}
+
+@media (min-width: 1191px) and (max-width: 1200px) {
+  
+
+}
+@media (min-width: 1200px) and (max-width: 1370px) {
+  
+
+}
+
+@media (min-width: 1373px) and (max-width: 1470px) {
+  
+
+}
+
+@media screen and( max-width:1500) {
+
+
+  
+}
+
+
+@media screen and( max-width:1920) {
+
+}
