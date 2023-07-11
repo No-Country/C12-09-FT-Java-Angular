@@ -176,7 +176,7 @@
 
 }
 
-@media (min-width: 575px) and (max-width: 991px) {
+@media (min-width: 600px) and (max-width: 695px) {
 
     .slider-wrap {
         position: relative;
@@ -209,7 +209,92 @@
         font-size: 24px;
         font-weight: bolder;
     }
+    .marcas {
 
+        padding: 20px;
+        width: 515px;
+        height: 100px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width: 700px) and (max-width: 790px) {
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    .marcas {
+
+        padding: 20px;
+        width: 515px;
+        height: 100px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width: 800px) and (max-width: 898px) {
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
     .marcas {
 
         padding: 20px;
@@ -220,6 +305,50 @@
     }
 
 }
+@media (min-width: 900px) and (max-width: 990px) {
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    .marcas {
+
+        padding: 20px;
+        width: 700px;
+        height: 100px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+
 @media (min-width: 992px) and (max-width: 1190px) {
     
     .slider-wrap {
@@ -265,7 +394,7 @@
 
   }
 
-  @media (min-width: 1190px) and (max-width: 1373px) {
+  @media (min-width: 1191px) and (max-width: 1200px) {
     
     .slider-wrap {
         position: relative;
@@ -302,7 +431,54 @@
    
     .marcas {
 
-        width: 1120px;
+        width: 1100px;
+        height: 123px;
+        top: 967px;
+        left: -11px;
+    
+        padding: 20px;
+    
+        background: yellow;
+    }
+  }
+  @media (min-width: 1200px) and (max-width: 1370px) {
+    
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+   
+    .marcas {
+
+        width: 1100px;
         height: 123px;
         top: 967px;
         left: -11px;
@@ -350,7 +526,7 @@
    
     .marcas {
 
-        width: 1300px;
+        width: 110px;
         height: 123px;
         top: 967px;
         left: -11px;
