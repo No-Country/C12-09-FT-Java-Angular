@@ -1,7 +1,6 @@
 package com.nocountry.powerfit.model.mapper;
 
 import com.nocountry.powerfit.model.entity.Product;
-import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
 import com.nocountry.powerfit.model.response.UserResponse;
