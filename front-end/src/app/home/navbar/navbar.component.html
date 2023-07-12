@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <!-- Contenido del header -->
       <div class="d-flex">
@@ -34,18 +34,19 @@
       </div>
     </div>
     </nav>
+
     <nav>
     <!-- Contenido de la barra de navegación -->
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav flex-row">
         <li class="nav-item">
-          <a class="nav-link" href="#">Suplementos</a>
+          <a class="nav-link" (click)="selectCategory('Suplementos')" href="listCategory">Suplementos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Equipamiento</a>
+          <a class="nav-link" (click)="selectCategory('Equipamiento')" href="listCategory">Equipamiento</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Indumentaria</a>
+          <a class="nav-link" (click)="selectCategory('Indumentaria')"  href="listCategory">Indumentaria</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
