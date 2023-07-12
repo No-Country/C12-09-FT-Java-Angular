@@ -1,9 +1,10 @@
 .marcas {
 
-    width: 1290px;
-    height: 223px;
+    width: 1269px;
+    height: 153px;
     top: 967px;
     left: -11px;
+    margin-top: 20px;
 
     padding: 20px;
 
@@ -84,7 +85,9 @@
 
 }
 
-@media screen and (max-width: 380px) {
+
+
+@media (min-width:300px) and (max-width: 330px) {
    
 
     .slider-wrap {
@@ -122,59 +125,291 @@
     .marcas {
 
         padding: 20px;
-        width: 200px;
-        height: 51px;
-        top: 303px;
-        background: yellow;
-    }
-
-}
-
-@media (max-width: 575px) {
-   
-
-    .slider-wrap {
-        position: relative;
-        overflow: hidden;
-        height: 30px;
-    }
-
-    .slider-main {
-        position: relative;
-        width: 1000%;
-        animation: slide 15s forwards alternate ease-in-out;
-
-    }
-
-    .item {
-        display: inline-block;
-        width: 112px;
-        height: 50px;
-        background: yellow;
-        position: relative;
-        margin: 0;
-    }
-
-    .text {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        font-size: 24px;
-        font-weight: bolder;
-    }
-
-    .marcas {
-
-        padding: 20px;
-        width: 575px;
+        width: 295px;
         height: 100px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
 
 }
+@media (min-width:330px) and (max-width: 390px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+
+        padding: 20px;
+        width: 355px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width:392px) and (max-width: 420px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+
+        padding: 20px;
+        width: 385px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width:420px) and (max-width: 490px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 212px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+
+        padding: 20px;
+        width: 375px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width:492px) and (max-width: 520px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+
+        padding: 20px;
+        width: 485px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width:525px) and (max-width: 570px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+
+        padding: 20px;
+        width: 550px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+@media (min-width:580px) and (max-width: 600px) {
+   
+
+    .slider-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .slider-main {
+        position: relative;
+        width: 1000%;
+        animation: slide 15s forwards alternate ease-in-out;
+
+    }
+
+    .item {
+        display: inline-block;
+        width: 112px;
+        height: 50px;
+        background: yellow;
+        position: relative;
+        margin: 0;
+    }
+
+    .text {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .marcas {
+        padding: 20px;
+        width: 520px;
+        height: 100px;
+        margin-top: 20px;
+        top: 303px;
+        background: yellow;
+    }
+
+}
+
+
 
 @media (min-width: 600px) and (max-width: 695px) {
 
@@ -214,6 +449,7 @@
         padding: 20px;
         width: 515px;
         height: 100px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
@@ -257,6 +493,7 @@
         padding: 20px;
         width: 515px;
         height: 100px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
@@ -300,6 +537,7 @@
         padding: 20px;
         width: 700px;
         height: 100px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
@@ -343,6 +581,7 @@
         padding: 20px;
         width: 700px;
         height: 100px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
@@ -388,13 +627,14 @@
         padding: 20px;
         width: 925px;
         height: 132px;
+        margin-top: 20px;
         top: 303px;
         background: yellow;
     }
 
   }
 
-  @media (min-width: 1191px) and (max-width: 1200px) {
+@media (min-width: 1191px) and (max-width: 1200px) {
     
     .slider-wrap {
         position: relative;
@@ -435,13 +675,15 @@
         height: 123px;
         top: 967px;
         left: -11px;
-    
-        padding: 20px;
+        margin-top: 20px;
+
+        padding: 10px;
     
         background: yellow;
     }
   }
-  @media (min-width: 1200px) and (max-width: 1370px) {
+
+@media (min-width: 1200px) and (max-width: 1370px) {
     
     .slider-wrap {
         position: relative;
@@ -482,14 +724,14 @@
         height: 123px;
         top: 967px;
         left: -11px;
-    
+        margin-top: 20px;
         padding: 20px;
     
         background: yellow;
     }
   }
 
-  @media (min-width: 1373px) and (max-width: 1470px) {
+  @media (min-width: 1373px) and (max-width: 1450px) {
     
     .slider-wrap {
         position: relative;
@@ -526,13 +768,12 @@
    
     .marcas {
 
-        width: 110px;
+        width: 1115px;
         height: 123px;
         top: 967px;
         left: -11px;
-    
+        margin-top: 20px;
         padding: 20px;
-    
         background: yellow;
     }
   }
@@ -541,7 +782,7 @@
  
     .marcas {
 
-        width: 1220px;
+        width: 1120px;
         height: 223px;
         top: 967px;
         left: -11px;

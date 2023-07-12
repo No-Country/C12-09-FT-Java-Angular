@@ -1,8 +1,6 @@
 package com.nocountry.powerfit.service;
 
-import com.nocountry.powerfit.model.entity.Category;
 import com.nocountry.powerfit.model.entity.Product;
-import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.mapper.ProductMapper;
 import com.nocountry.powerfit.model.request.ProductRequest;
@@ -68,7 +66,13 @@ public class ProductServiceImpl implements IProductService {
 
     }
 
-    public List<ProductResponse> getProductForCategory(String name) throws ResourceNotFoundException {
+    @Override
+    public ProductRequest save(Product product) {
+        IProductRepository.save(product);
+        return null;
+    }
+
+    public List<ProductResponse> getProductsForCategory(String name) throws ResourceNotFoundException {
         List<Product> products = IProductRepository.findByCategory(name);
         if(products.isEmpty()){
             throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + name);
@@ -81,12 +85,6 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public ProductRequest save(Product product) {
-        IProductRepository.save(product);
-        return null;
-    }
-
-    @Override
     public ProductResponse getById(Long id) throws ResourceNotFoundException {
         Product product = IProductRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("No se encontró el producto con el id: " + id));
@@ -96,7 +94,6 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public List<ProductResponse> getAll() {
         return IProductRepository.findAll().stream().filter(p -> p.getStock() != 0).map(productMapper::entityToDto).collect(Collectors.toList());
-
     }
 
     @Override
@@ -107,9 +104,17 @@ public class ProductServiceImpl implements IProductService {
         }
     }
 
-    @Override
-    public List<ProductResponse> findByName(String name) {
+    public List<ProductResponse> findByName (String name) throws ResourceNotFoundException {
         List<Product> products = IProductRepository.findByName(name);
-        return productMapper.entityToDtoList(products);
+        if(products.isEmpty()){
+            throw new ResourceNotFoundException("No se encontró el producto con el nombre " + name);
+        }
+        List<ProductResponse> productResponses = products.stream()
+                .map(product -> productMapper.entityToDto(product))
+                .collect(Collectors.toList());
+
+        return productResponses;
     }
+
+
 }

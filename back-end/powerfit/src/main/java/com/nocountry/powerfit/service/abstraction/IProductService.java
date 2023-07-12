@@ -1,5 +1,6 @@
 package com.nocountry.powerfit.service.abstraction;
 
+import com.nocountry.powerfit.model.entity.Category;
 import com.nocountry.powerfit.model.entity.Product;
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.request.ProductRequest;
@@ -17,8 +18,8 @@ public interface IProductService {
     void delete(Long id);
     ProductResponse getById(Long id) throws ResourceNotFoundException;
     List<ProductResponse> getAll();
-    List<ProductResponse> findByName(String name);
-//    List<ProductResponse> getProductForCategory(Category name) throws ResourceNotFoundException;
+    List<ProductResponse> findByName(String name) throws ResourceNotFoundException;
+    List<ProductResponse> getProductsForCategory(String name) throws ResourceNotFoundException;
 
 
 //    Product update(Long id, Product product);
