@@ -1083,11 +1083,12 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
     width: 22rem;
     height: 420px;
     position: relative;
-    
+    /*  */
     margin: 10px;
     flex: 0 0 18rem;
     margin-right: 10px;
     padding: 20px;
+    /*  */
   
   }
   .card-img-top {
