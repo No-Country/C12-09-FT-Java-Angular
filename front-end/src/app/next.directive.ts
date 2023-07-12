@@ -12,6 +12,7 @@ export class NextDirective {
    @HostListener('click')
    nextFunc(){
     var elm = this.el.nativeElement.parentElement.parentElement.children[0];
+    console.log('nada')
     var item = elm.getElementsByClassName("item");
     elm.append(item[0]);
 

@@ -10,7 +10,7 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
 import { CarouselProductComponent } from './shared/carousel-product/carousel-product.component';
 import { CarouselSponsorComponent } from './shared/carousel-sponsor/carousel-sponsor.component';
 import { LoginComponent } from './home/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, Validators } from '@angular/forms';
 import { RegisterComponent } from './home/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -18,12 +18,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
+import { PromocionesComponent } from './shared/promociones/promociones.component'
+import { DetailComponent } from './home/product/detail/detail.component';
+import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'detail', component: DetailComponent},
+  {path: 'listCategory', component: ProductsCategoryComponent}
+
 ];
 
 @NgModule({
@@ -38,7 +45,9 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent,ProfileComponent
+    CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
+    DetailComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,7 @@ const routes: Routes = [
     ToastrModule.forRoot(), // ToastrModule added
     AppRoutingModule,
     HttpClientModule,
+
   ],
   providers: [
     RouterModule,
