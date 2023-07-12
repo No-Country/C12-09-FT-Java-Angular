@@ -9,6 +9,7 @@ export class CarouselProductComponent {
 
   private divWidth!: number;
   private divHeight!: number;
+  translateXValue: number = 100
 
   name = "Angular " + VERSION.major;
 
@@ -20,19 +21,29 @@ export class CarouselProductComponent {
   @ViewChild('buttonLeft', { static: true }) buttonLeft!: ElementRef;
   @ViewChild('buttonRight', { static: true }) buttonRight!: ElementRef;
 
-  // @HostListener('document:click', ['$event'])
-  // onClick(event: MouseEvent): void {
-  //      if (this.buttonLeft.nativeElement.contains(event.target )){
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent): void {
+       if (this.buttonLeft.nativeElement.contains(event.target )){
           
-  //         console.log('hola')
-  //     } else{
-  //        console.log('adios')
-  //     }
+          console.log('hola')
+          const width = this.myContainer.nativeElement.offsetWidth; 
+          const widthSon = this.mySlider.nativeElement.offsetWidth;
+          
+
+          this.translateXValue = width/widthSon; 
+      } else{
+        const width = this.myContainer.nativeElement.offsetWidth; 
+
+         console.log('adios')
+         this.translateXValue = width/ 2; 
+
+
+      }
         
         
       
 
-  // }
+  }
 
   @HostListener('window:resize')
   onWindowResize(){
@@ -68,7 +79,7 @@ medirMycontainer(){
 
 
 setNext(){
- 
+  this.translateXValue -= 10;
 }
 
 setBack(){
