@@ -1,9 +1,9 @@
 package com.nocountry.powerfit.model.mapper;
 
 import com.nocountry.powerfit.model.entity.Product;
-import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
+import com.nocountry.powerfit.model.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -24,19 +24,19 @@ public class ProductMapper {
                 .name(product.getName())
                 .description(product.getDescription())
                 .stock(product.getStock())
-                .category(product.getCategory().getName())
+                .category(product.getCategory())
                 .imgList(product.getCarrousel().stream()
                         .map(imageMapper::imageToDto)
                         .collect(Collectors.toList()))
                 .build();
     }
 
-    public Product dtoToProduct(ProductRequest request, User user) {
+    public Product dtoToProduct(ProductRequest request, UserResponse user) {
         return Product.builder()
                 .description(request.getDescription())
                 .name(request.getName())
                 .cart(null)
-                .categoryId(request.getCategoryId())
+                .category(request.getCategory())
                 .price(request.getPrice())
                 .stock(request.getStock())
                 .build();
@@ -50,7 +50,7 @@ public class ProductMapper {
             productResponse.setId(p.getId());
             productResponse.setName(p.getName());
             productResponse.setDescription(p.getDescription());
-            productResponse.setCategory(p.getCategory().getName());
+            productResponse.setCategory(p.getCategory());
             productResponse.setPrice(p.getPrice());
             productResponse.setStock(p.getStock());
             productResponse.setImgList(p.getCarrousel().stream().map(

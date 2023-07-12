@@ -63,7 +63,7 @@ public class UserMapper {
                 //.city(updateRequest.getCity())
                 .address(updateRequest.getAddress())
                 .phoneNumber(updateRequest.getPhoneNumber())
-                .document(updateRequest.getDocument())
+                //.document(updateRequest.getDocument())
                 .build();
     }
 

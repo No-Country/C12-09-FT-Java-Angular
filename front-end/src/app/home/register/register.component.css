@@ -47,7 +47,7 @@ button{
   color: #F7FC00; /* Cambia el color del texto al pasar el mouse */
 }
 .disabled-button  {
-  opacity: 0.5; /* Por ejemplo, reduce la opacidad */
+  opacity: 0.9; /* Por ejemplo, reduce la opacidad */
   cursor: not-allowed; /* Cambia el cursor cuando está desactivado */
   /* Agrega otros estilos personalizados */
   color: #F7FC00;

@@ -21,26 +21,29 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "Name cannot be empty")
+    @NotEmpty(message = "Debe especificar un nombre")
     private String name;
 
-    @NotEmpty(message = "Description cannot be empty")
+    @NotEmpty(message = "Debe especificar una descripción")
     private String description;
 
-    @NotNull(message = "You must specify the price")
-    @Min(value = 0, message = "The minimum price is 0")
+    @NotNull(message = "Debe especificar el precio")
+    @Min(value = 0, message = "El precio minimo es 0")
     private Double price;
 
-    @NotNull(message = "You must specify the stock")
-    @Min(value = 0, message = "The stock must be a positive number")
+    @NotNull(message = "Debe especificar el stock")
+    @Min(value = 0, message = "El stock debe ser un numero positivo, minimo 0")
     private Integer stock;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+//    @ManyToOne
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+//
+//    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
+//    private Long categoryId;
 
-    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
-    private Long categoryId;
+    @NotNull(message = "Debe especificar una categoría")
+    private String category;
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
