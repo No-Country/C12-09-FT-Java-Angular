@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { SharedService } from 'src/app/shared/shared-service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,8 @@ import { TokenService } from 'src/app/services/token.service';
 export class NavbarComponent {
   isLogged = false;
 
-  constructor(private router:Router, private tokenService: TokenService) { }
+  constructor(private router:Router, private tokenService: TokenService,
+    private sharedService:SharedService) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -27,6 +29,10 @@ export class NavbarComponent {
 
   login(){
     this.router.navigate(['/login'])
+  }
+
+  selectCategory(category: string) {
+    this.sharedService.selectCategory(category);
   }
 }
 
