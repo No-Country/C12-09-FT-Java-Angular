@@ -20,12 +20,17 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
+import { DetailComponent } from './home/product/detail/detail.component';
+import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'detail', component: DetailComponent},
+  {path: 'listCategory', component: ProductsCategoryComponent}
+
 ];
 
 @NgModule({
@@ -40,7 +45,9 @@ const routes: Routes = [
     CarouselSponsorComponent,
     LoginComponent,
     RegisterComponent,
-    CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent
+    CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
+    DetailComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     BrowserModule,

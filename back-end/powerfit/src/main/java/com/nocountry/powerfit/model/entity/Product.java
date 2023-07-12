@@ -19,24 +19,34 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
     private Long id;
-    @NotEmpty(message = "Name cannot be empty")
+
+    @NotEmpty(message = "Debe especificar un nombre")
     private String name;
-    @NotEmpty(message = "Description cannot be empty")
+
+    @NotEmpty(message = "Debe especificar una descripción")
     private String description;
-    @NotNull(message = "You must specify the price")
-    @Min(value = 0, message = "The minimum price is 0")
+
+    @NotNull(message = "Debe especificar el precio")
+    @Min(value = 0, message = "El precio minimo es 0")
     private Double price;
-    private boolean stock;
-    @Min(value = 0, message = "The quantity must be a positive number")
-    private Integer quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @NotNull(message = "Debe especificar el stock")
+    @Min(value = 0, message = "El stock debe ser un numero positivo, minimo 0")
+    private Integer stock;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+//    @ManyToOne
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+//
+//    @Column(name = "category_id", insertable= false, nullable = false, updatable = false)
+//    private Long categoryId;
+
+    @NotNull(message = "Debe especificar una categoría")
+    private String category;
+
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
     private Cart cart;
 
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)

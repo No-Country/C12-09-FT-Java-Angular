@@ -14,18 +14,18 @@ import javax.validation.constraints.NotNull;
 public class ProductRequest {
 
     private Long id;
-    @NotEmpty(message = "Name cannot be empty")
+    @NotEmpty(message = "Nombre no puede estar vacío")
     private String name;
-    @NotEmpty(message = "Description cannot be empty")
+    @NotEmpty(message = "Descripción no puede estar vacía")
     private String description;
-    @NotNull(message = "You must specify the price")
-    @Min(value = 0, message = "The minimum price is 0")
+    @NotNull(message = "Debe especificar el precio")
+    @Min(value = 0, message = "El precio minimo es 0")
     private double price;
-    private boolean stock;
-    @Min(value = 0, message = "The quantity must be a positive number")
-    private Integer quantity;
-    @NotNull(message = "Id cannot by null")
-    private Long categoryId;
+    @NotNull(message = "Debe especificar el stock")
+    @Min(value = 0, message = "EL stock debe ser número positivo")
+    private Integer stock;
+    @NotNull(message = "Debe especificar una categoría")
+    private String category;
 
     
 
