@@ -35,6 +35,7 @@ com\nocountry\powerfit\model\mapper\UserMapper$UserMapperBuilder.class
 com\nocountry\powerfit\model\response\ProductResponse$ProductResponseBuilder.class
 com\nocountry\powerfit\model\response\MessageDto.class
 com\nocountry\powerfit\repository\IUserRepository.class
+com\nocountry\powerfit\service\abstraction\IImageService.class
 com\nocountry\powerfit\model\entity\User.class
 com\nocountry\powerfit\controller\ProductController.class
 com\nocountry\powerfit\model\request\CategoryRequest$CategoryRequestBuilder.class
@@ -46,6 +47,7 @@ com\nocountry\powerfit\model\request\ProductRequest.class
 com\nocountry\powerfit\model\response\ProductResponse.class
 com\nocountry\powerfit\service\AuthServiceImp.class
 com\nocountry\powerfit\model\entity\Bill$BillBuilder.class
+com\nocountry\powerfit\model\exception\ResourceNotFoundException.class
 com\nocountry\powerfit\model\request\CategoryRequest.class
 com\nocountry\powerfit\model\entity\City$CityBuilder.class
 com\nocountry\powerfit\model\request\ProductRequest$ProductRequestBuilder.class
@@ -61,6 +63,7 @@ com\nocountry\powerfit\model\entity\Bill.class
 com\nocountry\powerfit\model\response\CartResponse$CartResponseBuilder.class
 com\nocountry\powerfit\service\abstraction\CartService.class
 com\nocountry\powerfit\service\abstraction\CategoryService.class
+com\nocountry\powerfit\service\ImageServiceImpl.class
 com\nocountry\powerfit\service\abstraction\AuthService.class
 com\nocountry\powerfit\model\entity\Image.class
 com\nocountry\powerfit\model\entity\Cart.class
