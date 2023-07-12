@@ -28,7 +28,11 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+<<<<<<< HEAD
 			<version>42.6.0</version>
+=======
+			<scope>runtime</scope>
+>>>>>>> ba98fb9f76e3dad22c9647966c3c0c7bef6197ea
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
