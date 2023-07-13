@@ -15,4 +15,8 @@ export class ProductService {
   public getProductsForCategory(name:string): Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.authURL + 'category' + `/${name}`);
   }
+
+  public getById(id:number): Observable<any>{
+    return this.httpClient.get<any>(this.authURL + `${id}`);
+  }
 }

@@ -1,5 +1,6 @@
 <header>
-  <nav class="navbar navbar-expand-md main-menu">
+
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
 
       <button type="button" id="sidebarCollapse" class="btn btn-menu d-block d-md-none">
@@ -65,42 +66,26 @@
     </div>
   </div>
 
-  <!-- Sidebar -->
-  <nav id="sidebar">
-    <div class="sidebar-header">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-10 pl-0">
-            <a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta</a>
-            <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
-          </div>
-          
-          <div class="col-2 text-left">
-            <button type="button" id="sidebarCollapseX" class="btn btn-link">
-              <img class="btn-close" src="../../../assets/CLOSE.svg" alt="close-btn">
-            </button>
-          </div>
-          <h6 class="text-uppercase mt-4">Menu</h6>
-        </div>
-      </div>
+  <nav>
+    <!-- Contenido de la barra de navegación -->
+    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item">
+          <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listCategory/Equipamiento">Equipamiento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listCategory/Indumentaria">Indumentaria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Descuentos</a>
+        </li>
+      </ul>
     </div>
-    
-    <ul class="list-unstyled components links">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Suplementos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Equipamiento</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Indumentaria</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Nosotros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Descuentos</a>
-      </li>
-    </ul>
   </nav>
 </header>

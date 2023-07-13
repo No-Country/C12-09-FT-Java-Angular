@@ -60,229 +60,731 @@
 
 }
 
-/* Estilos para dispositivos extra pequeños */
-@media (max-width: 575px) {
-
-    /* Estilos CSS aquí */
+@media (min-width: 300px) and (max-width: 390px) {
     .flex-container {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-        width: 460px;
-        height: auto;
-        padding: 20px;
-        border-bottom-right-radius: 300px;
-        border-top-right-radius: 300px;
+
+        width: 340px;
+        height: 150px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
     }
 
+    .flex-container div {
+
+        display: flex;
+        align-items: center;
+       /* justify-content: flex-start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
+
+    }
 
     .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Michroma;
         font-weight: 400;
-        line-height: 61px;
-        letter-spacing: 0px;
-        text-align: center;
-        margin-left: 200px;
+        line-height: 23px;
+        letter-spacing: 0em;
         text-align: left;
 
-        color: #FFFFFF;
-        font-size: 26px;
-        margin: 0;
-        font-family: 'Michroma', sans-serif;
-        color: #FFFFFF;
+
+
+
+    }
+
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
+
+    .image {
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+        top: 80;
+        left: 10px;
+
+    }
+
+}
+
+
+@media  (min-width: 400px) and (max-width:490px) {
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        width: 352px;
+        height: 150px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
+        align-items: center;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
+
+    }
+
+    .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Michroma;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+
+
+    }
+
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
+
+    .image {
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+        top: 80;
+        left: 10px;
+
+    }
+
+}
+
+
+@media screen and(max-width:1920) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 1007px;
+        height: 572px;
+        top: 413px;
+        /* background-color: aquamarine;
+        padding: 5px;
+        border: 2px solid black; */
+    }
+
+
+}
+
+
+
+
+
+@media (min-width: 500px) and (max-width: 600px) {
+
+    /* claro*/
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        width: 480px;
+        height: 150px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
+        align-items: center;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
+
+    }
+
+    .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Michroma;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+
+
+    }
+
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
+
+    .image {
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+        top: 80;
+        left: 10px;
+
+    }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 700px) {
+
+    /* claro*/
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        width: 480px;
+        height: 150px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
+        align-items: center;
+       /* justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
+
+    }
+
+    .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 1px;
+        font-size: 18px;
+        font-family: Michroma;
+        font-weight: 400;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+
+
+    }
+
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
+
+    .image {
+        width: 90px;
+        height: 90px;
+        margin-top: 20px;
+        top: 80;
+        left: 10px;
+
     }
 
 
 
+}
 
-    .image {
-        width: 220px;
+@media (min-width: 700px) and (max-width: 800px) {
+
+    /* claro*/
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        width: 500px;
         height: 250px;
-        margin-top: 20px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
     }
 
-}
+    .flex-container div {
 
-/* Estilos para dispositivos pequeños */
-@media (min-width: 576px) and (max-width: 767px) {
-
-    /* Estilos CSS aquí */
-    .flex-container {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-        width: 470px;
-        height: auto;
-        border-bottom-right-radius: 300px;
-        border-top-right-radius: 300px;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
 
     }
 
     .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 50px;
+        font-size: 28px;
+        font-family: Michroma;
         font-weight: 400;
-        line-height: 41px;
+        line-height: 23px;
         letter-spacing: 0em;
-        text-align: center;
-        margin-left: 200px;
-        font-family: 'Michroma', sans-serif;
-        font-size: 24px;
-        color: #FFFFFF;
-    
+        text-align: left;
+
+
+
+
     }
 
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
 
     .image {
         width: 200px;
         height: 200px;
-        margin-top: 20px;
-    }
-
-    .azul {
-
-        display: flex;
-        flex-direction: row;
-        width: 100px;
+        margin-top: 150px;
+        left: 10px;
 
     }
+
+
+
 }
 
-/* Estilos para dispositivos medianos */
-@media (min-width: 768px) and (max-width: 991px) {
-    /* Estilos CSS aquí */
+@media (min-width: 800px) and (max-width: 900px) {
 
-    
-    /* Estilos CSS aquí */
     .flex-container {
         display: flex;
         flex-direction: row;
+
+        width: 700px;
+        height: 250px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
         align-items: center;
-        justify-content: center;
-        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-        width: 670px;
-        height: auto;
-        border-bottom-right-radius: 300px;
-        border-top-right-radius: 300px;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
 
     }
 
     .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 50px;
+        font-size: 28px;
+        font-family: Michroma;
         font-weight: 400;
-        line-height: 41px;
+        line-height: 23px;
         letter-spacing: 0em;
-        text-align: center;
-        margin-left: 200px;
-        font-family: 'Michroma', sans-serif;
-        font-size: 24px;
-        color: #FFFFFF;
-    
+        text-align: left;
+
+
+
+
     }
 
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
 
     .image {
         width: 200px;
         height: 200px;
-        margin-top: 20px;
-    }
-
-    .azul {
-
-        display: flex;
-        flex-direction: row;
-        width: 100px;
+        margin-top: 150px;
+        left: 10px;
 
     }
+
 }
 
-/* Estilos para dispositivos grandes */
-@media (min-width: 992px) and (max-width: 1199px) {
-    /* Estilos CSS aquí */
+@media (min-width: 900px) and (max-width: 990px) {
     .flex-container {
         display: flex;
         flex-direction: row;
+
+        width: 700px;
+        height: 250px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
         align-items: center;
-        justify-content: center;
-        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-        width: 870px;
-    
-        height: 350px;
-        border-bottom-right-radius: 300px;
-        border-top-right-radius: 300px;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
 
     }
 
     .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 1px;
+        margin-top: 50px;
+        font-size: 28px;
+        font-family: Michroma;
         font-weight: 400;
-        line-height: 61px;
+        line-height: 23px;
         letter-spacing: 0em;
-        text-align: center;
-        margin-left: 200px;
-        font-family: 'Michroma', sans-serif;
-        font-size: 34px;
-        color: #FFFFFF;
-    
+        text-align: left;
+
+
+
+
     }
 
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
 
     .image {
         width: 200px;
         height: 200px;
-        margin-top: 20px;
-    }
-
-    .azul {
-
-        display: flex;
-        flex-direction: row;
-        width: 100px;
+        margin-top: 150px;
+        left: 10px;
 
     }
-    
 }
 
-/* Estilos para dispositivos extra grandes */
-@media (min-width: 1200px) {
-    /* Estilos CSS aquí */
+@media (min-width: 1000px) and (max-width: 1200px) {
     .flex-container {
         display: flex;
         flex-direction: row;
+
+        width: 900px;
+        height: 280px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
         align-items: center;
-        justify-content: center;
-        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-        width: 870px;
-    
-        height: 350px;
-        border-bottom-right-radius: 300px;
-        border-top-right-radius: 300px;
+        /*justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
 
     }
 
     .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 10px;
+        margin-top: 60px;
+        font-size: 38px;
+        font-family: Michroma;
         font-weight: 400;
-        line-height: 71px;
+        line-height: 33px;
         letter-spacing: 0em;
-        text-align: center;
-        margin-left: 200px;
-        font-family: 'Michroma', sans-serif;
-        font-size: 40px;
-        color: #FFFFFF;
-    
+        text-align: left;
+
+
+
+
     }
 
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
 
     .image {
-        width: 300px;
-        height: 300px;
-        margin-top: 20px;
-    }
-
-    .azul {
-
-        display: flex;
-        flex-direction: row;
-        width: 100px;
+        width: 200px;
+        height: 200px;
+        margin: 30px;
+        margin-top: 200px;
+        left: 10px;
 
     }
 }
+
+@media (min-width: 1200px) and(max-width:1250) {
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        width: 1207px;
+        height: 499px;
+        top: 127.4453125px;
+        left: -64px;
+
+
+
+    }
+
+    .flex-container div {
+
+        display: flex;
+        align-items: center;
+       /* justify-content: start;*/
+        margin: 5px;
+        width: 250px;
+        height: 90px;
+        font-weight: 200px;
+
+
+
+
+
+    }
+
+    .flex-container div h1 {
+
+
+        width: 110px;
+        height: 50px;
+        margin: 10px;
+        margin-top: 60px;
+        font-size: 38px;
+        font-family: Michroma;
+        font-weight: 400;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+
+
+    }
+
+    .flex-container div button {
+
+        width: 50px;
+        height: 24px;
+        margin: 1px;
+        /* margin-right: 160px; */
+        text-align: center;
+        font-size: 10px;
+        font-family: roboto;
+        color: #F7FC00;
+        background: black;
+        font: 0.5em roboto;
+        border-radius: 26.200000762939453px;
+
+
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+        margin: 30px;
+        margin-top: 200px;
+        left: 10px;
+
+    }
+
+}
+
+

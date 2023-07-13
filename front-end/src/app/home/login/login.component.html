@@ -1,5 +1,4 @@
 <!--Header-->
-<app-navbar></app-navbar>
 <section>
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -8,27 +7,35 @@
 
           <h2 class="fw-bold mb-2 text-uppercase">Ya tengo una cuenta</h2>
           <p class="text">Para iniciar sesión ingresa tu mail y contraseña</p>
-    
+
           <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-    
+
             <div class="form-outline form-white mb-4">
               <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Ingresa tu e-mail" [(ngModel)]="email" required />
               <label class="form-label" for="email"></label>
             </div>
-    
+
             <div class="form-outline form-white mb-4">
               <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Ingresa tu contraseña" [(ngModel)]="password" required />
               <label class="form-label" for="password"></label>
             </div>
+<<<<<<< HEAD
+
+            <p class="small mb-5 pb-lg-2"><a href="#!">Forgot password?</a></p>
+
+            <button class="btn btn-login" type="submit">Ingresar</button>
+
+=======
     
             <p class="small mb-5 pb-lg-2"><a href="#!">¿Olvidaste tu contraseña?</a></p>
     
             <button class="btn btn-login w-100" type="submit">Ingresar</button>
     
+>>>>>>> 4d554aeff44aa32d3134983da61a8f06020dffcb
           </form>
-    
+
         </div>
-    
+
         <div>
           <h2 class="fw-bold mb-2 text-uppercase text-center">Nuevo en Power fit</h2>
           <br>
@@ -39,4 +46,3 @@
   </div>
 </section>
 <!--Footer-->
-<app-footer></app-footer>

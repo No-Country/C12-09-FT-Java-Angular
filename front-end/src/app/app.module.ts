@@ -28,8 +28,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'detail', component: DetailComponent},
-  {path: 'listCategory', component: ProductsCategoryComponent}
+  {path: 'detail/:id', component: DetailComponent},
+  {path: 'listCategory/:category', component: ProductsCategoryComponent}
 
 ];
 
