@@ -57,9 +57,6 @@ h6 {
     border-radius: 0.25rem;
 }
 
-.btn:active {
-    box-shadow: #F7FC00;
-}
 
 
 
@@ -106,7 +103,6 @@ h6 {
     padding: 0 1rem;
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .sub-menu {
         padding: 0 1rem;

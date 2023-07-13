@@ -13,7 +13,7 @@ export class NavbarComponent {
 
   constructor(private router:Router, private tokenService: TokenService) { }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
