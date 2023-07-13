@@ -21,11 +21,14 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cart")
     private List<Product> products;
 
-    @OneToOne
+    @OneToOne(mappedBy = "cart")
     private User user;
+
+    //@OneToOne
+    //private Bill bill;
 
     private double total;
 

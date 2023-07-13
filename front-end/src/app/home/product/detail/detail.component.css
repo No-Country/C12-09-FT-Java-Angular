@@ -1,0 +1,45 @@
+
+/******Responsive******/
+.bg-color{
+  background-color:  #F0F1D3;
+
+}
+.sizeColImage{
+  height: 470px;
+  display: flex;
+  align-items: center;
+}
+.colCenter{
+  display: flex;
+  align-items: center;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+}
+h5{
+  font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 575.98px){
+
+  .colCenter{
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .centerGroup{
+
+    justify-content: center;
+
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .sizeColImage{
+    height: 450px;
+    display: flex;
+    align-items: center;
+  }
+  .sizeImage{
+    height: 350px;
+
+  }
+}

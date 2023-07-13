@@ -52,4 +52,18 @@ public class UserServiceImp implements UserService {
         IUserRepository.deleteById(id);
 
     }
+
+    @Override
+    public UserResponse getUserInfo() {
+//        Object userInstance = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        try {
+//            if (userInstance instanceof User) {
+//                String username = ((User) userInstance).getUsername();
+//            }
+//        } catch (Exception e) {
+//            throw new UsernameNotFoundException("User not found");
+//        }
+//        return userRepository.findByEmail(userInstance.toString());
+        return null;
+    }
 }

@@ -6,8 +6,8 @@
     border-top-right-radius: 300px;
     justify-content: center;
     background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-    width: 1007px;
-    height: 572px;
+    width: 900px;
+    height: 499px;
     top: 413px;
     /* background-color: aquamarine;
     padding: 5px;
@@ -79,77 +79,5 @@
     /* top: 109px;
     left: 707px;
     bottom: 500px; */
-    
-}
-
-@media screen and (max-width: 400px) {
-
-    .flex-container {
-        display: flex;
-        flex-direction: row;
-
-        width: 150px;
-        height: 100px;
-        top: 127.4453125px;
-        left: -64px;
-
-
-
-    }
-
-    .flex-container div {
-
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin: 5px;
-        width: 50px;
-        height: 90px;
-        font-weight: 200px;
-
-
-
-
-
-    }
-
-    .flex-container div h1 {
-
-
-        width: 50px;
-        height: 50px;
-        margin: 1px;
-        margin-top: 10px;
-        font-size: 14px;
-
-
-
-    }
-
-    .flex-container div button {
-
-        width: 50px;
-        height: 24px;
-        margin: 1px;
-        /* margin-right: 160px; */
-        text-align: center;
-        font-size: 10px;
-        font-family: roboto;
-        color: #F7FC00;
-        background: black;
-        font: 0.5em roboto;
-        border-radius: 26.200000762939453px;
-
-
-    }
-
-    .image {
-        width: 90px;
-        height: 90px;
-        margin-top: 20px;
-        top: 80;
-        left: 10px;
-
-    }
 
 }

@@ -1,3 +1,10 @@
+:root {
+  --slide-transform: 0;
+  --transition: transform 1s;
+}
+
+
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -13,12 +20,7 @@
   width: 5%;
 }
 
-.card {
-  flex: 0 0 18rem;
-  margin-right: 10px;
-  padding: 20px;
 
-}
 
 .card-body {
   width: 226px;
@@ -44,7 +46,6 @@
   letter-spacing: 0em;
   text-align: left;
   text-align: center;
-
 }
 
 .card-img-top {
@@ -53,15 +54,11 @@
   top: 414px;
   left: 260px;
   background: #F0F1D3;
-
-
 }
 
 .marcas {
-
   padding: 30px;
-  width: 1275px;
-
+  width: auto;
 }
 
 .slider-wrap {
@@ -73,16 +70,20 @@
 .slider-main {
   position: absolute;
   width: 1000%;
-  /* animation: slide 15s forwards alternate ease-in-out; */
+  display: flex;
+  transform: translateX(var(--slide-transform));
+  transition: var(--transition);
 }
 
 .item {
   display: inline-block;
-  width: 312px;
+  width: 18rem;
   margin-right: 350px;
   height: 450px;
   position: relative;
   margin: 10px;
+  margin-right: 10px;
+  padding: 20px;
 
 }
 

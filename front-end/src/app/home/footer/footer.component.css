@@ -1,5 +1,9 @@
 footer{
   background-color: #F7FC00;
+  /* width: 1445px;
+  justify-content: center;
+  margin-left: 290px; */
+
 }
 .container h2{
   color: #000;
@@ -19,6 +23,9 @@ footer{
   line-height: normal;
   text-decoration: none;
   margin-bottom: 8px;
+}
+.container a:hover{
+  color: rgb(121, 121, 121);
 }
 .container{
   display: grid;
