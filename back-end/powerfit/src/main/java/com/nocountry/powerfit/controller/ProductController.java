@@ -37,25 +37,31 @@ public class ProductController {
 
     //metodo básico provisorio, agrega producto sin imagen.
     @PostMapping("/addproduct")
-    @ApiOperation(value = "Agrega producto", notes = "Retorna Http 201 Created")
-    public ResponseEntity<Product> addProductWithoutUserAuth(@RequestBody Product product){
+    @ApiOperation(value = "Agrega producto", notes = "Retorna 201 created")
+    public ResponseEntity<ProductResponse> addOnlyProduct(@RequestBody Product product){
         iProductService.save(product);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
-
-    }
-
-    @GetMapping("/name/{name}")
-    @ApiOperation(value = "Busca producto por nombre", notes = "Retorna producto por nombre")
-    public ResponseEntity<List<ProductResponse>> findByName (@PathVariable String name) throws ResourceNotFoundException {
-        List<ProductResponse> response = iProductService.findByName(name);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @GetMapping("/all")
-    @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos")
+    @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos en stock")
     public ResponseEntity<List<ProductResponse>> getAll() {
         List<ProductResponse> response = iProductService.getAll();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping("/name/{productName}")
+    @ApiOperation(value = "Busca producto por nombre", notes = "Retorna producto por nombre")
+    public ResponseEntity<List<ProductResponse>> findByName (@PathVariable String productName) throws ResourceNotFoundException {
+        List<ProductResponse> response = iProductService.findByName(productName);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping("/category/{categoryName}")
+    @ApiOperation(value = "Busca por categoría", notes = "Retorna lista de productos por categoría")
+    public ResponseEntity<List<ProductResponse>> getProductsForCategory (@PathVariable String categoryName) throws ResourceNotFoundException {
+        List<ProductResponse> response = iProductService.getProductsForCategory(categoryName);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -66,19 +72,11 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/category/{name}")
-    @ApiOperation(value = "Busca por categoría", notes = "Retorna lista de productos por categoría")
-    public ResponseEntity<List<ProductResponse>> getProductsForCategory (@PathVariable String name) throws ResourceNotFoundException {
-        List<ProductResponse> response = iProductService.getProductsForCategory(name);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
-    }
-
-
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "Borra producto por id", notes = "Retorna http 204, no content")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    @ApiOperation(value = "Borra producto por id", notes = "Confirma con mensaje en el cuerpo si borró o no el id indicado")
+    public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException {
         iProductService.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.status(HttpStatus.OK).body("Producto con el id " + id + " eliminado exitosamente");
     }
 
 //    @PutMapping("/{id}")
