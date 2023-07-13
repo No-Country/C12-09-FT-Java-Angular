@@ -35,7 +35,6 @@
     letter-spacing: 0em;
     text-align: center;
     margin-left: 200px;
-    text-align: left;
     font-family: 'Michroma', sans-serif;
     font-size: 54px;
     color: #FFFFFF;
@@ -49,28 +48,7 @@
 
 }
 
-.flex-container div button {
 
-    /* width: 120px;
-    height: 39px;
-    top: 220pxC
-    left: 43px;
-    border-radius: 25px; */
-    width: 280px;
-    height: 53px;
-    left: -106px;
-    margin: 20px;
-    margin-right: 230px;
-    text-align: center;
-    font-size: 20px;
-    font-family: roboto;
-    color: #F7FC00;
-    background: black;
-    font: 1em roboto;
-    border-radius: 26.200000762939453px;
-
-
-}
 
 .image {
     width: 362px;
@@ -80,4 +58,231 @@
     left: 707px;
     bottom: 500px; */
 
+}
+
+/* Estilos para dispositivos extra pequeños */
+@media (max-width: 575px) {
+
+    /* Estilos CSS aquí */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 460px;
+        height: auto;
+        padding: 20px;
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+    }
+
+
+    .flex-container div h1 {
+        font-weight: 400;
+        line-height: 61px;
+        letter-spacing: 0px;
+        text-align: center;
+        margin-left: 200px;
+        text-align: left;
+
+        color: #FFFFFF;
+        font-size: 26px;
+        margin: 0;
+        font-family: 'Michroma', sans-serif;
+        color: #FFFFFF;
+    }
+
+
+
+
+    .image {
+        width: 220px;
+        height: 250px;
+        margin-top: 20px;
+    }
+
+}
+
+/* Estilos para dispositivos pequeños */
+@media (min-width: 576px) and (max-width: 767px) {
+
+    /* Estilos CSS aquí */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 470px;
+        height: auto;
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+
+    }
+
+    .flex-container div h1 {
+        font-weight: 400;
+        line-height: 41px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 200px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 24px;
+        color: #FFFFFF;
+    
+    }
+
+
+    .image {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .azul {
+
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+
+    }
+}
+
+/* Estilos para dispositivos medianos */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos CSS aquí */
+
+    
+    /* Estilos CSS aquí */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 670px;
+        height: auto;
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+
+    }
+
+    .flex-container div h1 {
+        font-weight: 400;
+        line-height: 41px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 200px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 24px;
+        color: #FFFFFF;
+    
+    }
+
+
+    .image {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .azul {
+
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+
+    }
+}
+
+/* Estilos para dispositivos grandes */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Estilos CSS aquí */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 870px;
+    
+        height: 350px;
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+
+    }
+
+    .flex-container div h1 {
+        font-weight: 400;
+        line-height: 61px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 200px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 34px;
+        color: #FFFFFF;
+    
+    }
+
+
+    .image {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+    }
+
+    .azul {
+
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+
+    }
+    
+}
+
+/* Estilos para dispositivos extra grandes */
+@media (min-width: 1200px) {
+    /* Estilos CSS aquí */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
+        width: 870px;
+    
+        height: 350px;
+        border-bottom-right-radius: 300px;
+        border-top-right-radius: 300px;
+
+    }
+
+    .flex-container div h1 {
+        font-weight: 400;
+        line-height: 71px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 200px;
+        font-family: 'Michroma', sans-serif;
+        font-size: 40px;
+        color: #FFFFFF;
+    
+    }
+
+
+    .image {
+        width: 300px;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .azul {
+
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+
+    }
 }

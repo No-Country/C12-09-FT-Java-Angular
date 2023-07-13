@@ -59,6 +59,8 @@
 .marcas {
   padding: 30px;
   width: auto;
+  display: flex;
+  flex-direction:row ;
 }
 
 .slider-wrap {
@@ -84,6 +86,7 @@
   margin: 10px;
   margin-right: 10px;
   padding: 20px;
+  
 
 }
 
@@ -101,4 +104,83 @@
   top: 50%;
   background: white;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 575px) {
+
+  /* Estilos CSS aquí */
+  .marcas {
+    padding: 30px;
+    width: auto;
+    display: flex;
+    flex-direction:row;
+  }
+  
+  .slider-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 550px;
+  }
+  
+  .slider-main {
+    position: absolute;
+    width: 1000px;
+    display: flex;
+   
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  }
+  .slider-main:nth-child(n+6) {
+    display: none; /* Oculta las cards a partir del quinto elemento */
+  }
+  .item {
+    display: inline-block;
+    width: 200px;
+    margin-right: 350px;
+    height: 250px;
+    position: relative;
+    margin: 10px;
+    margin-right: 10px;
+    padding: 20px; 
+   
+  
+  
+  }
+  .card-img-top {
+    width: 110px;
+    height: 90px;
+    top: 400px;
+    left: 260px;
+    background: #F0F1D3;
+  }
+
+  .card-body {
+    width: 150px;
+    height: 25px;
+    top: 0px;
+    left: 8px;
+    text-align: center;
+  
+  }
+  .button-compra {
+    width: 125px;
+    height: 32px;
+    top: 43px;
+    left: 21px;
+    border-radius: 21px;
+    background-color: yellow;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
 }
