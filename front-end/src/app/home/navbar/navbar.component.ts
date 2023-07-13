@@ -28,5 +28,7 @@ export class NavbarComponent {
   login(){
     this.router.navigate(['/login'])
   }
+
+  
 }
 
