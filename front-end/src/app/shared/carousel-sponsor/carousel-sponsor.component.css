@@ -1,10 +1,12 @@
 .marcas {
 
+    display: flex;
+    flex-direction: row;
     width: auto;
-    height: 153px;
+    height: 150px;
     top: 967px;
     left: -11px;
-    margin-top: 20px;
+    margin-top: 28px;
 
     padding: 20px;
 

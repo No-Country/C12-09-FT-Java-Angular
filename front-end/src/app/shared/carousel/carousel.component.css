@@ -35,7 +35,6 @@
     letter-spacing: 0em;
     text-align: center;
     margin-left: 200px;
-    text-align: left;
     font-family: 'Michroma', sans-serif;
     font-size: 54px;
     color: #FFFFFF;
@@ -49,28 +48,7 @@
 
 }
 
-.flex-container div button {
 
-    /* width: 120px;
-    height: 39px;
-    top: 220pxC
-    left: 43px;
-    border-radius: 25px; */
-    width: 280px;
-    height: 53px;
-    left: -106px;
-    margin: 20px;
-    margin-right: 230px;
-    text-align: center;
-    font-size: 20px;
-    font-family: roboto;
-    color: #F7FC00;
-    background: black;
-    font: 1em roboto;
-    border-radius: 26.200000762939453px;
-
-
-}
 
 .image {
     width: 362px;
