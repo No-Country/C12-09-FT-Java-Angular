@@ -15,6 +15,11 @@
 
 }
 
+
+.product{
+    height: 500px;
+}
+
 .row {
     /* padding: 2px;
     width: auto;
