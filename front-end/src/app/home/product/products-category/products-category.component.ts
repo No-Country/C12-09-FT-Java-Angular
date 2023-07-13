@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/services/product.service';
-import { SharedService } from 'src/app/shared/shared-service';
+
 
 @Component({
   selector: 'app-products-category',
@@ -11,21 +11,29 @@ import { SharedService } from 'src/app/shared/shared-service';
   styleUrls: ['./products-category.component.css']
 })
 export class ProductsCategoryComponent implements OnInit{
-
-
+  categoryName: string = '';
   products: Product[] = [];
 
   constructor(private productService:ProductService,
     private toastr: ToastrService,
-    private router: Router,
-    private sharedService: SharedService){}
+    private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.sharedService.categorySelected$.subscribe(category => {
-      this.getProducts(category);
+    this.routeCategory();
+    this.route.params.subscribe(params => {
+    this.categoryName = params['category'];
+  });
+  }
+  selectCategory(category: string) {
+    this.categoryName = category;
+    this.getProducts(category);
+  }
+  routeCategory(){
+    this.route.params.subscribe(params => {
+      const categoryName = params['category'];
+      this.getProducts(categoryName);
     });
   }
-
   getProducts(categoryName: string){
     this.productService.getProductsForCategory(categoryName).subscribe(
       data => {

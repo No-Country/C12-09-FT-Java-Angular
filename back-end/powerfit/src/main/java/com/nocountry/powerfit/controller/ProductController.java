@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products")
 @Api(value = "Product Controller", description = "Product functionalities")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
