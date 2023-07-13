@@ -1,10 +1,14 @@
 h2 {
-  color: #000;
   font-family: Roboto;
-  font-size: 36px;
-  font-style: normal;
+  font-size: 34px;
   font-weight: 700;
-  line-height: normal;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+
+a{
+  text-decoration: none;
+  color: gray;
 }
 
 p {
@@ -17,22 +21,23 @@ p {
 }
 
 .form-control {
-  width: 493px;
-  height: 71px;
-  flex-shrink: 0;
-  border-radius: 20px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
   border: 1px solid #000;
 }
 
 button {
   font-family: Roboto;
-  font-size: 30.24px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   border-radius: 25.200000762939453px;
-  width: 493px;
-  height: 63px;
+  width: 359px;
+  height: 47px;
   flex-shrink: 0;
 }
 

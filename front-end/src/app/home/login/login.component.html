@@ -12,8 +12,8 @@
           <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
     
             <div class="form-outline form-white mb-4">
-              <input type="email" id="username" name="username" class="form-control form-control-lg" placeholder="Ingresa tu e-mail" [(ngModel)]="username" required />
-              <label class="form-label" for="username"></label>
+              <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Ingresa tu e-mail" [(ngModel)]="email" required />
+              <label class="form-label" for="email"></label>
             </div>
     
             <div class="form-outline form-white mb-4">
@@ -21,9 +21,9 @@
               <label class="form-label" for="password"></label>
             </div>
     
-            <p class="small mb-5 pb-lg-2"><a href="#!">Forgot password?</a></p>
+            <p class="small mb-5 pb-lg-2"><a href="#!">¿Olvidaste tu contraseña?</a></p>
     
-            <button class="btn btn-login" type="submit">Ingresar</button>
+            <button class="btn btn-login w-100" type="submit">Ingresar</button>
     
           </form>
     
@@ -32,7 +32,7 @@
         <div>
           <h2 class="fw-bold mb-2 text-uppercase text-center">Nuevo en Power fit</h2>
           <br>
-          <button type="button" class="btn btn-register" (click)="register()">Crear una cuenta</button>
+          <button type="button" class="btn btn-register w-100" (click)="register()">Crear una cuenta</button>
         </div>
       </div>
     </div>
