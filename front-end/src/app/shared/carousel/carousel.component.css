@@ -6,7 +6,7 @@
     border-top-right-radius: 300px;
     justify-content: center;
     background: linear-gradient(270.11deg, #F7FC00 11.37%, rgba(247, 252, 0, 0) 126.95%);
-    width: 1110px;
+    width: 900px;
     height: 499px;
     top: 413px;
     /* background-color: aquamarine;
@@ -100,7 +100,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+       /* justify-content: flex-start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -179,7 +179,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -283,7 +283,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -363,7 +363,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+       /* justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -444,7 +444,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -523,7 +523,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -599,7 +599,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -674,7 +674,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+        /*justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
@@ -750,7 +750,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: start;
+       /* justify-content: start;*/
         margin: 5px;
         width: 250px;
         height: 90px;
