@@ -1,45 +1,31 @@
 .circle {
   position: absolute;
-  background: linear-gradient(0deg, #fe620b, #fe620b),
-    linear-gradient(0deg, #ffffff, #ffffff);
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  font-family: Roboto;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 80px;
-  letter-spacing: 0em;
-  text-align: right;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #ffffff;
-  color: #ffffff;
-  top: -40px;
-  left: 200px;
-  z-index: 100;
+ 
+ 
+}
+.descuento{
+  width: 120px;
+  height: 80px;
+  margin-bottom: 297px;
+  margin-left: 210px;
 }
 .promo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  height: 400px;
 
-  /* position: absolute; */
-  /* width: 900px; */
-  /* margin-right: 100px; */
-  /* margin-top: 40px; */
-  /* background: blue; */
 }
 
 .card-body {
-  width: 226px;
-  height: 25px;
-  top: 88px;
+  width: 126px;
+  height: 120px;
+  top: 98px;
   left: 8px;
   text-align: center;
-  background: red;
-}
+  justify-content: center;
+} 
 .button-compra {
-  width: 225px;
+  width: 125px;
   height: 47px;
   top: 43px;
   left: 21px;
@@ -53,17 +39,252 @@
   text-align: left;
   text-align: center;
 }
+
+
+
 .item {
-display: flex;
-  margin-right: 350px;
-  width: 22rem;
+   display: flex;
+    margin-right: 200px;
+    width: 270px;
+    height:340px ;
+    
+    margin-right: 10px;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+
+  }
+  .card-img {
+    width: 250px;
+  height: 170px;
+  top: 414px;
+  left: 260px;
+  background: #F0F1D3;
+  }
+
+  /* Estilos para resoluciones de 575px o menos */
+@media (max-width: 575px) {
+  /* Cambios en los estilos aquí */
   
-  margin-right: 10px;
-  background-color: aqua;
-  justify-content: center;
-}
-.card-img {
-  width: 200px;
-  height: 220px;
-  background: #f0f1d3;
-}
+  .circle {
+    position: absolute;
+   
+   
+  }
+  .descuento{
+    width: 120px;
+    height: 80px;
+    margin-bottom: 250px;
+    margin-left: 110px;
+  }
+  .promo {
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+  
+  }
+  
+  .card-body {
+    width: 126px;
+    height: 120px;
+    top: 98px;
+    left: 8px;
+    text-align: center;
+    justify-content: center;
+  } 
+  .button-compra {
+    width: 125px;
+    height: 47px;
+    top: 43px;
+    left: 21px;
+    border-radius: 21px;
+    background-color: yellow;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-align: center;
+  }
+  
+  
+  
+  .item {
+     display: flex;
+     flex-direction: column;
+      margin-right: 100px;
+      width: 170px;
+      height:290px ;
+      
+      margin-right: 10px;
+      justify-content: center;
+      text-align: center;
+      background: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+  
+    }
+    .card-img {
+      width: 100px;
+    height: 110px;
+    top: 414px;
+    left: 260px;
+    background: #F0F1D3;
+    }
+
+  
+  }
+
+
+
+  @media (min-width: 576px) and (max-width: 767px) {
+
+    .circle {
+      position: absolute;
+     
+     
+    }
+    .descuento{
+      width: 120px;
+      height: 80px;
+      margin-bottom: 250px;
+      margin-left: 110px;
+    }
+    .promo {
+      display: flex;
+      justify-content: space-around;
+      height: 300px;
+    
+    }
+    
+    .card-body {
+      width: 126px;
+      height: 120px;
+      top: 98px;
+      left: 8px;
+      text-align: center;
+      justify-content: center;
+    } 
+    .button-compra {
+      width: 125px;
+      height: 47px;
+      top: 43px;
+      left: 21px;
+      border-radius: 21px;
+      background-color: yellow;
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: left;
+      text-align: center;
+    }
+    
+    
+    
+    .item {
+       display: flex;
+       flex-direction: column;
+        margin-right: 100px;
+        width: 170px;
+        height:290px ;
+        
+        margin-right: 10px;
+        justify-content: center;
+        text-align: center;
+        background: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+    
+      }
+      .card-img {
+        width: 100px;
+      height: 110px;
+      top: 414px;
+      left: 260px;
+      background: #F0F1D3;
+      }
+  
+
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    
+    .circle {
+      position: absolute;
+     
+     
+    }
+    .descuento{
+      width: 120px;
+      height: 80px;
+      margin-bottom: 250px;
+      margin-left: 110px;
+    }
+    .promo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      height: 300px;
+    
+    }
+    
+    .card-body {
+      width: 126px;
+      height: 120px;
+      top: 98px;
+      left: 8px;
+      text-align: center;
+      justify-content: center;
+    } 
+    .button-compra {
+      width: 125px;
+      height: 47px;
+      top: 43px;
+      left: 21px;
+      border-radius: 21px;
+      background-color: yellow;
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: left;
+      text-align: center;
+    }
+    
+    
+    
+    .item {
+       display: flex;
+       flex-direction: column;
+        margin-right: 200px;
+        width: 170px;
+        height:290px ;
+        
+        margin-right: 10px;
+        justify-content: center;
+        text-align: center;
+        background: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+    
+      }
+      .card-img {
+        width: 100px;
+      height: 110px;
+      top: 414px;
+      left: 260px;
+      background: #F0F1D3;
+      }
+  
+
+  }
