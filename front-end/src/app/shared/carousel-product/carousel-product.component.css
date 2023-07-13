@@ -23,7 +23,7 @@
 
 
 .card-body {
-  width: 226px;
+  width: 120px;
   height: 25px;
   top: 88px;
   left: 8px;
@@ -31,16 +31,19 @@
 
 
 }
+.card-title{
+  font-size: 16px;
+}
 
 .button-compra {
-  width: 225px;
+  width: 120px;
   height: 47px;
   top: 43px;
   left: 21px;
   border-radius: 21px;
   background-color: yellow;
   font-family: Roboto;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0em;
@@ -50,7 +53,7 @@
 
 .card-img-top {
   width: 280px;
-  height: 220px;
+  height: 120px;
   top: 414px;
   left: 260px;
   background: #F0F1D3;
@@ -72,6 +75,7 @@
 .slider-main {
   position: absolute;
   width: 1000%;
+  height: 300px;
   display: flex;
   transform: translateX(var(--slide-transform));
   transition: var(--transition);
@@ -79,9 +83,9 @@
 
 .item {
   display: inline-block;
-  width: 18rem;
+  width: 200px;
   margin-right: 350px;
-  height: 450px;
+  height: 320px;
   position: relative;
   margin: 10px;
   margin-right: 10px;
@@ -93,7 +97,7 @@
 .prev {
   position: absolute;
   left: 33px;
-  top: 50%;
+  top: 30%;
   background: white;
   transform: translate(-50%, -50%);
 }
@@ -101,7 +105,7 @@
 .next {
   position: absolute;
   right: -5px;
-  top: 50%;
+  top: 30%;
   background: white;
   transform: translate(-50%, -50%);
 }
@@ -114,6 +118,7 @@
     width: auto;
     display: flex;
     flex-direction:row;
+    justify-content: center;
   }
   
   .slider-wrap {
@@ -124,17 +129,17 @@
   
   .slider-main {
     position: absolute;
-    width: 1000px;
+    width: 600px;
+
     display: flex;
-   
-    display: flex;
-  flex-direction: column;
+    justify-content: space-around;
   justify-content: center;
 
   }
-  .slider-main:nth-child(n+6) {
-    display: none; /* Oculta las cards a partir del quinto elemento */
+  .card-title{
+    font-size: 12px;
   }
+
   .item {
     display: inline-block;
     width: 200px;
@@ -144,40 +149,44 @@
     margin: 10px;
     margin-right: 10px;
     padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    text-align: start;
    
   
   
   }
   .card-img-top {
-    width: 110px;
+    width: 130px;
     height: 90px;
     top: 400px;
-    left: 260px;
+    margin-left: 20px;
     background: #F0F1D3;
   }
 
   .card-body {
-    width: 150px;
+    width: 100px;
     height: 25px;
-    top: 0px;
+    bottom: 2px;
     left: 8px;
     text-align: center;
   
   }
   .button-compra {
-    width: 125px;
+    width: 80px;
     height: 32px;
     top: 43px;
     left: 21px;
     border-radius: 21px;
     background-color: yellow;
     font-family: Roboto;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: left;
-    text-align: center;
+    text-align:center;
   }
 }
 

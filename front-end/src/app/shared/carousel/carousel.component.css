@@ -1,6 +1,6 @@
 .flex-container {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
 
     border-bottom-right-radius: 300px;
     border-top-right-radius: 300px;
@@ -65,7 +65,7 @@
         display: flex;
         flex-direction: row;
 
-        width: 340px;
+        width: 440px;
         height: 150px;
         top: 127.4453125px;
         left: -64px;

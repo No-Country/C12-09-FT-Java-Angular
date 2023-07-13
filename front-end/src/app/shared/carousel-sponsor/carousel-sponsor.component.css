@@ -86,3 +86,88 @@
 
 
 }
+
+@media (max-width: 575px) {
+
+    .marcas {
+
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: 80px;
+        top: 967px;
+        left: -11px;
+        margin-top: 28px;
+    
+        padding: 20px;
+    
+        background: yellow;
+    }
+
+    .item {
+        display: inline-block;
+        /* display: flex; */
+        width: 312px;
+        margin-right: 10px;
+        height: 80px;
+        position: relative;
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .marcas {
+
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: 80px;
+        top: 967px;
+        left: -11px;
+        margin-top: 28px;
+    
+        padding: 20px;
+    
+        background: yellow;
+    }
+
+    .item {
+        display: inline-block;
+        /* display: flex; */
+        width: 312px;
+        margin-right: 10px;
+        height: 80px;
+        position: relative;
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos CSS aquí */
+    .marcas {
+
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        height: 80px;
+        top: 967px;
+        left: -11px;
+        margin-top: 28px;
+    
+        padding: 20px;
+    
+        background: yellow;
+    }
+
+    .item {
+        display: inline-block;
+        /* display: flex; */
+        width: 312px;
+        margin-right: 10px;
+        height: 80px;
+        position: relative;
+        margin: 0;
+    }
+  }
