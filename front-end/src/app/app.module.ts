@@ -22,13 +22,15 @@ import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
 import { CartComponent } from './home/cart/cart.component';
+import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'detail', component: DetailComponent}
+  {path: 'detail/:id', component: DetailComponent},
+  {path: 'listCategory/:category', component: ProductsCategoryComponent}
 
 ];
 
@@ -46,7 +48,8 @@ const routes: Routes = [
     RegisterComponent,
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
-    CartComponent
+    CartComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     BrowserModule,

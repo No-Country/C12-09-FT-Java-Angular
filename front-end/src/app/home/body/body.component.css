@@ -1,6 +1,7 @@
-.body-container {
+.container {
     background: black;
-    width: 5000px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulos {
@@ -10,54 +11,22 @@
     line-height: 68px;
     letter-spacing: 0em;
     text-align: left;
-
     color: rgba(247, 252, 0, 1);
 
 }
 
+
+.product{
+    height: 500px;
+}
+
 .row {
-    padding: 2px;
-    width: 2280px;
-    height: 620px;
+    /* padding: 2px;
+    width: auto;
+    height: 620px; */
     /* background: black; */
 
 }
 
 /* .image {} */
 
-@media screen and (max-width: 400px) {
-
-
-    
- 
-  /* .slider-wrap {
-    overflow: hidden;
-    height: 260px;
-  } */
-  .body-container {
-    background: black;
-    width: 400px;
-
-}
-
-    .row {
-        width: 400px;
-        height: 400px;
-        background: black;
-
-    }
-
-    .titulos {
-        font-family: Michroma;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 23px;
-        letter-spacing: 0em;
-        text-align: left;
-        
-    
-        color: rgba(247, 252, 0, 1);
-    
-    }
-   
-}

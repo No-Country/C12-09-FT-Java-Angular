@@ -4,7 +4,6 @@ import com.nocountry.powerfit.model.entity.Product;
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
-import com.nocountry.powerfit.repository.IProductRepository;
 import com.nocountry.powerfit.service.abstraction.IProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -12,24 +11,23 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
 import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/products")
 @Api(value = "Product Controller", description = "Product functionalities")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
     private IProductService iProductService;
 
-    @ApiOperation(value = "Registro de un producto", notes = "Retorna producto creado")
+
     @PostMapping("/add")
+    @ApiOperation(value = "Registro de un producto", notes = "Retorna producto creado")
     public ResponseEntity<ProductResponse> uploadFiles(
             @RequestParam(value="postimages", required = false) List<MultipartFile> postImage ,
             @RequestPart(value ="product", required = true) ProductRequest request) {
@@ -37,10 +35,33 @@ public class ProductController {
 
     }
 
+    //metodo básico provisorio, agrega producto sin imagen.
+    @PostMapping("/addproduct")
+    @ApiOperation(value = "Agrega producto", notes = "Retorna 201 created")
+    public ResponseEntity<ProductResponse> addOnlyProduct(@RequestBody Product product){
+        iProductService.save(product);
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
     @GetMapping("/all")
-    @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos")
+    @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos en stock")
     public ResponseEntity<List<ProductResponse>> getAll() {
         List<ProductResponse> response = iProductService.getAll();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping("/name/{productName}")
+    @ApiOperation(value = "Busca producto por nombre", notes = "Retorna producto por nombre")
+    public ResponseEntity<List<ProductResponse>> findByName (@PathVariable String productName) throws ResourceNotFoundException {
+        List<ProductResponse> response = iProductService.findByName(productName);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping("/category/{categoryName}")
+    @ApiOperation(value = "Busca por categoría", notes = "Retorna lista de productos por categoría")
+    public ResponseEntity<List<ProductResponse>> getProductsForCategory (@PathVariable String categoryName) throws ResourceNotFoundException {
+        List<ProductResponse> response = iProductService.getProductsForCategory(categoryName);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -52,10 +73,10 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "Busca por el id para eliminar registro ", notes = "Retorna http 204, no content")
-    public ResponseEntity<?> delete(@PathVariable Long id) {
+    @ApiOperation(value = "Borra producto por id", notes = "Confirma con mensaje en el cuerpo si borró o no el id indicado")
+    public ResponseEntity<String> delete(@PathVariable Long id) throws ResourceNotFoundException {
         iProductService.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.status(HttpStatus.OK).body("Producto con el id " + id + " eliminado exitosamente");
     }
 
 //    @PutMapping("/{id}")

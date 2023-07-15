@@ -11,17 +11,24 @@ import { JwtDto } from 'src/app/model/jwt-dto';
   providedIn: 'root'
 })
 export class AuthService {
-
   authURL = environment.apiResrURL + '/auth/';
+  private isLoggedIn = false;
 
   constructor(private httpClient: HttpClient) { }
 
-  public register(userDto: UserDto): Observable<any>{
+  public register(userDto: UserDto): Observable<any> {
     return this.httpClient.post<any>(this.authURL + 'create', userDto);
   }
 
-  public login(loginUser: Login): Observable<JwtDto>{
-    return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUser)
+  public login(loginUser: Login): Observable<JwtDto> {
+    return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUser);
   }
 
+  public getIsLoggedIn(): boolean {
+    return this.isLoggedIn;
+  }
+
+  public setIsLoggedIn(value: boolean): void {
+    this.isLoggedIn = value;
+  }
 }

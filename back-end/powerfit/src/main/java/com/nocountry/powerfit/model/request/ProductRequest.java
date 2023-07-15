@@ -24,8 +24,8 @@ public class ProductRequest {
     @NotNull(message = "Debe especificar el stock")
     @Min(value = 0, message = "EL stock debe ser número positivo")
     private Integer stock;
-    @NotNull(message = "Debe especificar el ID")
-    private Long categoryId;
+    @NotNull(message = "Debe especificar una categoría")
+    private String category;
 
     
 

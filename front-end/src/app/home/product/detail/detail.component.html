@@ -1,14 +1,16 @@
-<div class="container mt-5 mb-5">
+
+<div class="container mt-5 mb-5" *ngIf="product">
   <div class="row justify-content-center">
     <div class="card mb-3  sizeCard" style="max-width: 900px;">
       <div class="row g-0 d-flex align-items-center">
         <div class="col-md-4 col-lg-6 mx-auto bg-color sizeColImage">
+
           <img src="assets/Advanced_Whey_Protein.png" class="img-fluid sizeImage" alt="...">
         </div>
         <div class="col-md-8 col-lg-6 mx-auto d-flex  mt-4 colCenter">
           <div class="card-body ">
-            <h5 class="card-title">Card title</h5>
-            <p>$9600</p>
+            <h5 class="card-title">{{product.name}}</h5>
+            <p>${{product.price}}</p>
             <div class="input-group input-group-sm centerGroup">
               <span class="input-group-btn">
                 <button type="button" class="btn btn-warning" (click)="decrement()"><</button>
@@ -26,9 +28,8 @@
               <button type="button" class="btn btn-outline-warning ">L</button>
               <button type="button" class="btn btn-outline-warning ">XL</button>
             </div>
-            <h5 class="card-title mt-3">Descripcion del producto</h5>
-            <p class="card-text">This is a wider card with supporting text below.</p>
-            <h5>Envios</h5>
+            <h6 class="card-title mt-3"><span>{{product.description}}</span></h6>
+            <h5 class="mt-3">Envios</h5>
             <div class="row">
               <div class="col-2 d-flex align-items-center justify-content-center">
                 <i class="fa-solid fa-truck-fast"></i>
@@ -59,3 +60,4 @@
     </div>
   </div>
 </div>
+
