@@ -23,7 +23,9 @@ public class Bill {
     @JoinColumn(name = "user_id")
     private User user;
 
-    //private Cart cart;
+    @OneToOne
+    private Cart cart;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime date;
 }
