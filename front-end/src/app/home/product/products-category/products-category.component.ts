@@ -8,11 +8,14 @@ import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-products-category',
   templateUrl: './products-category.component.html',
-  styleUrls: ['./products-category.component.css']
+  styleUrls: ['./products-category.component.css'],
+
 })
 export class ProductsCategoryComponent implements OnInit{
+
   categoryName: string = '';
   products: Product[] = [];
+
 
   constructor(private productService:ProductService,
     private toastr: ToastrService,
@@ -39,6 +42,7 @@ export class ProductsCategoryComponent implements OnInit{
       data => {
         console.log(data);
         this.products = data;
+        console.log(this.products)
       },
       err =>{
         console.error(err);

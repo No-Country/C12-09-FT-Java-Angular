@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class ProductRequest {
 
-    private Long id;
+
     @NotEmpty(message = "Nombre no puede estar vacío")
     private String name;
     @NotEmpty(message = "Descripción no puede estar vacía")
