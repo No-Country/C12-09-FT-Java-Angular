@@ -1,0 +1,100 @@
+.page-title {
+    text-align: center;
+    color: #000;
+    font-family: Michroma;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*Botones*/
+
+button {
+    font-family: Roboto;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 25.200000762939453px;
+    width: 359px;
+    height: 47px;
+    flex-shrink: 0;
+}
+
+.btn-checkout {
+    background: #000000;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #F7FC00;
+}
+
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    transition: none;
+}
+
+.btn-checkout:hover {
+    background: #625E5E;
+}
+
+.btn-checkout:active {
+    border: 1px solid #F7FC00;
+}
+
+.btn-checkout:disabled {
+    background: rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cart-view {
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.title {
+    margin-bottom: 5vh;
+}
+
+.card {
+    border: 1px solid black;
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+}
+
+.trash-can {
+    width: 34.691px;
+    height: 34.63px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #000;
+}
+
+.summary {
+    border: 1px solid black;
+    padding: 35px;
+    height: 457px;
+    flex-shrink: 0;
+}
+
+.cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.img-product {
+    width: 163.772px;
+    height: 133.89px;
+    flex-shrink: 0;
+}
