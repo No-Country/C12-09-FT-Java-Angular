@@ -1,2 +1,4 @@
-package com.nocountry.powerfit.model.mapper;public class BillMapper {
+package com.nocountry.powerfit.model.mapper;
+
+public class BillMapper {
 }
