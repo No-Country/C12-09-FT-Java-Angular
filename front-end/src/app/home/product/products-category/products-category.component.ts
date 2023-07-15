@@ -40,12 +40,12 @@ export class ProductsCategoryComponent implements OnInit{
   getProducts(categoryName: string){
     this.productService.getProductsForCategory(categoryName).subscribe(
       data => {
-        console.log(data);
         this.products = data;
         console.log(this.products)
       },
       err =>{
-        console.error(err);
+        this.toastr.error("Error categoria vacia");
+        console.error(err.message);
       }
     )
   }
