@@ -5,13 +5,15 @@ import { RegisterComponent } from './home/register/register.component';
 import { LoginComponent } from './home/login/login.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
+import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Asegúrate de que la ruta para HomeComponent esté configurada correctamente
   { path: 'login', component: LoginComponent},
   { path: 'perfil', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'nosotros', component: NosotrosComponent}
+  { path: 'nosotros', component: NosotrosComponent},
+  { path: 'suplementos', component: ProductsCategoryComponent}
 
 ];
 
