@@ -22,9 +22,8 @@ import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
-import { NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
-
 
 
 
@@ -37,6 +36,7 @@ const routes: Routes = [
   {path: 'nosotros', component: NosotrosComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'listCategory/:category', component: ProductsCategoryComponent}
+
 
 ];
 
@@ -55,8 +55,8 @@ const routes: Routes = [
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
     ProductsCategoryComponent,
-
   ],
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, { useHash: false }),
@@ -65,6 +65,7 @@ const routes: Routes = [
     ToastrModule.forRoot(), // ToastrModule added
     AppRoutingModule,
     HttpClientModule,
+    CommonModule
 
 
   ],

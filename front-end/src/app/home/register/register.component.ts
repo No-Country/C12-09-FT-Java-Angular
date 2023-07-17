@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
       },
       err =>{
         console.log(err);
-        this.toastr.error(err.error, 'Error', { timeOut: 8000, positionClass: positionClass});
+        this.toastr.error(err.error.message, 'Error', { timeOut: 8000, positionClass: positionClass});
       }
     )
 

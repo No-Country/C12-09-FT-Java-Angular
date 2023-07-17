@@ -22,32 +22,29 @@ export class ProductsCategoryComponent implements OnInit{
     private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.routeCategory();
+
     this.route.params.subscribe(params => {
     this.categoryName = params['category'];
+    this.getProducts(this.categoryName);
   });
   }
   selectCategory(category: string) {
     this.categoryName = category;
     this.getProducts(category);
   }
-  routeCategory(){
-    this.route.params.subscribe(params => {
-      const categoryName = params['category'];
-      this.getProducts(categoryName);
-    });
-  }
+
   getProducts(categoryName: string){
     this.productService.getProductsForCategory(categoryName).subscribe(
-      data => {
-        this.products = data;
-        console.log(this.products)
-      },
-      err =>{
-        this.toastr.error("Error categoria vacia");
-        console.error(err.message);
-      }
-    )
+      (data) => {
+          this.products = data;
+
+        },
+        err => {
+          console.log(err);
+          this.toastr.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});
+        }
+
+    );
   }
 
 }
