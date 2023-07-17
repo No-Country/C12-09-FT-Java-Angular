@@ -24,6 +24,7 @@ import { DetailComponent } from './home/product/detail/detail.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 import { CommonModule } from '@angular/common';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
+import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 
 
 
@@ -54,6 +55,7 @@ const routes: Routes = [
     RegisterComponent,
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
+    ProductDetailComponent,
     ProductsCategoryComponent,
   ],
 
