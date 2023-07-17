@@ -21,8 +21,10 @@
             <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-link" href="/login" (click)="login()" *ngIf="!isLogged"><img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta</a>
-            <a class="btn btn-link" href="/login" (click)="onLogOut()" *ngIf="isLogged"><img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Hola, tú</a>
+            <a class="btn btn-link" href="/login" (click)="login()" *ngIf="!isLogged"><img class="icons account"
+                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta</a>
+            <a class="btn btn-link" href="/login" (click)="onLogOut()" *ngIf="isLogged"><img class="icons account"
+                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Hola, tú</a>
           </li>
         </ul>
       </div>
@@ -34,17 +36,18 @@
     <div class="container">
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/suplementos']">Suplementos</a>
+      
+           <li>
+            <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Equipamiento</a>
+            <a class="nav-link" href="/listCategory/Equipamiento">Equipamiento</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Indumentaria</a>
+            <a class="nav-link" href="/listCategory/Indumentaria">Indumentaria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/nosotros']">Nosotros</a>
+            <a class="nav-link" href="nosotros">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Descuentos</a>
@@ -66,26 +69,44 @@
     </div>
   </div>
 
-  <nav>
-    <!-- Contenido de la barra de navegación -->
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-      <ul class="navbar-nav flex-row">
-        <li class="nav-item">
-          <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/listCategory/Equipamiento">Equipamiento</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/listCategory/Indumentaria">Indumentaria</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Descuentos</a>
-        </li>
-      </ul>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-10 pl-0">
+            <a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg"
+                alt="mi-cuenta"> Mi cuenta</a>
+            <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
+          </div>
+
+          <div class="col-2 text-left">
+            <button type="button" id="sidebarCollapseX" class="btn btn-link">
+              <img class="btn-close" src="../../../assets/CLOSE.svg" alt="close-btn">
+            </button>
+          </div>
+          <h6 class="text-uppercase mt-4">Menu</h6>
+        </div>
+      </div>
     </div>
+
+    <ul class="list-unstyled components links">
+      <li class="nav-item">
+        <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/listCategory/Equipamiento">Equipamiento</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/listCategory/Indumentaria">Indumentaria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nosotros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Descuentos</a>
+      </li>
+    </ul>
   </nav>
 </header>

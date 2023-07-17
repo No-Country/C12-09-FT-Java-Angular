@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.isLogged = this.authService.getIsLoggedIn();
     this.isLogginFail = false;
   }
-  
+
 
   onLogin(): void {
     const loginUser: Login = {
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       () => {
         this.isLogged = true;
         this.isLogginFail = false;
+        console.log("loqueo exitoso");
         this.router.navigate(['']);
       },
       (err) => {

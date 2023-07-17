@@ -27,8 +27,8 @@ public class Cart {
     @OneToOne(mappedBy = "cart")
     private User user;
 
-    //@OneToOne
-    //private Bill bill;
+    @OneToOne
+    private Bill bill;
 
     private double total;
 

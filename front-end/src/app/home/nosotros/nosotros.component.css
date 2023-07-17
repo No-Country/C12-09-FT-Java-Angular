@@ -1,0 +1,142 @@
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1480px;
+
+}
+.yellow{
+    color: yellow;
+}
+
+.Image {
+    width: 1400px;
+    height: 927px;
+    background:linear-gradient(89.88deg, rgba(0, 0, 0, 0) 0.11%, #000000 99.9%), url("../../../assets/nosotros/nosotros1.png") top no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+.Image2 {
+    width:1400px;
+    height: 927px;
+    background:linear-gradient(89.88deg, rgba(0, 0, 0, 0) 0.11%, #000000 99.9%), url("../../../assets/nosotros/nosotros2.png") top no-repeat;
+    background-size: cover;
+    position: relative;
+    
+    
+}
+.Image3 {
+    width: 1400px;
+    height: 927px;
+    background:linear-gradient(89.88deg, rgba(0, 0, 0, 0) 0.11%, #000000 99.9%), url("../../../assets/nosotros/nosotros3.png") top no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.text-title {
+    font-family: Michroma;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 68px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(247, 252, 0, 1);
+
+
+}
+
+
+
+.text-content{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 42px;
+letter-spacing: 0em;
+text-align: left;
+color: #FFFFFF;
+width: 250px;
+height: 495px;
+top: 561px;
+left: 904px;
+
+
+
+}
+.text-content2{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 42px;
+letter-spacing: 0em;
+text-align: left;
+color: #FFFFFF;
+width: 250px;
+height: 495px;
+top: 1061px;
+left: 14px;
+
+
+
+}
+.text-content3{
+    font-family: Roboto;
+font-size: 18px;
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+color: #FFFFFF;
+width: 210px;
+height: 25px;
+top: 11px;
+left: 904px;
+
+
+
+}
+
+.information {
+    width: 420px;
+    height: 593px;
+    top: 160px;
+    left: 904px;
+    position: absolute;
+    z-index: 100;
+
+
+
+}
+.information3 {
+    width: 420px;
+    height: 493px;
+    top: 410px;
+    left: 904px;
+    position: absolute;
+    z-index: 100;
+
+}
+
+.information2 {
+    width: 420px;
+    height: 593px;
+    top: 440px;
+    left: 90px;
+    position: absolute;
+    z-index: 100;
+
+}
+
+.scroll{
+    width: 202px;
+height: 82px;
+margin-top: 300px;
+margin-left: 88px;
+color:  rgba(255, 255, 255, 1);
+
+left: 1075px;
+
+
+}

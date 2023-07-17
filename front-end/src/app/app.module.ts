@@ -22,12 +22,19 @@ import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
+import { NgStyle } from '@angular/common';
+import { NosotrosComponent } from './home/nosotros/nosotros.component';
+
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'nosotros', component: NosotrosComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'listCategory/:category', component: ProductsCategoryComponent}
 
@@ -47,7 +54,8 @@ const routes: Routes = [
     RegisterComponent,
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
-    ProductsCategoryComponent
+    ProductsCategoryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -58,6 +66,7 @@ const routes: Routes = [
     AppRoutingModule,
     HttpClientModule,
 
+
   ],
   providers: [
     RouterModule,
@@ -67,7 +76,7 @@ const routes: Routes = [
     BodyComponent,
     FooterComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   bootstrap: [AppComponent]
 })
