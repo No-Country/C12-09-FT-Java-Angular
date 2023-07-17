@@ -41,7 +41,7 @@ export class ProductsCategoryComponent implements OnInit{
         },
         err => {
           console.log(err);
-          this.toastr.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});
+          this.toastr.error(err.error.message, 'Sin productos', { timeOut: 3000, positionClass: 'toast-top-right'});
         }
 
     );
