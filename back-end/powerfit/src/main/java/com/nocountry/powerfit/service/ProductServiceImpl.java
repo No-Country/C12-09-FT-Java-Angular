@@ -67,11 +67,12 @@ public class ProductServiceImpl implements IProductService {
         IProductRepository.save(product);
     }
 
-    public List<ProductResponse> getProductsForCategory(String categoryName) throws ResourceNotFoundException {
+    public List<ProductResponse> getProductsForCategory(String categoryName) {
         List<Product> products = IProductRepository.findByCategory(categoryName);
-        //products = IProductRepository.findBySimilarCategoryName(categoryName);
+        if(products.isEmpty()) {
+            products = IProductRepository.findBySimilarCategoryName(categoryName);
             if (products.isEmpty()) {
-                return null;//
+                return null;//Se pone en null porque si una categoria esta vacia se le mezclan los productos de otras categorias en front
                 //throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + categoryName);
             }else {
                 List<ProductResponse> productResponses = products.stream()
@@ -80,6 +81,13 @@ public class ProductServiceImpl implements IProductService {
 
                 return productResponses;
             }
+        }
+
+        List<ProductResponse> productResponses = products.stream()
+                .map(product -> productMapper.entityToDto(product))
+                .collect(Collectors.toList());
+
+        return productResponses;
     }
 
     @Override
