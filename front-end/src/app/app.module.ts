@@ -23,6 +23,7 @@ import { PromocionesComponent } from './shared/promociones/promociones.component
 import { DetailComponent } from './home/product/detail/detail.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
 import { CommonModule } from '@angular/common';
+import { NosotrosComponent } from './home/nosotros/nosotros.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'nosotros', component: NosotrosComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'listCategory/:category', component: ProductsCategoryComponent}
 

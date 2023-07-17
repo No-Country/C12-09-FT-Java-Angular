@@ -59,20 +59,26 @@ h5{
   }
 
 }
-@media (min-width: 576.98px){
+@media (min-width: 576.98px) and (max-width: 768px){
+
   .sizeColImage{
     justify-content: center;
+  }
+  .sizeImage{
+    height: 400px;
+    width: 400px;
   }
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .sizeColImage{
-    height: 450px;
-    display: flex;
-    align-items: center;
-  }
-  .sizeImage{
-    height: 350px;
+    height: 400px;
+
 
   }
+  .sizeImage{
+    height: 400px;
+
+  }
+
 }
 

@@ -79,7 +79,6 @@ button{
     height: 300px;
   }
   .btn-custom {
-
     width: 150px; /* Ajusta el ancho del botón al 50% del contenedor */
   }
 }
@@ -87,4 +86,14 @@ button{
   .btn-custom {
     width: 200px; /* Ajusta el ancho del botón al 50% del contenedor */
   }
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
+    h1{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    img{
+      height: 280px;
+    }
+
 }
