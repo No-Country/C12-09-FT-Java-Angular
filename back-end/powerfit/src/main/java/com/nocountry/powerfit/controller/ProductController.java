@@ -36,15 +36,6 @@ public class ProductController {
 
     }
 
-    //metodo básico provisorio, agrega producto sin imagen.
-    @PostMapping("/addproduct")
-    @ApiOperation(value = "Agrega producto", notes = "Retorna 201 created")
-    public ResponseEntity<ProductResponse> addOnlyProduct(@RequestBody Product product){
-        iProductService.save(product);
-
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
     @GetMapping("/all")
     @ApiOperation(value = "Busca todos los productos", notes = "Retorna lista de productos en stock")
     public ResponseEntity<List<ProductResponse>> getAll() {
