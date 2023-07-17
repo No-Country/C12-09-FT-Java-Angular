@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,7 +71,8 @@ public class ProductServiceImpl implements IProductService {
         List<Product> products = IProductRepository.findByCategory(categoryName);
         //products = IProductRepository.findBySimilarCategoryName(categoryName);
             if (products.isEmpty()) {
-                throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + categoryName);
+                return null;//
+                //throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + categoryName);
             }else {
                 List<ProductResponse> productResponses = products.stream()
                         .map(product -> productMapper.entityToDto(product))
