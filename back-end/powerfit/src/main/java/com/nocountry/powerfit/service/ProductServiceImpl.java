@@ -73,12 +73,6 @@ public class ProductServiceImpl implements IProductService {
             products = IProductRepository.findBySimilarCategoryName(categoryName);
             if (products.isEmpty()) {
                 throw new ResourceNotFoundException("No se encontró la categoría con el nombre " + categoryName);
-            }else {
-                List<ProductResponse> productResponses = products.stream()
-                        .map(product -> productMapper.entityToDto(product))
-                        .collect(Collectors.toList());
-
-                return productResponses;
             }
         }
 
