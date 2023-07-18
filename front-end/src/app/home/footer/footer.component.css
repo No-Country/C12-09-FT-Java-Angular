@@ -2,7 +2,8 @@ footer{
   display: flex;
   flex-direction: column;
   background-color: #F7FC00;
-
+  max-width: 1400px;
+  height: 288px;
   
 
 }
@@ -25,7 +26,7 @@ footer{
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
-  /* margin-bottom: 8px; */
+  margin-bottom: 8px;
 }
 
 .container a:hover{
@@ -35,7 +36,7 @@ footer{
 .container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background: blue;
+
   grid-template-areas: "contact   redbox " "Payments  shipping ";
 }
 
