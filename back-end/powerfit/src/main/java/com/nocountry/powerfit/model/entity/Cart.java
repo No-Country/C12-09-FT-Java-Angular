@@ -31,9 +31,4 @@ public class Cart {
     //private Bill bill;
 
     private double total;
-
-    @CreationTimestamp
-    @Column(updatable = false, nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime created;
 }

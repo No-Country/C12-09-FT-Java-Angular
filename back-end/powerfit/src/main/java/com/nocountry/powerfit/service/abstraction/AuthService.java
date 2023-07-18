@@ -13,6 +13,4 @@ public interface AuthService {
 
     AuthResponse register(RegisterRequest registerRequest) throws IOException;
     AuthResponse login(LoginRequest loginRequest);
-
-    User create(RegisterRequest request) throws AttributeException;
 }
