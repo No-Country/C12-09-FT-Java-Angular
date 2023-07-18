@@ -23,10 +23,11 @@
 
 
 .card-body {
-  width: 120px;
+  width: 220px;
   height: 25px;
   top: 88px;
   left: 8px;
+  justify-content: center;
   text-align: center;
 
 
@@ -53,7 +54,7 @@
 
 .card-img-top {
   width: 280px;
-  height: 120px;
+  height: 150px;
   top: 414px;
   left: 260px;
   background: #F0F1D3;
@@ -83,9 +84,9 @@
 
 .item {
   display: inline-block;
-  width: 200px;
+  width: 270px;
   margin-right: 350px;
-  height: 320px;
+  height: 340px;
   position: relative;
   margin: 10px;
   margin-right: 10px;
@@ -190,6 +191,3 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-
-}

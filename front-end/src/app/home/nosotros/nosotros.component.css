@@ -140,3 +140,8 @@ left: 1075px;
 
 
 }
+
+/* Estilos para dispositivos extra pequeños */
+@media (max-width: 575px) {
+    /* Estilos CSS aquí */
+  }
