@@ -24,4 +24,9 @@ public class Bill {
     private User user;
 
     //private Cart cart;
+    @OneToOne
+    private Cart cart;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime date;
 }

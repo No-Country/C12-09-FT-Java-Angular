@@ -13,7 +13,7 @@ export class CarouselProductComponent {
 
   name = "Angular " + VERSION.major;
 
-  @ViewChild('myContainer', { static: true }) myContainer!: ElementRef;
+  @ViewChild('myContainer', { static:  true }) myContainer!: ElementRef;
  
   
 
@@ -30,7 +30,7 @@ export class CarouselProductComponent {
           const widthSon = this.mySlider.nativeElement.offsetWidth;
           
 
-          this.translateXValue = width/widthSon; 
+          this.translateXValue = width/widthSon*2; 
       } else{
         const width = this.myContainer.nativeElement.offsetWidth; 
 
