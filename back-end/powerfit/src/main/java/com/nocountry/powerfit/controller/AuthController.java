@@ -37,20 +37,4 @@ public class AuthController {
         AuthResponse response = authService.login(request);
         return ResponseEntity.ok(response);
     }
-    @PostMapping("/create")
-    public ResponseEntity<?> create(@Valid @RequestBody RegisterRequest request, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            String errorMessage = bindingResult.getFieldErrors()
-                    .stream()
-                    .map(error -> error.getDefaultMessage())
-                    .reduce("", (accumulator, message) -> accumulator + " " + message);
-            return ResponseEntity.badRequest().body(errorMessage.trim());
-        }
-        try {
-            User userEntity = authService.create(request);
-            return ResponseEntity.ok(new MessageDto(HttpStatus.OK, "User " + userEntity.getEmail() + " has been created"));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
-        }
-    }
 }

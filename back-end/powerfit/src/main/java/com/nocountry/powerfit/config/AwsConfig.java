@@ -30,6 +30,7 @@ public class AwsConfig {
                 .build();
     }
 
+    @Bean
     public String getBucket() {
         return this.bucket;
     }
