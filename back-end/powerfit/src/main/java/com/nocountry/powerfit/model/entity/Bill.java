@@ -23,6 +23,7 @@ public class Bill {
     @JoinColumn(name = "user_id")
     private User user;
 
+    //private Cart cart;
     @OneToOne
     private Cart cart;
 
