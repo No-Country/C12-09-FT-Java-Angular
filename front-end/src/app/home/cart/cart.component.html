@@ -1,76 +1,115 @@
+<!--Navbar-->
+<app-navbar></app-navbar>
+
+<!--Vista del carrito-->
 <section class="cart-view">
+  <ng-container *ngIf="product.length != 0">
     <div class="container">
-        <div class="page-title">
-            <h2 class="mb-2 mt-2 text-uppercase">Carrito de compras</h2>
-        </div>
-        <div class="mt-4">
-            <div class="row">
-                <div class="col-md-8 cart">
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <!-- Producto 1-->
-                            <div class="col-6 card">
-                                <div class="row mt-4 mb-4">
-                                    <div class="col-1">
-                                        <img class="trash-can" src="../../../assets/DELETE.svg" alt="delete">
-                                    </div>
-                                    <div class="col-2"><img class="img-fluid"
-                                            src="../../../assets/Advanced_Whey_Protein.png"></div>
-                                    <div class="col-4">
-                                        <div class="row">
-                                            <p>Advanced whey protein
-                                            (1000 gr.) (33 sv.)</p> 
-                                            <p>&dollar;9600.00</p> 
+      <div class="page-title">
+        <h2>Carrito de compras</h2>
+      </div>
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-md-8 cart">
+            <div class="row align-items-center">
+              <div class="row main justify-content-center">
+                <!-- Producto 1-->
+                <div class="col-6 card">
+                  <div class="row mt-4 mb-4">
+                    <div class="col-1">
+                      <img
+                        class="trash-can"
+                        src="../../../assets/DELETE.svg"
+                        alt="delete"
+                      />
+                    </div>
+                    <div class="col-2">
+                      <img
+                        class="product img-fluid"
+                        src="../../../assets/Advanced_Whey_Protein.png"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <div class="row">
+                        <div class="description">
+                          <p>{{ product.name }}</p>
+                          <p>&dollar;{{ product.price }}</p>
 
-                                            <form action="">Cantidad
-                                                <select name="producto" id="stock">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </form>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
+                          <form *ngFor="let item of product; let i = index">
+                            Cantidad
+                            <select name="producto" id="item">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </form>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <!--Comprabacion de la compra-->
+          <!--Comprabacion de la compra-->
 
-                <div class="col-md-4 summary">
-                    <div>
-                        <h5><b>Resumen de la compra</b></h5>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col" style="padding-left:0;"></div>
-                        <p>Subtotal</p>
-                        <div class="col text-right">&euro; 132.00</div>
-                    </div>
-                    <form>
-                        <p>Envio</p>
-                        <select>
-                            <option class="text-muted">Moto mandado - Solo CABA - &dollar;750.00</option>
-                            <option class="text-muted">Correo Argentino - &dollar;1000.00</option>
-                            <option class="text-muted">Retiro en sucursal - &dollar;0.00</option>
-                        </select>
-                    </form>
-                    <div class="row mt-4 mb-2" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">Total</div>
-                        <div class="col text-right">&dollar; 20700.00</div>
-                    </div>
-                    <button class="btn-checkout">Finalizar compra</button>
-                </div>
+          <div class="col-md-4 summary">
+            <div class="summary-title">Resumen de la compra</div>
+            <br />
+            <div class="row d-flex">
+              <div class="col summary-text">Subtotal</div>
+              <div class="col align-items-end">
+                <b>&dollar; {{ subTotal }} </b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col summary-text">Envio</div>
+              <div class="col"><b>&dollar; 132.00</b></div>
             </div>
 
+            <!--<form>
+                          <div class="col" style="padding-left:0;">Envio</div>
+                          <select>
+                              <option class="text-muted">Moto mandado - Solo CABA - &dollar;750.00</option>
+                              <option class="text-muted">Correo Argentino - &dollar;1000.00</option>
+                              <option class="text-muted">Retiro en sucursal - &dollar;0.00</option>
+                          </select>
+                      </form>-->
+
+            <div
+              class="row mt-4 mb-2"
+              style="border-top: 2px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
+            >
+              <div class="col"><b>Total</b></div>
+              <div class="col text-right">
+                <b>&dollar; {{ grandTotal }}</b>
+              </div>
+            </div>
+            <button class="btn-checkout">Finalizar compra</button>
+          </div>
         </div>
-
+      </div>
     </div>
+  </ng-container>
 
+  <ng-container *ngIf="product.length == 0">
+    <div class="container mt-4 ">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+          <h2 class="empty-cart">No tienes productos en el carrito</h2>
+          <p>Agrega productos para continuar</p>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button href="#" class="btn-checkout">Ir a comprar</button>
+        </div>
+      </div>
+      
+    </div>
+  </ng-container>
 </section>
+
+<!-- Footer -->
+<app-footer></app-footer>

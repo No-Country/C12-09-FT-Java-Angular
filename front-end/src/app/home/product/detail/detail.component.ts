@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class DetailComponent implements OnInit{
   nameCategory:string ='';
 
   constructor(private productService:ProductService,
-  private activatedRoute: ActivatedRoute, private toast:ToastrService){}
+  private activatedRoute: ActivatedRoute, private toast:ToastrService, private cartService:CartService){}
 
   ngOnInit(): void {
     this.getProductById();
@@ -48,6 +49,10 @@ export class DetailComponent implements OnInit{
 
   increment():void{
     this.quantity++;
+  }
+
+  addtocart(item:any){
+    this.cartService.addToCart(item);
   }
 
 }
