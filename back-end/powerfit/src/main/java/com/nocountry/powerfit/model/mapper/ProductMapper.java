@@ -1,21 +1,25 @@
 package com.nocountry.powerfit.model.mapper;
 
+import com.nocountry.powerfit.model.entity.Image;
 import com.nocountry.powerfit.model.entity.Product;
 import com.nocountry.powerfit.model.request.ProductRequest;
+import com.nocountry.powerfit.model.response.ImageResponse;
 import com.nocountry.powerfit.model.response.ProductResponse;
 import com.nocountry.powerfit.model.response.UserResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
+
 @Component
 public class ProductMapper {
 
-    private final ImageMapper imageMapper;
+    @Autowired
+    private ImageMapper imageMapper;
 
     public ProductResponse entityToDto(Product product) {
         return ProductResponse.builder()
@@ -29,13 +33,14 @@ public class ProductMapper {
                         .map(imageMapper::imageToDto)
                         .collect(Collectors.toList()))
                 .build();
+
+
     }
 
     public Product dtoToProduct(ProductRequest request, UserResponse user) {
         return Product.builder()
                 .description(request.getDescription())
                 .name(request.getName())
-                .cart(null)
                 .category(request.getCategory())
                 .price(request.getPrice())
                 .stock(request.getStock())
@@ -61,4 +66,13 @@ public class ProductMapper {
         return responses;
     }
 
+    public Product mapToDto(ProductRequest request) {
+        return Product.builder()
+                .stock(request.getStock())
+                .price(request.getPrice())
+                .name(request.getName())
+                .description(request.getDescription())
+                .category(request.getCategory())
+                .build();
+    }
 }

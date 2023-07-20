@@ -23,14 +23,23 @@ import { PromocionesComponent } from './shared/promociones/promociones.component
 import { DetailComponent } from './home/product/detail/detail.component';
 import { CartComponent } from './home/cart/cart.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
+import { CommonModule } from '@angular/common';
+import { NosotrosComponent } from './home/nosotros/nosotros.component';
+import { ProductDetailComponent } from './home/product-detail/product-detail.component';
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'nosotros', component: NosotrosComponent},
   {path: 'detail/:id', component: DetailComponent},
-  {path: 'listCategory/:category', component: ProductsCategoryComponent}
+  {path: 'listCategory/:category', component: ProductsCategoryComponent},
+  {path: "cart", component: CartComponent}
+
 
 ];
 
@@ -49,8 +58,12 @@ const routes: Routes = [
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
     CartComponent,
-    ProductsCategoryComponent
+    ProductsCategoryComponent,
+    ProductDetailComponent,
+    NosotrosComponent,
+    ProductsCategoryComponent,
   ],
+
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes, { useHash: false }),
@@ -59,6 +72,8 @@ const routes: Routes = [
     ToastrModule.forRoot(), // ToastrModule added
     AppRoutingModule,
     HttpClientModule,
+    CommonModule
+
 
   ],
   providers: [
@@ -69,7 +84,7 @@ const routes: Routes = [
     BodyComponent,
     FooterComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   bootstrap: [AppComponent]
 })

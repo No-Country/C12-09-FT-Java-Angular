@@ -29,19 +29,11 @@ public class ProductController {
     @PostMapping("/add")
     @ApiOperation(value = "Registro de un producto", notes = "Retorna producto creado")
     public ResponseEntity<ProductResponse> uploadFiles(
-            @RequestParam(value="postimages", required = false) List<MultipartFile> postImage ,
-            @RequestPart(value ="product", required = true) ProductRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(iProductService.add(postImage, request));
+            @RequestParam(value = "postImages") List<MultipartFile> postImage ,
+            @RequestPart(value = "product") ProductRequest request) {
+        ProductResponse response = iProductService.add(postImage, request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
-    }
-
-    //metodo básico provisorio, agrega producto sin imagen.
-    @PostMapping("/addproduct")
-    @ApiOperation(value = "Agrega producto", notes = "Retorna 201 created")
-    public ResponseEntity<ProductResponse> addOnlyProduct(@RequestBody Product product){
-        iProductService.save(product);
-
-        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/all")
@@ -67,7 +59,7 @@ public class ProductController {
 
     @GetMapping("/{id}")
     @ApiOperation(value = "Busca por id", notes = "Retorna un producto")
-    public ResponseEntity<?> getById(@PathVariable Long id) throws ResourceNotFoundException {
+    public ResponseEntity<ProductResponse> getById(@PathVariable Long id) throws ResourceNotFoundException {
         ProductResponse response = iProductService.getById(id);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }

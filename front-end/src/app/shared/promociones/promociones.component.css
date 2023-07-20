@@ -4,10 +4,10 @@
  
 }
 .descuento{
-  width: 120px;
-  height: 80px;
+  width: 140px;
+  height: 100px;
   margin-bottom: 297px;
-  margin-left: 210px;
+  margin-left: 315px;
 }
 .promo {
   display: flex;
@@ -45,7 +45,7 @@
 .item {
    display: flex;
     margin-right: 200px;
-    width: 270px;
+    width: 370px;
     height:340px ;
     
     margin-right: 10px;
@@ -58,8 +58,8 @@
 
   }
   .card-img {
-    width: 250px;
-  height: 170px;
+    width: 340px;
+  height: 190px;
   top: 414px;
   left: 260px;
   background: #F0F1D3;
@@ -75,52 +75,63 @@
    
   }
   .descuento{
-    width: 120px;
+    width: 100px;
     height: 80px;
-    margin-bottom: 250px;
-    margin-left: 110px;
+    margin-bottom: 220px;
+    margin-left: 90px;
   }
-  .promo {
-    display: flex;
-    justify-content: space-around;
-    height: 300px;
-  
-  }
-  
   .card-body {
-    width: 126px;
+    width: 100px;
     height: 120px;
-    top: 98px;
+    top: 100px;
     left: 8px;
     text-align: center;
     justify-content: center;
   } 
+  .promo {
+    display: flex;
+    justify-content: start;
+    height: 270px;
+    margin-bottom: 50px;
+  
+  }
+
+  .card-img-top {
+    width: 130px;
+    height: 80px;
+    top: 400px;
+    margin-left: 20px;
+    background: #F0F1D3;
+  }
+
+
   .button-compra {
-    width: 125px;
-    height: 47px;
+    width: 80px;
+    height: 32px;
     top: 43px;
     left: 21px;
     border-radius: 21px;
     background-color: yellow;
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 700;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: left;
-    text-align: center;
+    text-align:center;
   }
-  
+  .card-text{
+    font-size: 8px;
+  }
   
   
   .item {
      display: flex;
      flex-direction: column;
-      margin-right: 100px;
-      width: 170px;
-      height:290px ;
-      
       margin-right: 10px;
+      width: 120px;
+      height:240px ;
+      
+      margin-left: 30px;
       justify-content: center;
       text-align: center;
       background: #fff;
@@ -137,7 +148,8 @@
     background: #F0F1D3;
     }
 
-  
+
+
   }
 
 
@@ -157,7 +169,7 @@
     }
     .promo {
       display: flex;
-      justify-content: space-around;
+      justify-content: start;
       height: 300px;
     
     }
@@ -191,11 +203,11 @@
     .item {
        display: flex;
        flex-direction: column;
-        margin-right: 100px;
+        margin-right: 10px;
         width: 170px;
         height:290px ;
         
-        margin-right: 10px;
+        margin-left: 20px;
         justify-content: center;
         text-align: center;
         background: #fff;
@@ -231,7 +243,7 @@
     .promo {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: start;
       height: 300px;
     
     }
@@ -265,11 +277,11 @@
     .item {
        display: flex;
        flex-direction: column;
-        margin-right: 200px;
+        margin-right: 10px;
         width: 170px;
         height:290px ;
         
-        margin-right: 10px;
+        margin-left: 80px;
         justify-content: center;
         text-align: center;
         background: #fff;
