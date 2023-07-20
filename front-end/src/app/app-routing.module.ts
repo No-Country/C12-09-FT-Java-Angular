@@ -6,6 +6,7 @@ import { LoginComponent } from './home/login/login.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
 import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
+import { CartComponent } from './home/cart/cart.component';
 
 const routes: Routes = [
   // { path: '', component: HomeComponent }, // Asegúrate de que la ruta para HomeComponent esté configurada correctamente
@@ -13,6 +14,7 @@ const routes: Routes = [
   // { path: 'perfil', component: ProfileComponent},
   // { path: 'register', component: RegisterComponent},
   // { path: 'suplementos', component: ProductsCategoryComponent}
+  {path: 'cart', component: CartComponent}
 
 ];
 

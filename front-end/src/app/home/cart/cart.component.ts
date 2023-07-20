@@ -8,21 +8,21 @@ import { Product } from 'src/app/model/product';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  public product : any = [];
-  public subTotal !: any;
-  public grandTotal !: any;
+  public products : any = [];
+  public plusShipment !: number;
+  public grandTotal !: number;
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProduct()
+    this.cartService.getProducts()
     .subscribe(res=>{
-      this.product = res;
-      this.subTotal = this.cartService.getTotalPrice();
-      this.grandTotal += this.subTotal + 132,0 ;
+      this.products = res;
+      this.grandTotal = this.cartService.getTotalPrice();
+      this.plusShipment += this.grandTotal + 132,0 ;
     })
   }
-  removeItem(item: any){
-    this.cartService.removeCartItem(item);
+  removeItem(product: any){
+    this.cartService.removeCartItem(product);
   }
   emptycart(){
     this.cartService.removeAllCart();

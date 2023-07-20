@@ -50,7 +50,7 @@ export class ProductsCategoryComponent implements OnInit{
     );
   }
 
-  addtocart(item:any){
-    this.cartService.addToCart(item);
+  addtocart(product:any){
+    this.cartService.addtoCart(product);
   }
 }

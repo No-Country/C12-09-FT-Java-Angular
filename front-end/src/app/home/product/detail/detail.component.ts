@@ -51,8 +51,8 @@ export class DetailComponent implements OnInit{
     this.quantity++;
   }
 
-  addtocart(item:any){
-    this.cartService.addToCart(item);
+  addtocart(product:any){
+    this.cartService.addtoCart(product);
   }
 
 }

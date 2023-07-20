@@ -16,19 +16,20 @@ h2 {
   font-weight: 400;
   line-height: normal;
   padding: 20px;
+  margin-top: 45px;
 }
 
 p {
   text-align: center;
   color: #000;
   font-family: Roboto;
-  font-size: 24px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.empty-cart{
+.empty-cart {
   color: #000;
   font-family: Michroma;
   font-size: 33px;
@@ -40,7 +41,13 @@ p {
 
 /*Botones*/
 
-button {
+.delete {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.btn {
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
@@ -112,10 +119,13 @@ button {
 }
 
 .summary {
+  width: 360px;
+  height: 300px;
   justify-content: center;
   border: 1px solid black;
   padding: 35px;
   flex-shrink: 0;
+  margin-bottom: 100px;
 }
 
 select {
@@ -166,4 +176,15 @@ b {
 .col-2 {
   flex: 0 0 auto;
   width: 25.667%;
+}
+
+@media (max-width: 575.98px) {
+}
+@media (min-width: 577px) and (max-width: 768px) {
+}
+@media (min-width: 768px) and (max-width: 992px) {
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
 }

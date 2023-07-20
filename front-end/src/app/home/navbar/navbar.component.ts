@@ -17,7 +17,7 @@ export class NavbarComponent {
 
    ngOnInit(): void {
 
-    this.cartService.getProduct()
+    this.cartService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
     })

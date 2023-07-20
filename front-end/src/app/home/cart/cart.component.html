@@ -3,7 +3,7 @@
 
 <!--Vista del carrito-->
 <section class="cart-view">
-  <ng-container *ngIf="product.length != 0">
+  <ng-container *ngIf="products.length != 0">
     <div class="container">
       <div class="page-title">
         <h2>Carrito de compras</h2>
@@ -14,19 +14,23 @@
             <div class="row align-items-center">
               <div class="row main justify-content-center">
                 <!-- Producto 1-->
-                <div class="col-6 card">
+                <div class="col-6 card mb-4" *ngFor="let product of products; let i = index">
                   <div class="row mt-4 mb-4">
                     <div class="col-1">
-                      <img
+                      <button class="delete" (click)="removeItem(product)">
+                        <img
                         class="trash-can"
                         src="../../../assets/DELETE.svg"
                         alt="delete"
                       />
+                      </button>
+                      
                     </div>
                     <div class="col-2">
                       <img
                         class="product img-fluid"
-                        src="../../../assets/Advanced_Whey_Protein.png"
+                        [src]="product.imgList[0].fileUrl"
+                        [alt]="product.imgList[0].name"
                       />
                     </div>
                     <div class="col-4">
@@ -34,17 +38,25 @@
                         <div class="description">
                           <p>{{ product.name }}</p>
                           <p>&dollar;{{ product.price }}</p>
+                          <!-- <p>Cantidad {{product.quantity}}</p>
+                          <p>{{product.total}}</p>-->
 
-                          <form *ngFor="let item of product; let i = index">
+                         <form>
                             Cantidad
-                            <select name="producto" id="item">
+                            <select name="product" id="item" [(ngModel)]="product.stock">
                               <option value="1">1</option>
                               <option value="2">2</option>
                               <option value="3">3</option>
                               <option value="4">4</option>
                               <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
                             </select>
                           </form>
+
                         </div>
                       </div>
                     </div>
@@ -62,7 +74,7 @@
             <div class="row d-flex">
               <div class="col summary-text">Subtotal</div>
               <div class="col align-items-end">
-                <b>&dollar; {{ subTotal }} </b>
+                <b>&dollar; {{ grandTotal }} </b>
               </div>
             </div>
             <div class="row">
@@ -85,28 +97,27 @@
             >
               <div class="col"><b>Total</b></div>
               <div class="col text-right">
-                <b>&dollar; {{ grandTotal }}</b>
+                <b>&dollar; {{ plusShipment  }}</b>
               </div>
             </div>
-            <button class="btn-checkout">Finalizar compra</button>
+            <button class="btn btn-checkout">Finalizar compra</button>
           </div>
         </div>
       </div>
     </div>
   </ng-container>
 
-  <ng-container *ngIf="product.length == 0">
-    <div class="container mt-4 ">
+  <ng-container *ngIf="products.length == 0">
+    <div class="container mt-4">
       <div class="row d-flex justify-content-center">
         <div class="col-md-8">
           <h2 class="empty-cart">No tienes productos en el carrito</h2>
           <p>Agrega productos para continuar</p>
         </div>
         <div class="row d-flex justify-content-center">
-          <button href="#" class="btn-checkout">Ir a comprar</button>
+          <button routerLink="/home" class="btn btn-checkout">Ir a comprar</button>
         </div>
       </div>
-      
     </div>
   </ng-container>
 </section>
