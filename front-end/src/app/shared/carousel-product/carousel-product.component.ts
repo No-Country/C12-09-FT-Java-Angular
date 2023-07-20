@@ -35,7 +35,7 @@ export class CarouselProductComponent {
         const width = this.myContainer.nativeElement.offsetWidth; 
 
          console.log('adios')
-         this.translateXValue = width/ 2; 
+         this.translateXValue = width-800; 
 
 
       }
