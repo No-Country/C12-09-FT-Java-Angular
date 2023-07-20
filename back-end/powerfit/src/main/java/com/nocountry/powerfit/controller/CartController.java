@@ -4,6 +4,8 @@ import com.nocountry.powerfit.model.exception.CartNotFoundException;
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.response.CartResponse;
 import com.nocountry.powerfit.service.abstraction.CartService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +14,14 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@Api(value = "Cart Controller", description = "Cart Controller")
 @RequestMapping("/api/v1/cart")
 public class CartController {
 
     private final CartService cartService;
 
     @PostMapping("/{cartId}/products")
+    @ApiOperation(value = "Agrega producto al carrito")
     public ResponseEntity<?> addProductsToCart(@PathVariable Long cartId, @RequestParam Long productId) {
         try {
             cartService.addProduct(cartId, productId);
@@ -28,6 +32,7 @@ public class CartController {
     }
 
     @DeleteMapping("/{cartId}/product/{productId}")
+    @ApiOperation(value = "Elimina producto del carrito")
     public ResponseEntity<Void> removeProductFromCart(@PathVariable Long cartId, @PathVariable Long productId) {
         try {
             cartService.removeProductFromCart(cartId, productId);
@@ -38,6 +43,7 @@ public class CartController {
     }
 
     @PutMapping("/{cartId}/product/{productId}")
+    @ApiOperation(value = "Modifica la cantidad del producto en el carrito")
     public ResponseEntity<Void> updateProductQuantity(
             @PathVariable Long cartId,
             @PathVariable Long productId,
@@ -51,6 +57,7 @@ public class CartController {
     }
 
     @GetMapping("/{cartId}/products")
+    @ApiOperation(value = "Obtiene productos del carrito")
     public ResponseEntity<?> getCartProducts(@PathVariable Long cartId) {
         try {
             List<CartResponse> cartProducts = cartService.getCartProducts(cartId);
@@ -61,6 +68,7 @@ public class CartController {
     }
 
     @GetMapping("/{cartId}/totalPrice")
+    @ApiOperation(value = "Obtiene precio total del carrito")
     public ResponseEntity<Double> getCartTotalPrice(@PathVariable Long cartId) {
         try {
             double totalPrice = cartService.getCartTotalPrice(cartId);
@@ -71,6 +79,7 @@ public class CartController {
     }
 
     @GetMapping("/{cartId}/isEmpty")
+    @ApiOperation(value = "Comprueba si el carrito está vacío")
     public ResponseEntity<Boolean> isCartEmpty(@PathVariable Long cartId) {
         try {
             boolean isEmpty = cartService.isCartEmpty(cartId);
@@ -81,6 +90,7 @@ public class CartController {
     }
 
     @DeleteMapping("/{cartId}")
+    @ApiOperation(value = "Vacía el carrito")
     public ResponseEntity<Void> clearCart(@PathVariable Long cartId) {
         try {
             cartService.clearCart(cartId);
