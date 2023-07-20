@@ -41,7 +41,6 @@ public class ProductMapper {
         return Product.builder()
                 .description(request.getDescription())
                 .name(request.getName())
-                .cart(null)
                 .category(request.getCategory())
                 .price(request.getPrice())
                 .stock(request.getStock())

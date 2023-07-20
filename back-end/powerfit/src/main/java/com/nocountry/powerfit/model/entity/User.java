@@ -64,8 +64,8 @@ public class User implements UserDetails {
 
     private Long postalCode;
 
-    @OneToOne
-    @JoinColumn(name = "cart_id")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    //@JoinColumn(name = "cart_id")
     private Cart cart;
 
     @JoinColumn(name="image_id")
