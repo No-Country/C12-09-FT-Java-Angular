@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
 import * as $ from 'jquery';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,18 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent {
   isLogged = false;
+  public totalItem : number = 0;
 
-  constructor(private router:Router, private tokenService: TokenService) { }
+  constructor(private router:Router, private tokenService: TokenService, private cartService: CartService) { }
 
    ngOnInit(): void {
+
+    this.cartService.getProduct()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
+  
+
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
@@ -41,6 +50,8 @@ export class NavbarComponent {
       });
     });
   }
+
+  
 
   onLogOut():void{
     this.tokenService.logOut();
