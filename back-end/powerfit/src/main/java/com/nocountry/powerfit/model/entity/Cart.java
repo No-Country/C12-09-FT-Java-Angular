@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -21,8 +22,13 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "cart")
-    private List<Product> products;
+//    @OneToMany(mappedBy = "cart")
+//    private List<Product> products;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "product_cart", joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "products_id"))
+    private List<Product> products = new ArrayList<>();
 
     @OneToOne(mappedBy = "cart")
     private User user;
@@ -30,10 +36,22 @@ public class Cart {
     @OneToOne
     private Bill bill;
 
-    private double total;
+    @Column(name = "amount", nullable = false, updatable = true)
+    private Double amount = 0.0;
 
-    @CreationTimestamp
-    @Column(updatable = false, nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime created;
+    @Column(name = "quantity", nullable = false, updatable = true)
+    private Integer quantity = 0;
+
+    public void addProduct(Product product) {
+        this.products.add(product);
+        quantity += 1;
+        amount += product.getPrice();
+    }
+
+    public boolean removeProduct(Product product) {
+        quantity -= 1;
+        amount -= product.getPrice();
+        return (this.products.remove(product));
+    }
+
 }

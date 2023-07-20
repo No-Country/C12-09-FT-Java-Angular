@@ -1,5 +1,6 @@
 package com.nocountry.powerfit.model.response;
 
+import com.nocountry.powerfit.model.entity.Role;
 import lombok.*;
 
 import java.util.Date;
@@ -19,4 +20,5 @@ public class UserResponse {
     private String city;
     private Long postalCode;
     private Date created;
+    private Role role;
 }

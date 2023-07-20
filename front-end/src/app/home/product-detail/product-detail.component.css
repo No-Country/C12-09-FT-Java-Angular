@@ -22,7 +22,7 @@ img{
 .supplement p{
   color: #000;
 font-family: Roboto;
-font-size: 22.455px;
+font-size: 22px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -40,9 +40,10 @@ line-height: normal;
   justify-content: center;
   align-items: center;
 }
-.saleoff p{
+.saleoff span{
   color:#FFF;
-  padding-top: 11px;
+  font-size: 1.2em;
+
 
 }
 .clothing img{
@@ -65,7 +66,48 @@ line-height: normal;
 @media screen and (width < 680px){
   .supplement,.equipment,.clothing{
     display:grid;
-    justify-content: center;
   }
+  img{
+    width: 207px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  .boximg{
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  form{
+    width: 200px;
+    margin: 0 auto;
+  }
+  .sbox,.dbox{
+    position: relative;
+  }
+  .sbox .info ,.sbox .descript{
+    width: 100%;
+  }
+  .info{
+    text-align: center;
+  }
+  .saleoff{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 15px;
+  }
+}
+@media screen and (width < 800px){
 
+  img{
+    width: 207px;
+    object-fit: cover;
+  }
+  p{
+    font-size: 15px;
+  }
+  .imgLuci{
+    width: 207px;
+    object-fit: cover;
+  }
 }

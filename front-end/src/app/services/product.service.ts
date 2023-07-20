@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../model/product';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,13 @@ export class ProductService {
 
   authURL = environment.apiResrURL + '/products/';
   constructor(private httpClient:HttpClient) { }
+
+  getProduct(){
+    return this.httpClient.get<any>(this.authURL + "/products")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 
   public getProductsForCategory(name:string): Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.authURL + 'category' + `/${name}`);

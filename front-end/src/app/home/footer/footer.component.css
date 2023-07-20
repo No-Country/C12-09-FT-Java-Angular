@@ -2,6 +2,9 @@ footer{
   display: flex;
   flex-direction: column;
   background-color: #F7FC00;
+  max-width: 1400px;
+  height: 288px;
+  
 
 }
 
@@ -33,6 +36,7 @@ footer{
 .container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
   grid-template-areas: "contact   redbox " "Payments  shipping ";
 }
 
@@ -62,6 +66,7 @@ footer{
   .container a, .container p{
     font-size: 18px;
   }
+
 }
 
 @media screen and (width > 780px){

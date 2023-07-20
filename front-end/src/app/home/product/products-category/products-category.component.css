@@ -43,10 +43,13 @@ button{
 .img-zoom:hover {
   transform: scale(1.1);
 }
+
+
 @media (max-width: 575.98px){
   h1{
-    font-size: 28px;
-    font-weight: 200;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 210;
     line-height: 58px;
     letter-spacing: 0em;
 
@@ -57,4 +60,44 @@ button{
 
 
   }
+  .col{
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  h1{
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  h1{
+    padding-top: 30px;
+  }
+  img{
+    height: 300px;
+  }
+  .btn-custom {
+    width: 150px; /* Ajusta el ancho del botón al 50% del contenedor */
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  h1{
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+  .btn-custom {
+    width: 200px; /* Ajusta el ancho del botón al 50% del contenedor */
+  }
+}
+@media (min-width: 1201px) and (max-width: 1400px) {
+    h1{
+      padding-top: 30px;
+      padding-bottom: 25px;
+    }
+    img{
+      height: 280px;
+    }
+
 }

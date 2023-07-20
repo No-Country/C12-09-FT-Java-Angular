@@ -2,11 +2,16 @@ package com.nocountry.powerfit.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 //import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
 //import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +24,7 @@ import java.util.List;
 @Builder
 @Table(name = "users")
 @NoArgsConstructor
-public class User /*implements UserDetails*/ {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,57 +64,48 @@ public class User /*implements UserDetails*/ {
 
     private Long postalCode;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime created;
-
-    @OneToOne
-    @JoinColumn(name = "cart_id")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    //@JoinColumn(name = "cart_id")
     private Cart cart;
 
-    //@JoinColumn(name="image_id")
-    //@OneToOne(cascade = CascadeType.REFRESH)
-    //private Image image;
+    @JoinColumn(name="image_id")
+    @OneToOne(cascade = CascadeType.REFRESH)
+    private Image image;
 
     @OneToMany(mappedBy = "user")
     private List<Bill> bill;
 
-    /*@JoinColumn(name = "role_id")
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    private Role role;*/
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
-
-    /*@Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
 
     @Override
-    public String getPassword() {
-        return null;
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
-    }*/
+        return true;
+    }
 }

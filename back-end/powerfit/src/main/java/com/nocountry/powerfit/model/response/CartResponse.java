@@ -15,5 +15,8 @@ public class CartResponse {
     private Long id;
     private User user;
     private List<Product> products;
-    private double total;
+    private Double amount;
+    private String nameUser;
+    private Integer quantity;
+    //private Category category;
 }

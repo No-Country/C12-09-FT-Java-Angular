@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 
 @Component({
@@ -15,39 +16,41 @@ export class ProductsCategoryComponent implements OnInit{
 
   categoryName: string = '';
   products: Product[] = [];
+  public productList: any;
 
 
   constructor(private productService:ProductService,
     private toastr: ToastrService,
-    private route: ActivatedRoute){}
+    private route: ActivatedRoute,
+    private cartService:CartService){}
 
   ngOnInit(): void {
-    this.routeCategory();
+
     this.route.params.subscribe(params => {
     this.categoryName = params['category'];
+    this.getProducts(this.categoryName);
   });
   }
   selectCategory(category: string) {
     this.categoryName = category;
     this.getProducts(category);
   }
-  routeCategory(){
-    this.route.params.subscribe(params => {
-      const categoryName = params['category'];
-      this.getProducts(categoryName);
-    });
-  }
+
   getProducts(categoryName: string){
     this.productService.getProductsForCategory(categoryName).subscribe(
-      data => {
-        this.products = data;
-        console.log(this.products)
-      },
-      err =>{
-        this.toastr.error("Error categoria vacia");
-        console.error(err.message);
-      }
-    )
+      (data) => {
+          this.products = data;
+
+        },
+        err => {
+          console.log(err);
+          this.toastr.error(err.error.message, 'Sin productos', { timeOut: 3000, positionClass: 'toast-top-right'});
+        }
+
+    );
   }
 
+  addtocart(item:any){
+    this.cartService.addToCart(item);
+  }
 }
