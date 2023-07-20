@@ -56,6 +56,7 @@ const routes: Routes = [
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
     ProductDetailComponent,
+    NosotrosComponent,
     ProductsCategoryComponent,
   ],
 
