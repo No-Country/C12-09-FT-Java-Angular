@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/services/product.service';
@@ -30,6 +30,15 @@ export class ProductsCategoryComponent implements OnInit{
     this.categoryName = params['category'];
     this.getProducts(this.categoryName);
   });
+  // Lee los parámetros de la ruta y realiza la búsqueda al cargar el componente
+  this.route.queryParams.subscribe(params => {
+    const searchValue = params['search'];
+    if (searchValue) {
+      this.productService.getProductByName(searchValue).subscribe(products => {
+        this.products = products;
+      });
+    }
+  });
   }
   selectCategory(category: string) {
     this.categoryName = category;
@@ -44,7 +53,7 @@ export class ProductsCategoryComponent implements OnInit{
         },
         err => {
           console.log(err);
-          this.toastr.error(err.error.message, 'Sin productos', { timeOut: 3000, positionClass: 'toast-top-right'});
+          this.toastr.info(err.error.message, 'Sin productos', { timeOut: 3000, positionClass: 'toast-top-right'});
         }
 
     );

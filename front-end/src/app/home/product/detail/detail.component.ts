@@ -14,6 +14,7 @@ export class DetailComponent implements OnInit{
   product!: Product;
   quantity:number = 1;
   nameCategory:string ='';
+  buttonState: string = ''; // Variable para almacenar el estado del botón activado
 
   constructor(private productService:ProductService,
   private activatedRoute: ActivatedRoute, private toast:ToastrService, private cartService:CartService){}
@@ -49,6 +50,11 @@ export class DetailComponent implements OnInit{
 
   increment():void{
     this.quantity++;
+  }
+
+
+  toggleButton(size: string) {
+    this.buttonState = size;
   }
 
   addtocart(item:any){
