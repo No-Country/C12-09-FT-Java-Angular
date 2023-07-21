@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.io.IOException;
 
-@CrossOrigin
+@CrossOrigin(value = "*")
 @RestController
 @RequestMapping("api/v1/auth")
 @RequiredArgsConstructor

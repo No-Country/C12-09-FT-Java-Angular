@@ -27,4 +27,10 @@ export class ProductService {
   public getById(id:number): Observable<any>{
     return this.httpClient.get<any>(this.authURL + `${id}`);
   }
+
+  public getProductByName(name:string): Observable<Product[]>{
+    return this.httpClient.get<Product[]>(this.authURL + 'name' + `/${name}`);
+  }
+
+
 }

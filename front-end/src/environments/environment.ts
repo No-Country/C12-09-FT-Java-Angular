@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiResrURL: 'http://localhost:8080/api/v1'
+  //apiResrURL: 'http://localhost:8080/api/v1'
+  apiResrURL: 'https://powerfit.onrender.com/api/v1'
 };
 
 /*
