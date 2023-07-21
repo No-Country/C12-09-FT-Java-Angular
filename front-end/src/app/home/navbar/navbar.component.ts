@@ -70,6 +70,10 @@ export class NavbarComponent {
     this.router.navigate(['/filter'], { queryParams: { search: this.searchValue } });
   }
 
+  estaVaciosearchValue():boolean{
+    return this.searchValue.length > 0;
+  }
+
 }
 
 
