@@ -21,8 +21,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
-import { CartComponent } from './home/cart/cart.component';
-import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
+
 import { CommonModule } from '@angular/common';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
@@ -39,6 +38,7 @@ import { loginGuard } from './guards/login.guard';
 import { EquipamientoComponent } from './home/product/equipamiento/equipamiento.component';
 import { IndumentariaComponent } from './home/product/indumentaria/indumentaria.component';
 import { SuplementosComponent } from './home/product/suplementos/suplementos.component';
+import { CartComponent } from './home/cart/cart.component';
 
 
 
@@ -83,7 +83,6 @@ const routes: Routes = [
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
     CartComponent,
-    ProductsCategoryComponent,
     ProductDetailComponent,
     NosotrosComponent,
     SuccesViewComponent,
