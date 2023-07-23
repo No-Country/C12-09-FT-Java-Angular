@@ -22,12 +22,19 @@
             <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
             <div class="badge bg-danger">{{totalItem}}</div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-link" href="/login" (click)="login()" *ngIf="!isLogged"><img class="icons account"
-                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta</a>
-            <a class="btn btn-link" href="/login" (click)="onLogOut()" *ngIf="isLogged"><img class="icons account"
-                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Hola, tú</a>
+
+          <li class="nav-item" *ngIf="!estaLogueado()">
+            <a class="btn btn-link" href="/login" (click)="login()">
+              <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta
+            </a>
           </li>
+
+          <div *ngIf="estaLogueado()">
+            <a class="btn btn-link" href="/login">
+              <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> {{ nameUser }}
+            </a>
+            <button type="button" class="btn btn-outline-danger btn-sm btn-sm-custom" (click)="cerrarSesion()">Cerrar sesión</button>
+          </div>
         </ul>
       </div>
 
@@ -40,13 +47,13 @@
         <ul class="navbar-nav mx-auto" >
 
            <li>
-            <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
+            <a class="nav-link" routerLink="/listCategory/Suplementos">Suplementos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listCategory/Equipamiento" >Equipamiento</a>
+            <a class="nav-link" routerLink="/listCategory/Equipamiento" >Equipamiento</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listCategory/Indumentaria" >Indumentaria</a>
+            <a class="nav-link" routerLink="/listCategory/Indumentaria" >Indumentaria</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="nosotros">Nosotros</a>
@@ -78,8 +85,20 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-10 pl-0">
-            <a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg"
-                alt="mi-cuenta"> Mi cuenta</a>
+            <!--<a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg"
+                alt="mi-cuenta"> Mi cuenta</a>-->
+                <li class="nav-item" *ngIf="!estaLogueado()">
+                  <a class="btn btn-link" href="/login" (click)="login()">
+                    <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta
+                  </a>
+                </li>
+
+                <div *ngIf="estaLogueado()">
+                  <a class="btn btn-link" href="/login">
+                    <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> {{ nameUser }}
+                  </a>
+                  <button type="button" class="btn btn-outline-danger btn-sm btn-sm-custom" (click)="cerrarSesion()">Cerrar sesión</button>
+                </div>
             <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
             <div class="badge bg-danger">{{totalItem}}</div>
           </div>

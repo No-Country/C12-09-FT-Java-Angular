@@ -4,6 +4,8 @@ import { TokenService } from 'src/app/services/token.service';
 import * as $ from 'jquery';
 import { SearchService } from 'src/app/search.service';
 import { CartService } from 'src/app/services/cart.service';
+import { TokenStoreService } from 'src/app/services/token-store.service';
+import { AuthService } from 'src/app/services/user/auth.service';
 
 
 @Component({
@@ -15,9 +17,11 @@ export class NavbarComponent {
   isLogged = false;
   public totalItem : number = 0;
   searchValue: string = '';
+  nameUser: string | null = "";
 
   constructor(private router:Router, private tokenService: TokenService,private cartService: CartService,
-    private searchService: SearchService) { }
+    private searchService: SearchService, private tokenStore:TokenStoreService,
+    private authService:AuthService) { }
 
 
    ngOnInit(): void {
@@ -72,6 +76,20 @@ export class NavbarComponent {
 
   estaVaciosearchValue():boolean{
     return this.searchValue.length > 0;
+  }
+
+  estaLogueado():boolean{
+    if(this.tokenStore.isLoggued()){
+      this.nameUser = this.authService.getNameUser();
+    }
+    return this.tokenStore.isLoggued();
+  }
+
+  cerrarSesion():void{
+    this.tokenStore.logOut();
+    this.authService.removeCartId();
+    this.authService.removeNameUser();
+    this.router.navigateByUrl('/login');
   }
 
 }

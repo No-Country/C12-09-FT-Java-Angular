@@ -11,12 +11,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class CartResponse {
+public class CartResponseInfoUser {
+
     private Long id;
-    private User user;
     private List<ProductResponse> products;
     private Double amount;
     private String nameUser;
     private Integer quantity;
-    //private Category category;
 }

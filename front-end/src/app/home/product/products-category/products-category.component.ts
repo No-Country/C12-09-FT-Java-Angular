@@ -39,6 +39,7 @@ export class ProductsCategoryComponent implements OnInit{
       });
     }
   });
+
   }
   selectCategory(category: string) {
     this.categoryName = category;

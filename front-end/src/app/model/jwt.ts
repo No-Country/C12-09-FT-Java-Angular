@@ -1,7 +1,13 @@
 export class Jwt {
-  jwt: string;
+  token: string;
+  message: string;
+  cartId: number;
+  name:string
 
-  constructor(jwt:string){
-    this.jwt=jwt;
+  constructor(token:string,message:string,cartId:number,name:string){
+    this.token = token;
+    this.message = message;
+    this.cartId = cartId;
+    this.name = name;
   }
 }

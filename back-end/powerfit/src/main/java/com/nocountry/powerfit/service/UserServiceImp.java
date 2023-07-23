@@ -8,8 +8,11 @@ import com.nocountry.powerfit.model.response.UserResponse;
 import com.nocountry.powerfit.repository.IUserRepository;
 import com.nocountry.powerfit.service.abstraction.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -55,15 +58,20 @@ public class UserServiceImp implements UserService {
 
     @Override
     public UserResponse getUserInfo() {
-//        Object userInstance = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        try {
-//            if (userInstance instanceof User) {
-//                String username = ((User) userInstance).getUsername();
-//            }
-//        } catch (Exception e) {
-//            throw new UsernameNotFoundException("User not found");
-//        }
-//        return userRepository.findByEmail(userInstance.toString());
-        return null;
+        Object userInstance = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String userName = "";
+        try {
+            if (userInstance instanceof User) {
+                userName = ((User) userInstance).getUsername();
+            }
+        } catch (Exception e) {
+            throw new UsernameNotFoundException("User not found");
+        }
+        Optional<User> user = IUserRepository.findByEmail(userName);
+        if(user.isEmpty())
+            new UsernameNotFoundException("User not found");
+        UserResponse response = userMapper.mapToDto(user);
+        return response;
+
     }
 }

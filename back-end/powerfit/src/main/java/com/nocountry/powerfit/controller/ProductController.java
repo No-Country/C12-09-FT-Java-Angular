@@ -1,6 +1,6 @@
 package com.nocountry.powerfit.controller;
 
-import com.nocountry.powerfit.model.entity.Product;
+
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
 import com.nocountry.powerfit.model.request.ProductRequest;
 import com.nocountry.powerfit.model.response.ProductResponse;
@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products")
 @Api(value = "Product Controller", description = "Product functionalities")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired

@@ -4,6 +4,9 @@ import com.nocountry.powerfit.model.entity.Image;
 import com.nocountry.powerfit.model.response.ImageResponse;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class ImageMapper {
     public ImageResponse imageToDto(Image img){
@@ -19,4 +22,9 @@ public class ImageMapper {
         return img;
     }
 
+    public List<ImageResponse> mapToDtoImagesList(List<Image> carrousel) {
+        return carrousel.stream()
+                .map(this::imageToDto)
+                .collect(Collectors.toList());
+    }
 }

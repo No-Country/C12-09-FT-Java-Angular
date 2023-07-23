@@ -1,5 +1,6 @@
 package com.nocountry.powerfit.service;
 
+import com.nocountry.powerfit.model.entity.Cart;
 import com.nocountry.powerfit.model.entity.Role;
 import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.exception.EntityAlreadyExistException;
@@ -39,11 +40,13 @@ public class AuthServiceImp implements AuthService {
                 .phoneNumber(registerRequest.getPhoneNumber())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
                 .role(Role.USER)
+                .cart(new Cart())
                 .build();
         userRepository.save(user);
         var jwToken = jwtService.generateToken(user);
         return AuthResponse.builder()
                 .token(jwToken)
+                .message("Usuario creado")
                 .build();
     }
 
@@ -55,6 +58,8 @@ public class AuthServiceImp implements AuthService {
             var jwToken = jwtService.generateToken(user);
             return AuthResponse.builder()
                     .token(jwToken)
+                    .cartId(user.getCart().getId())
+                    .name(user.getName())
                     .build();
         }catch (Exception e){
             throw new InvalidCredentialsException("Usuario o contraseña invalidos");
