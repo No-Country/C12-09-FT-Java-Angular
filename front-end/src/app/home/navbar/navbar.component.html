@@ -12,8 +12,9 @@
       </a>
 
       <div class="collapse navbar-collapse">
-        <form class="form-inline my-2 my-lg-0 mx-auto">
-          <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+
+        <form class="form-inline my-2 my-lg-0 mx-auto"(submit)="onSearchSubmit()">
+          <input class="form-control" type="search" placeholder="Buscar" aria-label="Search"  [(ngModel)]="searchValue"[ngModelOptions]="{standalone: true}">
         </form>
 
         <ul class="navbar-nav">
@@ -21,12 +22,19 @@
             <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
             <div class="badge bg-danger">{{totalItem}}</div>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-link" href="/login" (click)="login()" *ngIf="!isLogged"><img class="icons account"
-                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta</a>
-            <a class="btn btn-link" href="/login" (click)="onLogOut()" *ngIf="isLogged"><img class="icons account"
-                src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Hola, tú</a>
+
+          <li class="nav-item" *ngIf="!estaLogueado()">
+            <a class="btn btn-link" href="/login" (click)="login()">
+              <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta
+            </a>
           </li>
+
+          <div *ngIf="estaLogueado()">
+            <a class="btn btn-link" href="/login">
+              <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> {{ nameUser }}
+            </a>
+            <button type="button" class="btn btn-outline-danger btn-sm btn-sm-custom" (click)="cerrarSesion()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Salir</button>
+          </div>
         </ul>
       </div>
 
@@ -37,18 +45,18 @@
     <div class="container">
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav mx-auto" >
-      
-           <li>
-            <a class="nav-link" href="/listCategory/Suplementos">Suplementos</a>
+
+           <li class="nav-item">
+            <a class="nav-link" routerLink="/listCategory/Suplementos" routerLinkActive="router-link-active">Suplementos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listCategory/Equipamiento" >Equipamiento</a>
+            <a class="nav-link" routerLink="/listCategory/Equipamiento" routerLinkActive="router-link-active">Equipamiento</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listCategory/Indumentaria" >Indumentaria</a>
+            <a class="nav-link" routerLink="/listCategory/Indumentaria" routerLinkActive="router-link-active">Indumentaria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="nosotros">Nosotros</a>
+            <a class="nav-link" routerLink="nosotros" routerLinkActive="router-link-active">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Descuentos</a>
@@ -77,8 +85,20 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-10 pl-0">
-            <a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg"
-                alt="mi-cuenta"> Mi cuenta</a>
+            <!--<a class="btn btn-link" href="/login"><img class="icons account" src="../../../assets/mi-cuenta.svg"
+                alt="mi-cuenta"> Mi cuenta</a>-->
+                <li class="nav-item" *ngIf="!estaLogueado()">
+                  <a class="btn btn-link" href="/login" (click)="login()">
+                    <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> Mi cuenta
+                  </a>
+                </li>
+
+                <div *ngIf="estaLogueado()">
+                  <a class="btn btn-link" href="/login">
+                    <img class="icons account" src="../../../assets/mi-cuenta.svg" alt="mi-cuenta"> {{ nameUser }}
+                  </a>
+                  <button type="button" class="btn btn-outline-danger btn-sm btn-sm-custom" (click)="cerrarSesion()">Cerrar sesión</button>
+                </div>
             <a class="btn btn-link" href="/cart"><img class="icons" src="../../../assets/carrito.svg" alt="cart"></a>
             <div class="badge bg-danger">{{totalItem}}</div>
           </div>
