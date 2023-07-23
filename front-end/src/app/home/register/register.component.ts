@@ -32,7 +32,8 @@ export class RegisterComponent implements OnInit {
     }
     this.authService.register(dto).subscribe(
       data =>{
-        this.toastr.success(data.jwt, 'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
+        console.log(data.token);
+        this.toastr.success(data.message,'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
         this.router.navigate(['/login']);
       },
       err =>{

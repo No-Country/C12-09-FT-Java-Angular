@@ -14,7 +14,7 @@ import java.util.List;
 public class CartResponse {
     private Long id;
     private User user;
-    private List<Product> products;
+    private List<ProductResponse> products;
     private Double amount;
     private String nameUser;
     private Integer quantity;

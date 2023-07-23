@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/user/auth.service';
 import { Login } from 'src/app/model/login';
+import { ToastrService } from 'ngx-toastr';
+import { TokenStoreService } from 'src/app/services/token-store.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
   password = '';
   errMsj = '';
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router,
+    private toastr: ToastrService, private tokenStoreService:TokenStoreService) { }
 
   ngOnInit(): void {
     this.isLogged = this.authService.getIsLoggedIn();
@@ -45,8 +48,20 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  login(): void{
-
+  loginSecurely(): void{
+    const dto = new Login(this.email, this.password);
+    this.authService.loginSecurely(dto).subscribe(
+      response => {
+        this.tokenStoreService.setToken(response.token);
+        this.authService.setCartId(response.cartId);
+        this.authService.setNameUser(response.name);
+        this.router.navigateByUrl('/home');
+        console.log(response.token);
+      },
+      err => {
+        this.toastr.error(err.error, 'Error');
+      }
+    )
   }
 
   register(): void {

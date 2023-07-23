@@ -14,6 +14,8 @@ import { Jwt } from 'src/app/model/jwt';
 export class AuthService {
   authURL = environment.apiResrURL + '/auth/';
   private isLoggedIn = false;
+  private cartIdKey = 'cartId';
+  private nameUser = 'nameUser';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,6 +27,10 @@ export class AuthService {
     return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUser);
   }
 
+  public loginSecurely(login: Login): Observable<Jwt>{
+    return this.httpClient.post<Jwt>(this.authURL + 'login', login);
+  }
+
   public getIsLoggedIn(): boolean {
     return this.isLoggedIn;
   }
@@ -33,6 +39,25 @@ export class AuthService {
     this.isLoggedIn = value;
   }
 
+  setCartId(cartId:number): void{
+    localStorage.setItem(this.cartIdKey, cartId.toString());
 
+  }
+  getCartId(): number | null {
+    const cartId = localStorage.getItem(this.cartIdKey);
+    return cartId ? parseInt(cartId, 10) : null;
+  }
+  removeCartId(): void{
+    localStorage.removeItem(this.cartIdKey);
+  }
+  setNameUser(name:string):void{
+    localStorage.setItem(this.nameUser, name);
+  }
+  getNameUser(): string | null{
+    return localStorage.getItem(this.nameUser);
+  }
+  removeNameUser(): void{
+    localStorage.removeItem(this.nameUser);
+  }
 
 }

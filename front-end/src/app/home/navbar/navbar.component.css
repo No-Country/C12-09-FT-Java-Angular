@@ -51,7 +51,7 @@ h6 {
     background-position: right;
     background-size: 25px;
   }
-  
+
 
 .btn {
     font-size: 1rem;
@@ -60,12 +60,19 @@ h6 {
     border-radius: 0.25rem;
 }
 
-
-
+.btn-sm-custom {
+  font-size: 12px; /* Tamaño del texto */
+  padding: 0.25rem 0.5rem; /* Ajustar el relleno (padding) para reducir el tamaño del botón */
+}
+/* Estilos para el enlace activo */
+.nav-item a.nav-link.router-link-active {
+  color: yellow;
+}
 
 @media (min-width: 768px) {
     .form-inline .form-control {
         width: 210px;
+
     }
 }
 
@@ -73,12 +80,14 @@ h6 {
 @media (min-width: 992px) {
     .form-inline .form-control {
         width: 440px;
+
     }
 }
 
 @media (min-width: 1200px) {
     .form-inline .form-control {
         width: 600px;
+
     }
 }
 
@@ -195,4 +204,5 @@ a[data-toggle="collapse"] {
     position: relative;
     z-index: 2;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+
 }

@@ -21,8 +21,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
 import { PromocionesComponent } from './shared/promociones/promociones.component'
 import { DetailComponent } from './home/product/detail/detail.component';
-import { CartComponent } from './home/cart/cart.component';
-import { ProductsCategoryComponent } from './home/product/products-category/products-category.component';
+
 import { CommonModule } from '@angular/common';
 import { NosotrosComponent } from './home/nosotros/nosotros.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
@@ -33,6 +32,13 @@ import { PaymentResponseComponent } from './home/pago/payment-response/payment-r
 import { FilterComponent } from './home/product/filter/filter.component';
 import { SearchService } from './search.service';
 import { ProductService } from './services/product.service';
+import { registerGuard } from './guards/register.guard';
+import { loginGuard } from './guards/login.guard';
+
+import { EquipamientoComponent } from './home/product/equipamiento/equipamiento.component';
+import { IndumentariaComponent } from './home/product/indumentaria/indumentaria.component';
+import { SuplementosComponent } from './home/product/suplementos/suplementos.component';
+import { CartComponent } from './home/cart/cart.component';
 
 
 
@@ -44,8 +50,8 @@ import { ProductService } from './services/product.service';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent, canActivate: [registerGuard]},
+  { path: 'login', component: LoginComponent, canActivate: [loginGuard]},
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'payment/success', component: SuccesViewComponent },
   { path: 'payment/failure', component: FailureViewComponent },
@@ -53,9 +59,11 @@ const routes: Routes = [
   { path: 'payment-response', component: PaymentResponseComponent},
   { path: 'filter', component: FilterComponent},
   { path: 'detail/:id', component: DetailComponent},
+ // { path: 'listCategory/:category', component: ProductsCategoryComponent},
   { path: "cart", component: CartComponent},
-  {path: 'listCategory/:category', component: ProductsCategoryComponent},
-  {path: "cart", component: CartComponent}
+  { path: 'listCategory/Suplementos', component: SuplementosComponent },
+  { path: 'listCategory/Equipamiento', component: EquipamientoComponent },
+  { path: 'listCategory/Indumentaria', component: IndumentariaComponent },
 
 
 ];
@@ -75,14 +83,16 @@ const routes: Routes = [
     CategoriesComponent,ProfileComponent ,ObjectToArrayPipe, PromocionesComponent,
     DetailComponent,
     CartComponent,
-    ProductsCategoryComponent,
     ProductDetailComponent,
     NosotrosComponent,
     SuccesViewComponent,
     PendingViewComponent,
     FailureViewComponent,
     PaymentResponseComponent,
-    FilterComponent
+    FilterComponent,
+    SuplementosComponent,
+    EquipamientoComponent,
+    IndumentariaComponent
 
 
 

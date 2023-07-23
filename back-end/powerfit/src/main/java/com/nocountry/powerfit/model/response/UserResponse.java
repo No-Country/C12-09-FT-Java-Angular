@@ -21,4 +21,5 @@ public class UserResponse {
     private Long postalCode;
     private Date created;
     private Role role;
+    private CartResponse cartResponse;
 }

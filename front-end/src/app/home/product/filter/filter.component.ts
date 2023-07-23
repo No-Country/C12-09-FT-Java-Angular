@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { SearchService } from 'src/app/search.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -21,15 +22,15 @@ export class FilterComponent implements OnInit {
 
     }
     ngOnInit(): void {
-    // Lee los parámetros de la ruta y realiza la búsqueda al cargar el componente
-    this.route.queryParams.subscribe(params => {
-      const searchValue = params['search'];
-      if (searchValue) {
-        this.productService.getProductByName(searchValue).subscribe(products => {
-          this.products = products;
-        });
-      }
-    });
+   // Lee los parámetros de la ruta y realiza la búsqueda al cargar el componente
+   this.route.queryParams.subscribe(params => {
+    const searchValue = params['search'];
+    if (searchValue) {
+      this.productService.getProductByName(searchValue).subscribe(products => {
+        this.products = products;
+      });
+    }
+  });
     }
 /*
     searchProductByName(productName:string) {

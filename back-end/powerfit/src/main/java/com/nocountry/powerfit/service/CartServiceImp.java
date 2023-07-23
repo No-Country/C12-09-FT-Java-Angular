@@ -59,7 +59,7 @@ public class CartServiceImp implements CartService {
         if(cart.getProducts().isEmpty()){
             throw new ResourceNotFoundException("El carrito está vacío");        }
 
-        CartResponse cartResponse = CartMapper.entityToDto(cart);
+        CartResponse cartResponse = cartMapper.entityToDto(cart);
 
         return cartResponse;
     }
