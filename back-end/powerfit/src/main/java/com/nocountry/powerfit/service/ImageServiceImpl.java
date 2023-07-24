@@ -4,7 +4,6 @@ import com.nocountry.powerfit.model.entity.Image;
 import com.nocountry.powerfit.repository.IImageRepository;
 import com.nocountry.powerfit.service.abstraction.AwsService;
 import com.nocountry.powerfit.service.abstraction.IImageService;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

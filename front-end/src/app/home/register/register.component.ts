@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserDto } from 'src/app/model/user-dto';
 import { AuthService } from 'src/app/services/user/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -33,7 +32,8 @@ export class RegisterComponent implements OnInit {
     }
     this.authService.register(dto).subscribe(
       data =>{
-        this.toastr.success(data.message, 'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
+        console.log(data.token);
+        this.toastr.success(data.message,'Usuario Creado', { timeOut: 8000, positionClass: positionClass});
         this.router.navigate(['/login']);
       },
       err =>{

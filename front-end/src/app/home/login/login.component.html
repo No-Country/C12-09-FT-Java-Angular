@@ -1,5 +1,4 @@
 <!--Header-->
-<app-navbar></app-navbar>
 
 <!--Body-->
 <section>
@@ -11,7 +10,7 @@
           <h2 class="fw-bold mb-2 text-uppercase">Ya tengo una cuenta</h2>
           <p>Para iniciar sesión ingresa tu mail y contraseña</p>
 
-          <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+          <form #f="ngForm" (ngSubmit)="loginSecurely()" novalidate>
 
             <div class="form-outline form-white mb-4">
               <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Ingresa tu e-mail" [(ngModel)]="email" required />

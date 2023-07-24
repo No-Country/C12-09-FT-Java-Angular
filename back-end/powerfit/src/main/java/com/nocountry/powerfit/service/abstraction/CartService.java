@@ -10,9 +10,8 @@ public interface CartService {
 
     CartResponse addProduct(Long cartId, Long productId) throws ResourceNotFoundException, CartNotFoundException;
     void removeProductFromCart(Long cartId, Long productId) throws ResourceNotFoundException, CartNotFoundException;
-    CartResponse updateProductQuantity(Long cartId, Long productId, int stock) throws ResourceNotFoundException, CartNotFoundException;
-    List<CartResponse> getCartProducts(Long cartId) throws ResourceNotFoundException, CartNotFoundException;
-    double getCartTotalPrice(Long cartId) throws ResourceNotFoundException, CartNotFoundException;
-    boolean isCartEmpty(Long cartId) throws CartNotFoundException;
+    CartResponse getCartById(Long cartId) throws CartNotFoundException, ResourceNotFoundException;
     void clearCart(Long cartId) throws CartNotFoundException;
+
+    //  CartResponse updateProductQuantity(Long cartId, Long productId, int stock) throws ResourceNotFoundException, CartNotFoundException;
 }
