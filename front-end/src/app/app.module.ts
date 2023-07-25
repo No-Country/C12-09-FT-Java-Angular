@@ -39,6 +39,8 @@ import { EquipamientoComponent } from './home/product/equipamiento/equipamiento.
 import { IndumentariaComponent } from './home/product/indumentaria/indumentaria.component';
 import { SuplementosComponent } from './home/product/suplementos/suplementos.component';
 import { CartComponent } from './home/cart/cart.component';
+import { MercadoPagoServiceService } from './services/mercado-pago-service.service';
+import { ErrorComponentComponent } from './home/error-component/error-component.component';
 
 
 
@@ -64,7 +66,7 @@ const routes: Routes = [
   { path: 'listCategory/Suplementos', component: SuplementosComponent },
   { path: 'listCategory/Equipamiento', component: EquipamientoComponent },
   { path: 'listCategory/Indumentaria', component: IndumentariaComponent },
-
+  { path: 'error', component: ErrorComponentComponent }
 
 ];
 
@@ -92,8 +94,8 @@ const routes: Routes = [
     FilterComponent,
     SuplementosComponent,
     EquipamientoComponent,
-    IndumentariaComponent
-
+    IndumentariaComponent,
+    ErrorComponentComponent
 
 
   ],
@@ -119,7 +121,8 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     SearchService,
-    ProductService
+    ProductService,
+    MercadoPagoServiceService
 
 
   ],

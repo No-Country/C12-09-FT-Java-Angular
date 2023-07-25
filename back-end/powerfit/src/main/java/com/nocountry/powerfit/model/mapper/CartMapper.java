@@ -8,6 +8,7 @@ import com.nocountry.powerfit.model.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +20,7 @@ public class CartMapper {
     public  CartResponse entityToDto(Cart cart) {
         return CartResponse.builder()
                 .id(cart.getId())
-                .user(cart.getUser())
+                //.user(cart.getUser())
                 .nameUser("")
                 .products(mapToDtoProduct(cart.getProducts()))
                 .amount(cart.getAmount())
@@ -30,10 +31,11 @@ public class CartMapper {
     public static Cart dtoToEntity(CartRequest cartRequest) {
         return Cart.builder()
                 .id(cartRequest.getId())
-                .user(cartRequest.getUser())
+               // .user(cartRequest.getUser())
                 .products(cartRequest.getProducts())
                 .amount(cartRequest.getAmount())
                 .quantity(cartRequest.getQuantity())
+
                 .build();
     }
 
@@ -55,7 +57,7 @@ public class CartMapper {
         ProductResponse response = new ProductResponse();
         response.setId(product.getId());
         response.setName(product.getName());
-        response.setPrice(response.getPrice());
+        response.setPrice(product.getPrice());
         response.setStock(product.getStock());
         response.setDescription(product.getDescription());
         response.setCategory(product.getCategory());
