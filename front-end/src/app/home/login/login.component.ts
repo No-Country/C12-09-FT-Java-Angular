@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         console.log(response.token);
       },
       err => {
-        this.toastr.error(err.error, 'Error');
+        this.toastr.error(err.error.message, 'Error');
       }
     )
   }

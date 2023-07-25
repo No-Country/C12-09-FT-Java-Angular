@@ -8,6 +8,7 @@ import com.nocountry.powerfit.model.response.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,7 +33,7 @@ public class CartMapper {
                 .id(cartRequest.getId())
                 .user(cartRequest.getUser())
                 .products(cartRequest.getProducts())
-                .amount(cartRequest.getAmount())
+                .amount(BigDecimal.valueOf(cartRequest.getAmount()))
                 .quantity(cartRequest.getQuantity())
                 .build();
     }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { param } from 'jquery';
+import { TransactionData } from 'src/app/model/transaction-data';
+import { MercadoPagoServiceService } from 'src/app/services/mercado-pago-service.service';
 
 @Component({
   selector: 'app-payment-response',
@@ -8,23 +10,43 @@ import { param } from 'jquery';
   styleUrls: ['./payment-response.component.css']
 })
 export class PaymentResponseComponent implements OnInit {
+  transactionData: TransactionData | undefined; // Utiliza el tipo de dato adecuado para la respuesta
 
-  constructor(private route: ActivatedRoute, private router: Router){}
+  constructor(private mercadoPagoService: MercadoPagoServiceService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params =>{
-      const status = params['status'];// Asume que el servidor envía el estado del pago como parámetro 'status'
-      if (status === 'approved') {
-        this.router.navigateByUrl('/payment/success'); // Redireccionar a la vista de éxito si el estado es 'approved'
-      } else if (status === 'failure') {
-        this.router.navigateByUrl('/payment/failure'); // Redireccionar a la vista de fallo si el estado es 'failure'
-      } else if (status === 'pending') {
-        this.router.navigateByUrl('/payment/pending'); // Redireccionar a la vista de pendiente si el estado es 'pending'
-      } else {
-        // En caso de que el estado no sea reconocido o falte información, puedes redireccionar a una página de error
-        this.router.navigateByUrl('/error');//falta crear
+  ngOnInit() {
+    this.mercadoPagoService.sendTransactionData().subscribe(
+      (response) => {
+        console.log(response);
+        this.transactionData = response;
+        this.redirectToResponseComponent();
+      },
+      (error) => {
+        console.error(error);
+        // Manejar el error si es necesario
       }
-    });
+    );
   }
 
+  redirectToResponseComponent() {
+    const status = this.transactionData?.status;
+    if (status === 'approved') {
+      this.router.navigateByUrl('/payment/success');
+    } else if (status === 'pending') {
+      this.router.navigateByUrl('/payment/pending');
+    } else if (status === 'failure') {
+      this.router.navigateByUrl('/payment/failure');
+    } else {
+      // Redirigir a una página de error si el estado no es reconocido
+      this.router.navigateByUrl('/error');
+    }
+  }
 }
+
+
+
+
+
+
+
+

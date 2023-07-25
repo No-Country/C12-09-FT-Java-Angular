@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class Cart {
     private Bill bill;
 
     @Column(name = "amount", nullable = false, updatable = true)
-    private Double amount = 0.0;
+    private BigDecimal amount;
 
     @Column(name = "quantity", nullable = false, updatable = true)
     private Integer quantity = 0;
@@ -45,13 +46,13 @@ public class Cart {
     public void addProduct(Product product) {
         this.products.add(product);
         quantity += 1;
-        amount += product.getPrice();
+        amount = amount.add(product.getPrice());
     }
 
     public boolean removeProduct(Product product) {
         quantity -= 1;
-        amount -= product.getPrice();
-        return (this.products.remove(product));
+        amount = amount.subtract(product.getPrice());
+        return this.products.remove(product);
     }
 
 }

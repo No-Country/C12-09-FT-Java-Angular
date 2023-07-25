@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Product {
 
     @NotNull(message = "Debe especificar el precio")
     @Min(value = 0, message = "El precio minimo es 0")
-    private Double price;
+    private BigDecimal price;
 
     @NotNull(message = "Debe especificar el stock")
     @Min(value = 0, message = "El stock debe ser un numero positivo, minimo 0")
