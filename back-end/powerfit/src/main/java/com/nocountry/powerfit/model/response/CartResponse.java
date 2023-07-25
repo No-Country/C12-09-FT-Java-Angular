@@ -16,7 +16,7 @@ public class CartResponse {
     private Long id;
     private User user;
     private List<ProductResponse> products;
-    private BigDecimal amount;
+    private Double amount;
     private String nameUser;
     private Integer quantity;
     //private Category category;

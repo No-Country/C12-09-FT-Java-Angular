@@ -33,7 +33,7 @@ public class CartMapper {
                 .id(cartRequest.getId())
                 .user(cartRequest.getUser())
                 .products(cartRequest.getProducts())
-                .amount(BigDecimal.valueOf(cartRequest.getAmount()))
+                .amount(cartRequest.getAmount())
                 .quantity(cartRequest.getQuantity())
                 .build();
     }

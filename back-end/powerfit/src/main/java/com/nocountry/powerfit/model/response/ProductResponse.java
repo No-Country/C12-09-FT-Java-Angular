@@ -15,7 +15,7 @@ public class ProductResponse {
     private Long id;
     private String name;
     private Integer stock;
-    private BigDecimal price;
+    private Double price;
     private String category;
     private String description;
 

@@ -38,7 +38,7 @@ public class Cart {
     private Bill bill;
 
     @Column(name = "amount", nullable = false, updatable = true)
-    private BigDecimal amount;
+    private Double amount = 0.0;
 
     @Column(name = "quantity", nullable = false, updatable = true)
     private Integer quantity = 0;
@@ -46,13 +46,13 @@ public class Cart {
     public void addProduct(Product product) {
         this.products.add(product);
         quantity += 1;
-        amount = amount.add(product.getPrice());
+        amount += product.getPrice();
     }
 
     public boolean removeProduct(Product product) {
         quantity -= 1;
-        amount = amount.subtract(product.getPrice());
-        return this.products.remove(product);
+        amount -= product.getPrice();
+        return (this.products.remove(product));
     }
 
 }

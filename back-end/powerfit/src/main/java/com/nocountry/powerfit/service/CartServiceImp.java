@@ -69,14 +69,14 @@ public class CartServiceImp implements CartService {
     @Override
     public void clearCart(Long cartId) throws CartNotFoundException {
         Cart cart = cartRepository.findById(cartId)
-                .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
+                .orElseThrow(() -> new CartNotFoundException ("Carrito no encontrado"));
 
-        if (cart.getAmount().compareTo(BigDecimal.ZERO) == 0 && cart.getQuantity() == 0 && cart.getProducts().isEmpty()) {
+        if (cart.getAmount() == 0 && cart.getQuantity() == 0 && cart.getProducts().isEmpty()){
             throw new IllegalStateException("El carrito ya está vacío");
         }
 
         cart.getProducts().clear();
-        cart.setAmount(BigDecimal.ZERO);
+        cart.setAmount(0D);
         cart.setQuantity(0);
 
         cartRepository.save(cart);

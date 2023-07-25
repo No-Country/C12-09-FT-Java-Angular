@@ -31,7 +31,7 @@ public class Product {
 
     @NotNull(message = "Debe especificar el precio")
     @Min(value = 0, message = "El precio minimo es 0")
-    private BigDecimal price;
+    private Double price;
 
     @NotNull(message = "Debe especificar el stock")
     @Min(value = 0, message = "El stock debe ser un numero positivo, minimo 0")
