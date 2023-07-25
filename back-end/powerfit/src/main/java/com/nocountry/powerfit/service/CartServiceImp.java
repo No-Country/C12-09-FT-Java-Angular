@@ -12,6 +12,8 @@ import com.nocountry.powerfit.service.abstraction.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 @RequiredArgsConstructor
 public class CartServiceImp implements CartService {

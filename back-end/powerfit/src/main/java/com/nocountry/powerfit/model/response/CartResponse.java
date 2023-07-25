@@ -4,6 +4,7 @@ import com.nocountry.powerfit.model.entity.Product;
 import com.nocountry.powerfit.model.entity.User;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Builder
