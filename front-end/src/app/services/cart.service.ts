@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CartResponse } from '../model/cart-response';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,11 @@ export class CartService {
 
     return this.httpClient.put(url, null, { params: params });
   }
+
+  getCartById(cartId:number): Observable<CartResponse>{
+    return this.httpClient.get<CartResponse>(this.cartURL + `${cartId}` + '/products');
+  }
+
   getProduct(){
     return this.productList.asObservable();
   }
