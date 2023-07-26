@@ -1,7 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CartResponse } from '../model/cart-response';
+import { Cart } from '../model/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,12 @@ export class CartService {
 
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
+
   cartURL = environment.apiResrURL + '/cart/';
+
+  private cartSubject: BehaviorSubject<Cart | null> = new BehaviorSubject<Cart | null>(null);
+  public cart$: Observable<Cart | null> = this.cartSubject.asObservable();
+
   constructor(private httpClient:HttpClient) { }
 
   addProductToCart(cartId: number, productId: number): Observable<any> {
@@ -21,6 +28,28 @@ export class CartService {
 
     return this.httpClient.put(url, null, { params: params });
   }
+
+  getCartById(cartId: number): void {
+    const url = `${this.cartURL}/${cartId}/products`;
+
+    this.httpClient.get<Cart>(url).pipe(
+      tap((cartData: Cart) => this.cartSubject.next(cartData)),
+      catchError((error) => {
+        console.error('Error al obtener los detalles del carrito:', error);
+        this.cartSubject.next(null);
+        return [];
+      })
+    ).subscribe();
+  }
+
+ /* getCartById(cartId: number): Observable<CartResponse> {
+    const url = `${this.cartURL}/${cartId}/products`;
+
+    return this.httpClient.get<CartResponse>(url);
+  }*/
+
+
+
   getProduct(){
     return this.productList.asObservable();
   }
