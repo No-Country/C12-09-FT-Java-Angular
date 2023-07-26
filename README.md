@@ -12,6 +12,7 @@ Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, 
 ### Front-end:
 - Figma
 - Angular
+- Typescript
 - HTML5
 - CCS3
 - Bootstrap
