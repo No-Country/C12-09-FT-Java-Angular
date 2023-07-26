@@ -42,7 +42,7 @@ Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, 
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U052C6MJ6P8-8ee936e74644-48" width=50>| 
 |:-:|
 | **Andrea Quintero**  | 
-| <a href="https://github.com/???"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://linkedin.com/in/andreaquinteroherrera"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| <a href="https://www.behance.net/AndreaQuinteroH"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white"/></a> <a href="https://linkedin.com/in/andreaquinteroherrera"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 ### QA TESTER
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U05BDV8U34G-0dac5e6512f5-48" width=50>| 
 |:-:|
