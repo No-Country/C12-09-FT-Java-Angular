@@ -7,7 +7,7 @@
 Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, diseñado para ayudarte a alcanzar tus objetivos y llevar tu rendimiento al siguiente nivel. <br> Nuestro objetivo principal es brindarte una experiencia de compra excepcional, donde puedas encontrar todo lo que necesitas para potenciar tus entrenamientos y mejorar tu estilo de vida activo.
 <br>
 
-## Técnologias utilizadas:
+## Tecnologías utilizadas:
 
 ### Front-end:
 - Figma
