@@ -18,7 +18,7 @@ public class ProductResponse {
     private Double price;
     private String category;
     private String description;
-
     private List<ImageResponse> imgList;
+
 
 }

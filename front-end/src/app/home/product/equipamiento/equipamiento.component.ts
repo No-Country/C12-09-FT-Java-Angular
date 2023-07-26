@@ -32,7 +32,7 @@ export class EquipamientoComponent implements OnInit {
       this.products = products;
     },
     err => {
-      this.toastr.info(err.error.message,'Sin productos en la categoria Equipamiento');
+      this.toastr.info('Sin productos en la categoria Equipamiento');
     }
     );
   }

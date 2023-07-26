@@ -7,4 +7,7 @@ import com.nocountry.powerfit.model.request.PreferenceRequest;
 
 public interface PreferenceService {
     Preference createPreference(PreferenceRequest request) throws MPException, MPApiException;
+
+
+
 }
