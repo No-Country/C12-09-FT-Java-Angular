@@ -1,0 +1,30 @@
+
+<!-- payment-response.component.html -->
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card" *ngIf="transactionData">
+        <div class="card-body">
+          <h1>Respuesta de Pago</h1>
+          <p>Collection ID: {{ transactionData.collection_id }}</p>
+          <p>Collection Status: {{ transactionData.collection_status }}</p>
+          <p>Payment ID: {{ transactionData.payment_id }}</p>
+          <p>Status: {{ transactionData.status }}</p>
+          <p>External Reference: {{ transactionData.external_reference }}</p>
+          <p>Payment Type: {{ transactionData.payment_type }}</p>
+          <p>Merchant Order ID: {{ transactionData.merchant_order_id }}</p>
+          <p>Preference ID: {{ transactionData.preference_id }}</p>
+          <p>Site ID: {{ transactionData.site_id }}</p>
+          <p>Processing Mode: {{ transactionData.processing_mode }}</p>
+          <p>Merchant Account ID: {{ transactionData.merchant_account_id }}</p>
+          <!-- Agrega aquí los demás campos relevantes de la transacción -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

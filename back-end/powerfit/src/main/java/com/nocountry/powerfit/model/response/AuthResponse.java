@@ -10,4 +10,7 @@ import java.util.Date;
 @Builder
 public class AuthResponse {
     private String token;
+    private String message;
+    private Long cartId;
+    private String name;
 }

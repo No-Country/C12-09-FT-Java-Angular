@@ -2,22 +2,23 @@ package com.nocountry.powerfit.model.mapper;
 
 import com.nocountry.powerfit.model.entity.Role;
 import com.nocountry.powerfit.model.entity.User;
-import com.nocountry.powerfit.model.request.RegisterRequest;
+
 import com.nocountry.powerfit.model.request.UserRequest;
-import com.nocountry.powerfit.model.response.AuthResponse;
+
 import com.nocountry.powerfit.model.response.UserResponse;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-import java.util.Date;
+
+import java.util.Optional;
 
 @Builder
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
+
+    private final CartMapper cartMapper;
 
     public UserResponse dtoToEntityUser(User user) {
         return UserResponse.builder()
@@ -45,6 +46,16 @@ public class UserMapper {
                 .address(updateRequest.getAddress())
                 .phoneNumber(updateRequest.getPhoneNumber())
                 //.document(updateRequest.getDocument())
+                .build();
+    }
+
+    public UserResponse mapToDto(Optional<User> user) {
+        return UserResponse.builder()
+                .id(user.get().getId())
+                .email(user.get().getEmail())
+                .name(user.get().getName())
+                .role(user.get().getRole())
+                .cartResponse(cartMapper.mapToDto(user.get().getCart()))
                 .build();
     }
 }

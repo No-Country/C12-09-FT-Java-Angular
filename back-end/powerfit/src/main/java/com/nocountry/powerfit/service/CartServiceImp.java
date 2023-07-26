@@ -12,8 +12,7 @@ import com.nocountry.powerfit.service.abstraction.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.math.BigDecimal;
 
 @Service
 @RequiredArgsConstructor
@@ -49,67 +48,22 @@ public class CartServiceImp implements CartService {
             throw new ResourceNotFoundException("Producto no encontrado en el carrito");
         }
 
-        cart.getProducts().remove(product);
+        cart.removeProduct(product);
         cartRepository.save(cart);
 
     }
 
     @Override
-    public CartResponse updateProductQuantity(Long cartId, Long productId, int stock) throws ResourceNotFoundException, CartNotFoundException {
+    public CartResponse getCartById(Long cartId) throws CartNotFoundException, ResourceNotFoundException {
         Cart cart = cartRepository.findById(cartId)
                 .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
 
-        Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado"));
+        if(cart.getProducts().isEmpty()){
+            throw new ResourceNotFoundException("El carrito está vacío");        }
 
-        if (!cart.getProducts().contains(product)) {
-            throw new ResourceNotFoundException("Producto no encontrado en el carrito");
-        }
+        CartResponse cartResponse = cartMapper.entityToDto(cart);
 
-        product.setStock(stock);
-
-        cartRepository.save(cart);
-
-        return CartMapper.entityToDto(cart);
-    }
-
-    @Override
-    public List<CartResponse> getCartProducts(Long cartId) throws ResourceNotFoundException, CartNotFoundException {
-        Cart cart = cartRepository.findById(cartId)
-                .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
-
-        List<Product> cartItems = cart.getProducts();
-
-        List<CartResponse> cartResponses = cartItems.stream()
-                .map(product -> CartMapper.entityToDto(cart))
-                .collect(Collectors.toList());
-
-        return cartResponses;
-    }
-
-
-    @Override
-    public double getCartTotalPrice(Long cartId) throws CartNotFoundException {
-        Cart cart = cartRepository.findById(cartId)
-                .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
-
-        List<Product> cartItems = cart.getProducts();
-
-        double totalPrice = cartItems.stream()
-                .mapToDouble(Product::getPrice)
-                .sum();
-
-        return totalPrice;
-    }
-
-    @Override
-    public boolean isCartEmpty(Long cartId) throws CartNotFoundException {
-        Cart cart = cartRepository.findById(cartId)
-                .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
-
-        boolean isEmpty = cart.getProducts().isEmpty();
-
-        return isEmpty;
+        return cartResponse;
     }
 
     @Override
@@ -117,10 +71,35 @@ public class CartServiceImp implements CartService {
         Cart cart = cartRepository.findById(cartId)
                 .orElseThrow(() -> new CartNotFoundException ("Carrito no encontrado"));
 
+        if (cart.getAmount() == 0 && cart.getQuantity() == 0 && cart.getProducts().isEmpty()){
+            throw new IllegalStateException("El carrito ya está vacío");
+        }
+
         cart.getProducts().clear();
+        cart.setAmount(0D);
+        cart.setQuantity(0);
 
         cartRepository.save(cart);
     }
+
+    //    @Override
+//    public CartResponse updateProductQuantity(Long cartId, Long productId, int stock) throws ResourceNotFoundException, CartNotFoundException {
+//        Cart cart = cartRepository.findById(cartId)
+//                .orElseThrow(() -> new CartNotFoundException("Carrito no encontrado"));
+//
+//        Product product = productRepository.findById(productId)
+//                .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado"));
+//
+//        if (!cart.getProducts().contains(product)) {
+//            throw new ResourceNotFoundException("Producto no encontrado en el carrito");
+//        }
+//
+//        product.setStock(stock);
+//
+//        cartRepository.save(cart);
+//
+//        return CartMapper.entityToDto(cart);
+//    }
 
 }
 

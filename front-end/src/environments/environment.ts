@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiResrURL: 'https://powerfit.onrender.com/api/v1'
+  apiResrURL: 'https://powerfit-app.azurewebsites.net/api/v1'
 };
 
 /*

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -6,8 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent {
+export class BodyComponent implements OnInit{
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
 
 
-  
 }

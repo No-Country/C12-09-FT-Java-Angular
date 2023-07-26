@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <div class="container mt-5 mb-5" *ngIf="product">
   <div class="row  justify-content-center rowSize">
     <div class="card border border-3 cardSize mb-3 shadow p-3 mb-5 bg-body rounded" style="max-width: 750px;">
@@ -18,11 +18,11 @@
               <!-- The slideshow/carousel -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img [src]="product.imgList[0].fileUrl" [alt]="product.imgList[0].name" class="img-fluid sizeImage">
+                  <img [src]="product.imgList[1].fileUrl" [alt]="product.imgList[1].name" class="img-fluid sizeImage">
 
                 </div>
                 <div class="carousel-item">
-                  <img [src]="product.imgList[1].fileUrl" [alt]="product.imgList[1].name" class="img-fluid sizeImage">
+                  <img [src]="product.imgList[0].fileUrl" [alt]="product.imgList[0].name" class="img-fluid sizeImage">
                 </div>
 
                <!-- <div class="carousel-item">
@@ -56,14 +56,14 @@
               <span class="input-group-btn">
                 <button type="button" class="btn btn-warning me-2" (click)="increment()">></button>
               </span>
-              <button type="button" class="btn btn-dark text-warning rounded botonPago p-2" (click)="addtocart(product)">Agregar al carrito</button>
+              <button type="button" class="btn btn-dark text-warning rounded botonPago p-2" (click)="agregarProductoAlCarrito(product.id)">Agregar al carrito</button>
             </div>
             <div class="btnbtn-toolbar d-flex centerGroup mt-3"role="toolbar" aria-label="Toolbar with button groups" *ngIf="asCategoryClothing()">
               <div class="btn-group me-2" role="group" aria-label="Second group">
-                <button type="button" class="btn btn-outline-secondary">S</button>
-                <button type="button" class="btn btn-outline-secondary">M</button>
-                <button type="button" class="btn btn-outline-secondary">L</button>
-                <button type="button" class="btn btn-outline-secondary">XL</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="toggleButton('S')" [class.active]="buttonState === 'S'">S</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="toggleButton('M')" [class.active]="buttonState === 'M'">M</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="toggleButton('L')" [class.active]="buttonState === 'L'">L</button>
+                <button type="button" class="btn btn-outline-secondary" (click)="toggleButton('XL')" [class.active]="buttonState === 'XL'">XL</button>
               </div>
 
             </div>
