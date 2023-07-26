@@ -9,15 +9,18 @@ import lombok.*;
 @Builder
 public class TransactionDataResponse {
 
-    String collection_id;
-   String collection_status;
-   String payment_id;
-   String status;
-   String external_reference;
-   String payment_type;
-   String merchant_order_id;
-   String preference_id;
-   String site_id;
-   String processing_mode;
-   String merchant_account_id;
+   private String collection_id;
+   private String collection_status;
+   private String payment_id;
+   private String status;
+   private String external_reference;
+   private String payment_type;
+   private String merchant_order_id;
+   private String preference_id;
+   private String site_id;
+   private String processing_mode;
+   private String merchant_account_id;
+   private String name;
+   private String email;
+   private Long productId;
 }

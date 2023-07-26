@@ -1,5 +1,7 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +10,17 @@ export class CartService {
 
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
+  cartURL = environment.apiResrURL + '/cart/';
+  constructor(private httpClient:HttpClient) { }
 
-  constructor() { }
+  addProductToCart(cartId: number, productId: number): Observable<any> {
+    const url = this.cartURL + cartId + '/products';
+    // Enviar el productId como parte de la URL utilizando HttpParams
+    let params = new HttpParams();
+    params = params.append('productId', productId.toString());
 
+    return this.httpClient.put(url, null, { params: params });
+  }
   getProduct(){
     return this.productList.asObservable();
   }
