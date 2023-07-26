@@ -1,8 +1,16 @@
 <!--Navbar-->
 
 <!--Vista del carrito-->
+<div *ngIf="loading">
+  Cargando...
+</div>
+
+<div *ngIf="error">
+  Hubo un error al cargar los detalles del carrito.
+</div>
+
 <section class="cart-view">
-  <ng-container *ngIf="product.length != 0">
+  <ng-container *ngIf="cartData">
     <div class="container">
       <div class="page-title">
         <h2>Carrito de compras</h2>
@@ -33,8 +41,8 @@
                         <div class="description">
                           <p>{{ product.name }}</p>
                           <p>&dollar;{{ product.price }}</p>
-
-                          <form *ngFor="let item of product; let i = index">
+                          <!--let item of product; let i = index-->
+                          <form>
                             Cantidad
                             <select name="producto" id="item">
                               <option value="1">1</option>

@@ -16,7 +16,7 @@ export class CartComponent {
   public product : any = [];
   public subTotal !: any;
   public grandTotal !: any;
-  cartData: CartResponse | null = null;
+  cartData!: CartResponse | null;
   loading: boolean = true;
   error: boolean = false;
   constructor(private cartService : CartService, private authService:AuthService,
@@ -43,7 +43,7 @@ export class CartComponent {
 
   getCartDetails(): void {
     this.subscription = this.cartService.cart$.subscribe(
-      (cartData: Cart | null) => {
+      (cartData: CartResponse | null) => {
         this.cartData = cartData;
         this.loading = false;
         this.error = !cartData; // Si cartData es null, hay un error

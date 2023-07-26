@@ -15,8 +15,8 @@ export class CartService {
 
   cartURL = environment.apiResrURL + '/cart/';
 
-  private cartSubject: BehaviorSubject<Cart | null> = new BehaviorSubject<Cart | null>(null);
-  public cart$: Observable<Cart | null> = this.cartSubject.asObservable();
+  private cartSubject: BehaviorSubject<CartResponse | null> = new BehaviorSubject<CartResponse | null>(null);
+  public cart$: Observable<CartResponse | null> = this.cartSubject.asObservable();
 
   constructor(private httpClient:HttpClient) { }
 
@@ -32,8 +32,8 @@ export class CartService {
   getCartById(cartId: number): void {
     const url = `${this.cartURL}/${cartId}/products`;
 
-    this.httpClient.get<Cart>(url).pipe(
-      tap((cartData: Cart) => this.cartSubject.next(cartData)),
+    this.httpClient.get<CartResponse>(url).pipe(
+      tap((cartData: CartResponse) => this.cartSubject.next(cartData)),
       catchError((error) => {
         console.error('Error al obtener los detalles del carrito:', error);
         this.cartSubject.next(null);
@@ -49,7 +49,11 @@ export class CartService {
   }*/
 
 
-
+/*
+  getCartById(cartId:number): Observable<CartResponse>{
+    return this.httpClient.get<CartResponse>(this.cartURL + `${cartId}` + '/products');
+  }
+*/
   getProduct(){
     return this.productList.asObservable();
   }
