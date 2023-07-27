@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { Product } from 'src/app/model/product';
-import { Cart } from 'src/app/model/cart';
 import { Subscription } from 'rxjs';
-import { CartResponse } from 'src/app/model/cart-response';
 import { AuthService } from 'src/app/services/user/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { TotalItemService } from 'src/app/services/total-item.service';
+import { CartResponse } from 'src/app/model/cart-response';
+import { TokenService } from 'src/app/services/token.service';
+import { TokenStoreService } from 'src/app/services/token-store.service';
 
 @Component({
   selector: 'app-cart',
@@ -23,7 +23,8 @@ export class CartComponent implements OnInit, OnDestroy{
   public totalItem : number = 0;
 
   constructor(private cartService : CartService, private authService:AuthService,
-    private tostr:ToastrService, private totalItemService:TotalItemService) { }
+    private tostr:ToastrService, private totalItemService:TotalItemService,
+    private tokenService:TokenStoreService) { }
 
    // Reemplaza esto con el ID del carrito que deseas mostrar
 
@@ -43,6 +44,10 @@ export class CartComponent implements OnInit, OnDestroy{
     this.getCartDetails();
 
   }
+  estaLogueado(): boolean{
+   return this.tokenService.isLoggued();
+  }
+
   deleteProduct(id:number){
     alert("click");
   }
