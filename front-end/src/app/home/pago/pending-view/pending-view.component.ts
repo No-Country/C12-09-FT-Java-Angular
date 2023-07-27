@@ -8,10 +8,16 @@ import { TransactionData } from 'src/app/model/transaction-data';
   styleUrls: ['./pending-view.component.css']
 })
 export class PendingViewComponent {
+  fechaActual!: Date;
+  nombreMes!: string;
 
   transactionData: any; // Utiliza el tipo de dato adecuado para los datos de la URL
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { 
+    this.fechaActual = new Date();
+    this.nombreMes = this.fechaActual.toLocaleString('default', { month: 'long' });
+
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
