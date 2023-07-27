@@ -43,7 +43,9 @@ export class CartComponent implements OnInit, OnDestroy{
     this.getCartDetails();
 
   }
-
+  deleteProduct(id:number){
+    alert("click");
+  }
   getCartDetails(): void {
     this.subscription = this.cartService.cart$.subscribe(
       (cartData: CartResponse | null) => {

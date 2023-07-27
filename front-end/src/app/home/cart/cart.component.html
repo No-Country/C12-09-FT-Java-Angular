@@ -19,15 +19,24 @@
                 <div class="col-6 card" *ngFor="let product of cartData.products">
                   <div class="row mt-4 mb-4">
                     <div class="col-1">
-                      <img
-                        class="trash-can"
-                        src="../../../assets/DELETE.svg"
-                        alt="delete"
-                      />
+                      <button class="btn btn-link trash-can btn-secondary" type="button" (click)="deleteProduct(product.id)">
+                        <img src="../../../assets/DELETE.svg" alt="delete" />
+                      </button>
                     </div>
-                    <div class="col-2">
-                      <div *ngFor="let image of product.imgList">
+                    <div class="col-2" *ngIf="product.category === 'Indumentaria'">
+                      <div *ngFor="let image of product.imgList; let index = index">
                         <img
+                          *ngIf="index === 1"
+                          class="product img-fluid"
+                          [src]="image?.fileUrl"
+                          alt="{{ product.name }}"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-2" *ngIf="product.category != 'Indumentaria'">
+                      <div *ngFor="let image of product.imgList; let index = index">
+                        <img
+                          *ngIf="index === 0"
                           class="product img-fluid"
                           [src]="image?.fileUrl"
                           alt="{{ product.name }}"

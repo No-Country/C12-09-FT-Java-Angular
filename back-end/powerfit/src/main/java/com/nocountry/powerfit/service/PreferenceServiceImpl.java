@@ -56,7 +56,7 @@ public class PreferenceServiceImpl implements PreferenceService {
         PreferencePayerRequest payerRequest = PreferencePayerRequest.builder()
 
                 .name("Abel")
-                .email("user@gmail.com")
+                .email("marzoa3581@gmail.com")
 
                 .address(AddressRequest.builder()
                         .streetName("Garin")
@@ -67,18 +67,18 @@ public class PreferenceServiceImpl implements PreferenceService {
        // UserResponse user = userService.getUserInfo();
         //Url de respuestas
         PreferenceBackUrlsRequest backUrls = PreferenceBackUrlsRequest.builder()
-                .success("http://localhost:4200/payment/success") // <-- Aquí se cambia la URL de éxito a la URL de respuesta genérica
-                .failure("http://localhost:4200/payment/failure") // <-- También se cambia la URL de fallo a la URL de respuesta genérica
-                .pending("http://localhost:4200/payment/pending") // <-- También se cambia la URL de pendiente a la URL de respuesta genérica
+                .success("https://powerfit-app.azurewebsites.net/payment/success") // <-- Aquí se cambia la URL de éxito a la URL de respuesta genérica
+                .failure("https://powerfit-app.azurewebsites.net/payment/failure") // <-- También se cambia la URL de fallo a la URL de respuesta genérica
+                .pending("https://powerfit-app.azurewebsites.net/payment/pending") // <-- También se cambia la URL de pendiente a la URL de respuesta genérica
                 .build();
 
-        String notification = "https://a604-2800-810-50c-4cc-98f9-67c2-6b92-4531.ngrok.io/api/v1/preferences/notification";
+       // String notification = "https://a604-2800-810-50c-4cc-98f9-67c2-6b92-4531.ngrok.io/api/v1/preferences/notification";
 
         com.mercadopago.client.preference.PreferenceRequest preferenceRequest = com.mercadopago.client.preference.PreferenceRequest.builder()
                 .items(items)
                 .payer(payerRequest)
                 .backUrls(backUrls)
-                .notificationUrl(notification)
+               // .notificationUrl(notification)
                 .binaryMode(true)
                 .autoReturn("approved")
                 .build();
