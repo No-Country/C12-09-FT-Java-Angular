@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
   apiResrURL: 'http://localhost:8080/api/v1'
-  //apiResrURL: 'https://powerfit.onrender.com/api/v1'
+  //apiResrURL: 'https://powerfit-app.azurewebsites.net/api/v1'
 };
 
-/*
+/***********************************
  * apiResrURL: 'https://powerfit.onrender.com/api/v1'
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

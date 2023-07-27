@@ -64,6 +64,10 @@ h6 {
   font-size: 12px; /* Tamaño del texto */
   padding: 0.25rem 0.5rem; /* Ajustar el relleno (padding) para reducir el tamaño del botón */
 }
+/* Estilos para el enlace activo */
+.nav-item a.nav-link.router-link-active {
+  color: yellow;
+}
 
 @media (min-width: 768px) {
     .form-inline .form-control {

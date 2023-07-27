@@ -35,8 +35,7 @@ public class User implements UserDetails {
     @NotNull(message = "Name can't be null")
     private String name;
 
-    //@Pattern(regexp = "\\d{10}", message = "Por favor ingrese un documento válido")
-    //private Long document;
+    private String document;
 
     @Pattern(regexp = "^[A-Za-z]+$", message = "Please enter a last name")
     @Size(max = 15, message = "Please enter a valid last name")
@@ -58,22 +57,16 @@ public class User implements UserDetails {
 
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
+    private String city;
 
     private Long postalCode;
 
     @OneToOne(cascade = CascadeType.PERSIST)
-    //@JoinColumn(name = "cart_id")
     private Cart cart;
 
     @JoinColumn(name="image_id")
     @OneToOne(cascade = CascadeType.REFRESH)
     private Image image;
-
-    @OneToMany(mappedBy = "user")
-    private List<Bill> bill;
 
     @Enumerated(EnumType.STRING)
     private Role role;

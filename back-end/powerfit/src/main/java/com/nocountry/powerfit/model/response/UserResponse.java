@@ -18,8 +18,8 @@ public class UserResponse {
     private String phoneNumber;
     private String address;
     private String city;
+    private String document;
     private Long postalCode;
-    private Date created;
     private Role role;
     private CartResponse cartResponse;
 }

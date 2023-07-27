@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/model/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
+import { AuthService } from 'src/app/services/user/auth.service';
 
 @Component({
   selector: 'app-detail',
@@ -17,11 +18,36 @@ export class DetailComponent implements OnInit{
   buttonState: string = ''; // Variable para almacenar el estado del botón activado
 
   constructor(private productService:ProductService,
-  private activatedRoute: ActivatedRoute, private toast:ToastrService, private cartService:CartService){}
+  private activatedRoute: ActivatedRoute, private toast:ToastrService, private cartService:CartService,
+  private authService:AuthService){}
 
   ngOnInit(): void {
     this.getProductById();
 
+  }
+
+  agregarProductoAlCarrito(id: number) {
+    const cartId = this.authService.getCartId(); // Invocar la función para obtener el valor numérico o null
+    if (cartId !== null) {
+      // Si cartId no es null, entonces podemos agregar el producto al carrito
+      const productId = id; // Reemplaza esto con el ID del producto que deseas agregar
+
+      this.cartService.addProductToCart(cartId, productId).subscribe(
+        response => {
+          console.log('Producto agregado al carrito exitosamente:', response);
+          this.toast.success("Producto agregado con exito");
+          // Aquí puedes realizar otras acciones tras agregar el producto
+        },
+        error => {
+          console.error('Error al agregar el producto al carrito:', error.message);
+          this.toast.warning('Debes estar logueado para agregar productos al cart.');
+        }
+      );
+    } else {
+      // Manejar el caso en el que cartId es null (no hay carrito existente)
+      console.error('No se pudo agregar el producto al carrito. No hay carrito existente.');
+      this.toast.error('No se pudo agregar el producto al carrito. No hay carrito existente.');
+    }
   }
 
   getProductById():void{
