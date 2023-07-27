@@ -2,9 +2,12 @@ package com.nocountry.powerfit.model.mapper;
 
 import com.nocountry.powerfit.model.entity.Cart;
 import com.nocountry.powerfit.model.entity.Product;
+import com.nocountry.powerfit.model.entity.User;
 import com.nocountry.powerfit.model.request.CartRequest;
 import com.nocountry.powerfit.model.response.CartResponse;
 import com.nocountry.powerfit.model.response.ProductResponse;
+import com.nocountry.powerfit.model.response.UserCartResponse;
+import com.nocountry.powerfit.model.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +17,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Component
 public class CartMapper {
-
     private final ImageMapper imageMapper;
     public  CartResponse entityToDto(Cart cart) {
         return CartResponse.builder()
                 .id(cart.getId())
-                .user(cart.getUser())
-                .nameUser("")
+                .user(mapUserToDto(cart.getUser()))
                 .products(mapToDtoProduct(cart.getProducts()))
                 .amount(cart.getAmount())
                 .quantity(cart.getQuantity())
@@ -30,10 +31,11 @@ public class CartMapper {
     public static Cart dtoToEntity(CartRequest cartRequest) {
         return Cart.builder()
                 .id(cartRequest.getId())
-                .user(cartRequest.getUser())
+               // .user(cartRequest.getUser())
                 .products(cartRequest.getProducts())
                 .amount(cartRequest.getAmount())
                 .quantity(cartRequest.getQuantity())
+
                 .build();
     }
 
@@ -55,7 +57,7 @@ public class CartMapper {
         ProductResponse response = new ProductResponse();
         response.setId(product.getId());
         response.setName(product.getName());
-        response.setPrice(response.getPrice());
+        response.setPrice(product.getPrice());
         response.setStock(product.getStock());
         response.setDescription(product.getDescription());
         response.setCategory(product.getCategory());
@@ -63,5 +65,13 @@ public class CartMapper {
         return response;
     }
 
+    public UserCartResponse mapUserToDto(User user){
+        return UserCartResponse.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .lastName(user.getLastName())
+                .email(user.getEmail())
+                .build();
+    }
 
 }

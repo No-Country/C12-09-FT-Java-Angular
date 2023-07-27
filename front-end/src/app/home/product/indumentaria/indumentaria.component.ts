@@ -24,7 +24,7 @@ export class IndumentariaComponent {
       this.products = products;
     },
     err => {
-      this.toastr.info(err.error.message,'Sin productos en la categoria Indumentaria');
+      this.toastr.info('Sin productos en la categoria Indumentaria');
     }
     );
   }

@@ -45,7 +45,7 @@ export class AuthService {
   }
   getCartId(): number | null {
     const cartId = localStorage.getItem(this.cartIdKey);
-    return cartId ? parseInt(cartId, 10) : null;
+    return cartId ? parseInt(cartId, 10) : -1;
   }
   removeCartId(): void{
     localStorage.removeItem(this.cartIdKey);

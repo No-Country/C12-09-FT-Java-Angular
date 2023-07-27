@@ -5,6 +5,8 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +39,11 @@ public class Cart {
     private Bill bill;
 
     @Column(name = "amount", nullable = false, updatable = true)
+    @Min(value = 0, message = "El importe debe ser un numero positivo, minimo 0")
     private Double amount = 0.0;
 
     @Column(name = "quantity", nullable = false, updatable = true)
+    @Min(value = 0, message = "La cantidad debe ser un numero positivo, minimo 0")
     private Integer quantity = 0;
 
     public void addProduct(Product product) {

@@ -15,7 +15,7 @@ import { RegisterComponent } from './home/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import{ObjectToArrayPipe} from './shared/carousel-sponsor/objectToarray.pipe';
@@ -39,6 +39,9 @@ import { EquipamientoComponent } from './home/product/equipamiento/equipamiento.
 import { IndumentariaComponent } from './home/product/indumentaria/indumentaria.component';
 import { SuplementosComponent } from './home/product/suplementos/suplementos.component';
 import { CartComponent } from './home/cart/cart.component';
+import { MercadoPagoServiceService } from './services/mercado-pago-service.service';
+import { ErrorComponentComponent } from './home/error-component/error-component.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 
@@ -50,7 +53,7 @@ import { CartComponent } from './home/cart/cart.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent, canActivate: [registerGuard]},
+  { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent, canActivate: [loginGuard]},
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'payment/success', component: SuccesViewComponent },
@@ -64,7 +67,7 @@ const routes: Routes = [
   { path: 'listCategory/Suplementos', component: SuplementosComponent },
   { path: 'listCategory/Equipamiento', component: EquipamientoComponent },
   { path: 'listCategory/Indumentaria', component: IndumentariaComponent },
-
+  { path: 'error', component: ErrorComponentComponent }
 
 ];
 
@@ -92,8 +95,8 @@ const routes: Routes = [
     FilterComponent,
     SuplementosComponent,
     EquipamientoComponent,
-    IndumentariaComponent
-
+    IndumentariaComponent,
+    ErrorComponentComponent
 
 
   ],
@@ -113,14 +116,11 @@ const routes: Routes = [
 
   providers: [
     RouterModule,
-    AppComponent,
-    HomeComponent,
-    BodyComponent,
-    FooterComponent,
-    LoginComponent,
-    SearchService,
-    ProductService
 
+    SearchService,
+    ProductService,
+    MercadoPagoServiceService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
 
   ],
   bootstrap: [AppComponent]
