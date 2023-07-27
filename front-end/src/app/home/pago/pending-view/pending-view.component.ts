@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TransactionData } from 'src/app/model/transaction-data';
 
 @Component({
   selector: 'app-pending-view',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class PendingViewComponent {
 
+  transactionData: any; // Utiliza el tipo de dato adecuado para los datos de la URL
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.transactionData = params;
+    });
+  }
 }

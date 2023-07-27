@@ -2,6 +2,7 @@ package com.nocountry.powerfit.controller;
 
 import com.nocountry.powerfit.model.exception.CartNotFoundException;
 import com.nocountry.powerfit.model.exception.ResourceNotFoundException;
+import com.nocountry.powerfit.model.response.CartResponse;
 import com.nocountry.powerfit.service.abstraction.CartService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequiredArgsConstructor
 @Api(value = "Cart Controller")
@@ -19,10 +21,10 @@ public class CartController {
 
     @PutMapping("/{cartId}/products")
     @ApiOperation(value = "Agrega producto al carrito existente")
-    public ResponseEntity<?> addProductsToCart(@PathVariable Long cartId, @RequestParam Long productId) {
+    public ResponseEntity<String> addProductsToCart(@PathVariable Long cartId, @RequestParam Long productId) {
         try {
             cartService.addProduct(cartId, productId);
-            return ResponseEntity.ok().body("Producto agregado al carrito exitosamente");
+            return ResponseEntity.ok().body("{\"message\": \"Producto agregado al carrito exitosamente\"}");
         } catch (ResourceNotFoundException | CartNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
@@ -30,7 +32,7 @@ public class CartController {
 
     @GetMapping("/{cartId}/products")
     @ApiOperation(value = "Obtiene carrito por id con todos sus productos")
-    public ResponseEntity<?> getCartById(@PathVariable Long cartId) throws CartNotFoundException, ResourceNotFoundException {
+    public ResponseEntity<CartResponse> getCartById(@PathVariable Long cartId) throws CartNotFoundException, ResourceNotFoundException {
         return ResponseEntity.ok().body(cartService.getCartById(cartId));
     }
 

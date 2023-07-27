@@ -2,6 +2,7 @@ package com.nocountry.powerfit.model.response;
 
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Builder
@@ -14,10 +15,10 @@ public class ProductResponse {
     private Long id;
     private String name;
     private Integer stock;
-    private double price;
+    private Double price;
     private String category;
     private String description;
-
     private List<ImageResponse> imgList;
+
 
 }

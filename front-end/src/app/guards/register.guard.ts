@@ -5,8 +5,7 @@ export const registerGuard: CanActivateFn = (route, state) => {
   const router = new Router();
   const tokenStore = new TokenStoreService();
   if(tokenStore.isLoggued()){
-     // Si el usuario está logueado, redirigir al login y mostrar un mensaje
-     alert('Ya estás logueado. No puedes acceder a la página de registro.');
+     //alert('Ya estás logueado. No puedes acceder a la página de registro.');
      router.navigate(['/home']);
      return false; // No permitir el acceso a la página de registro
   }

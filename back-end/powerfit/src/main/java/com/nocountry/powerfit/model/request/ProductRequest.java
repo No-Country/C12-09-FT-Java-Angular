@@ -5,6 +5,7 @@ import lombok.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Builder
 @AllArgsConstructor
@@ -20,7 +21,7 @@ public class ProductRequest {
     private String description;
     @NotNull(message = "Debe especificar el precio")
     @Min(value = 0, message = "El precio minimo es 0")
-    private double price;
+    private Double price;
     @NotNull(message = "Debe especificar el stock")
     @Min(value = 0, message = "EL stock debe ser número positivo")
     private Integer stock;
