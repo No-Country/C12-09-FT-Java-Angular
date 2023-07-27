@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CartService {
-
+  public products = [];
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
   cartURL = environment.apiResrURL + '/cart/';
@@ -29,7 +29,7 @@ export class CartService {
     this.cartItemList.push(...product);
     this.products.next(product);
   }
-  addtoCart(product : any){
+  addToCart(product : any){
     this.cartItemList.push(product);
     this.products.next(this.cartItemList);
     this.getTotalPrice();
