@@ -6,6 +6,8 @@ import { SearchService } from 'src/app/search.service';
 import { CartService } from 'src/app/services/cart.service';
 import { TokenStoreService } from 'src/app/services/token-store.service';
 import { AuthService } from 'src/app/services/user/auth.service';
+import { TotalItemService } from 'src/app/services/total-item.service';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -14,18 +16,24 @@ import { AuthService } from 'src/app/services/user/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
   isLogged = false;
   public totalItem : number = 0;
   searchValue: string = '';
   nameUser: string | null = "";
 
+
   constructor(private router:Router, private tokenService: TokenService,private cartService: CartService,
     private searchService: SearchService, private tokenStore:TokenStoreService,
-    private authService:AuthService) { }
+    private authService:AuthService, private totalItemService:TotalItemService) { }
 
 
    ngOnInit(): void {
-
+    // Suscribirse al Observable del servicio para recibir actualizaciones en totalItem
+    this.totalItemService.getTotalItemObservable().subscribe(totalItem => {
+      this.totalItem = totalItem;
+    });
+    /*
     this.cartService.getProduct()
     .subscribe(res=>{
       this.totalItem = res.length;
@@ -36,7 +44,7 @@ export class NavbarComponent {
     } else {
       this.isLogged = false;
     }
-
+*/
     $(document).ready(() => {
       $("#sidebarCollapse").on("click", () => {
         $("#sidebar").addClass("active");
@@ -57,6 +65,10 @@ export class NavbarComponent {
         $(".overlay").removeClass("visible");
       });
     });
+
+    // Obtiene el valor actual del totalItem
+    this.totalItem = this.totalItemService.getTotalItem();
+
   }
 
 

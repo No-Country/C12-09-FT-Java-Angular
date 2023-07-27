@@ -17,6 +17,7 @@ export class MercadoPagoServiceService {
 
   constructor(private httpClient:HttpClient) { }
 
+  //Obtiene la preferencia del pago
   createPreference(product:ProductPayment):Observable<PreferenceDto>{
     return this.httpClient.post<PreferenceDto>(this.authURL + 'create', product);
   }
