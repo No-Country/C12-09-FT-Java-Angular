@@ -11,6 +11,7 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOrigin("https://powerfit-v2.netlify.app/");
         config.addAllowedOrigin("http://localhost:4200"); // Agrega aquí los orígenes permitidos
         config.addAllowedOrigin("https://powerfit-app.azurewebsites.net/");
         config.addAllowedHeader("*"); // Permite cualquier cabecera

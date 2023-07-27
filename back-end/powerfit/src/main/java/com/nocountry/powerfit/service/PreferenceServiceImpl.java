@@ -67,9 +67,9 @@ public class PreferenceServiceImpl implements PreferenceService {
        // UserResponse user = userService.getUserInfo();
         //Url de respuestas
         PreferenceBackUrlsRequest backUrls = PreferenceBackUrlsRequest.builder()
-                .success("https://powerfit-app.azurewebsites.net/payment/success") // <-- Aquí se cambia la URL de éxito a la URL de respuesta genérica
-                .failure("https://powerfit-app.azurewebsites.net/payment/failure") // <-- También se cambia la URL de fallo a la URL de respuesta genérica
-                .pending("https://powerfit-app.azurewebsites.net/payment/pending") // <-- También se cambia la URL de pendiente a la URL de respuesta genérica
+                .success("https://powerfit-v2.netlify.app/payment/success") // <-- Aquí se cambia la URL de éxito a la URL de respuesta genérica
+                .failure("https://powerfit-v2.netlify.app/payment/failure") // <-- También se cambia la URL de fallo a la URL de respuesta genérica
+                .pending("https://powerfit-v2.netlify.app/payment/pending") // <-- También se cambia la URL de pendiente a la URL de respuesta genérica
                 .build();
 
        // String notification = "https://a604-2800-810-50c-4cc-98f9-67c2-6b92-4531.ngrok.io/api/v1/preferences/notification";
