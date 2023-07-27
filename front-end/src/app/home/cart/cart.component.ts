@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/model/product';
 import { Cart } from 'src/app/model/cart';
@@ -6,21 +6,24 @@ import { Subscription } from 'rxjs';
 import { CartResponse } from 'src/app/model/cart-response';
 import { AuthService } from 'src/app/services/user/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { TotalItemService } from 'src/app/services/total-item.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit, OnDestroy{
   public product : any = [];
   public subTotal !: any;
   public grandTotal !: any;
   cartData!: CartResponse | null;
   loading: boolean = true;
   error: boolean = false;
+  public totalItem : number = 0;
+
   constructor(private cartService : CartService, private authService:AuthService,
-    private tostr:ToastrService) { }
+    private tostr:ToastrService, private totalItemService:TotalItemService) { }
 
    // Reemplaza esto con el ID del carrito que deseas mostrar
 
@@ -47,6 +50,9 @@ export class CartComponent {
         this.cartData = cartData;
         this.loading = false;
         this.error = !cartData; // Si cartData es null, hay un error
+        this.totalItem = cartData?.quantity ?? 0;
+        // Actualiza el valor del totalItem en el servicio
+        this.totalItemService.setTotalItem(this.totalItem);
       }
     );
     const cartId = this.authService.getCartId();

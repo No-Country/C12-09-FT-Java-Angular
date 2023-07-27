@@ -10,11 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequiredArgsConstructor
 @Api(value = "Cart Controller")
 @RequestMapping("/api/v1/cart")
+@CrossOrigin(origins = "*")
 public class CartController {
 
     private final CartService cartService;

@@ -10,9 +10,8 @@ import { AuthService } from 'src/app/services/user/auth.service';
   styleUrls: ['./succes-view.component.css']
 })
 export class SuccesViewComponent implements OnInit{
+
   transactionData: any; // Utiliza el tipo de dato adecuado para los datos de la URL
-
-
 
   constructor(private route: ActivatedRoute, private pruductService:ProductService,
     private userService:AuthService) { }

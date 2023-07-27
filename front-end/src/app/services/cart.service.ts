@@ -30,7 +30,7 @@ export class CartService {
   }
 
   getCartById(cartId: number): void {
-    const url = `${this.cartURL}/${cartId}/products`;
+    const url = this.cartURL + cartId + '/products';
 
     this.httpClient.get<CartResponse>(url).pipe(
       tap((cartData: CartResponse) => this.cartSubject.next(cartData)),
