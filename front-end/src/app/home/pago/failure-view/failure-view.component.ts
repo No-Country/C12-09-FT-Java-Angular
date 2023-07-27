@@ -9,8 +9,14 @@ import { TransactionData } from 'src/app/model/transaction-data';
 })
 export class FailureViewComponent {
   transactionData: any; // Utiliza el tipo de dato adecuado para los datos de la URL
+  fechaActual!: Date;
+  nombreMes!: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { 
+    this.fechaActual = new Date();
+    this.nombreMes = this.fechaActual.toLocaleString('default', { month: 'long' });
+
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
