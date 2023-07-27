@@ -24,9 +24,6 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @OneToMany(mappedBy = "cart")
-//    private List<Product> products;
-
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "product_cart", joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "products_id"))
@@ -34,9 +31,6 @@ public class Cart {
 
     @OneToOne(mappedBy = "cart")
     private User user;
-
-    @OneToOne
-    private Bill bill;
 
     @Column(name = "amount", nullable = false, updatable = true)
     @Min(value = 0, message = "El importe debe ser un numero positivo, minimo 0")
