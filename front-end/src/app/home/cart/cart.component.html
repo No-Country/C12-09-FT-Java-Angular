@@ -72,9 +72,11 @@
 
           <div class="col-md-4 summary">
             <!-- Aquí puedes mostrar el resumen de la compra -->
-            <h1 class="text-center">Total</h1>
-            <h3 class="text-center">{{cartData.amount}}</h3>
-
+            <h1 class="text-center">Total de la compra</h1>
+            <h3 class="text-center">$ {{cartData.amount}}</h3>
+            <div class="row d-flex justify-content-center">
+              <button href="#" class="btn-checkout mt-2">Ir a comprar</button>
+            </div>
           </div>
         </div>
       </div>
@@ -90,9 +92,7 @@
         <h2 class="empty-cart">No tienes productos en el carrito</h2>
         <p>Agrega productos para continuar</p>
       </div>
-      <div class="row d-flex justify-content-center">
-        <button href="#" class="btn-checkout">Ir a comprar</button>
-      </div>
+
     </div>
   </div>
 </ng-container>
