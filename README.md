@@ -4,7 +4,7 @@
 - Link deploy front-end: https://powerfitv1.netlify.app
 - Link deploy back-end: https://powerfit-app.azurewebsites.net/swagger-ui.html
 
-Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, diseñado para ayudarte a alcanzar tus objetivos y llevar tu rendimiento al siguiente nivel. <br> Nuestro objetivo principal es brindarte una experiencia de compra excepcional, donde puedas encontrar todo lo que necesitas para potenciar tus entrenamientos y mejorar tu estilo de vida activo.
+Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, diseñado para ayudarte a alcanzar tus objetivos y llevar tu rendimiento al siguiente nivel. <br> Nuestro objetivo principal es brindarte una experiencia de compra excepcional, donde puedas encontrar todo lo que necesitas para potenciar tu entrenamiento y mejorar tu estilo de vida activo.
 <br>
 
 ## Tecnologías utilizadas:
@@ -14,7 +14,7 @@ Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, 
 - Angular
 - Typescript
 - HTML5
-- CCS3
+- CSS3
 - Bootstrap
 - Netlify (deploy)
 
@@ -30,9 +30,7 @@ Somos un ecommerce especializado en suplementos, equipamiento y ropa deportiva, 
 - Postman
 - Swagger
 - Microsoft Azure (deploy)
-
-  <br>
-
+  
 ## Conocé nuestro equipo💻: 
 ### PM
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U05C4LT739V-fdd980df5c72-48" width=50>| 
