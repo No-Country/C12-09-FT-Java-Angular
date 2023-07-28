@@ -40,7 +40,8 @@ export class DetailComponent implements OnInit{
         },
         error => {
           console.error('Error al agregar el producto al carrito:', error.message);
-          this.toast.warning('Debes estar logueado para agregar productos al cart.');
+          this.toast.warning('Debes estar logueado para agregar productos al cart.')
+
         }
       );
     } else {

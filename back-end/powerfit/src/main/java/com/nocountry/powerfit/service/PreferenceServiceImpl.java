@@ -88,8 +88,28 @@ public class PreferenceServiceImpl implements PreferenceService {
         return response;
     }
 
+    @Override
+    public Preference createPreferenceList(List<PreferenceRequest> requestList) {
+        MercadoPagoConfig.setAccessToken(mercadoPagoAccessToken);
 
+        // Crea una lista para almacenar los items de la preferencia
+        List<PreferenceItemRequest> items = new ArrayList<>();
 
+        // Recorre la lista de request y crea los items para la preferencia
+        for (PreferenceRequest it : requestList) {
+            PreferenceItemRequest item = PreferenceItemRequest.builder()
+                    .id(String.valueOf(it.getId()))
+                    .title(it.getName())
+                    .description(it.getDescription())
+                    .unitPrice(it.getPrice())
+                    .currencyId("ARS")
+                    .quantity(it.getQuantity())
+                    .pictureUrl(it.getPictureUrl())
+                    .build();
+            items.add(item);
+        }
+        return null;
+    }
 
 
 

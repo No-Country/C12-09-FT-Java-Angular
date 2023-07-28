@@ -18,11 +18,13 @@
                 <!-- Iterar sobre los productos -->
                 <div class="col-6 card" *ngFor="let product of cartData.products">
                   <div class="row mt-4 mb-4">
-                    <div class="col-1">
-                      <button class="btn btn-link trash-can btn-secondary" type="button" (click)="deleteProduct(product.id)">
+                    <div class="col-2">
+                      <button class="btn trash-can" type="button" (click)="deletedProduct(cartData.id ,product.id)">
                         <img src="../../../assets/DELETE.svg" alt="delete" />
                       </button>
+
                     </div>
+
                     <div class="col-2" *ngIf="product.category === 'Indumentaria'">
                       <div *ngFor="let image of product.imgList; let index = index">
                         <img
@@ -70,12 +72,12 @@
 
           <!--Comprobación de la compra-->
 
-          <div class="col-md-4 summary">
+          <div class="col-md-4 summary"*ngIf="cartData.products">
             <!-- Aquí puedes mostrar el resumen de la compra -->
             <h1 class="text-center">Total de la compra</h1>
             <h3 class="text-center">$ {{cartData.amount}}</h3>
             <div class="row d-flex justify-content-center">
-              <button href="#" class="btn-checkout mt-2">Ir a comprar</button>
+              <button class="btn-checkout mt-2" (click)="comprar(cartData.products)">Ir a comprar</button>
             </div>
           </div>
         </div>
@@ -85,7 +87,7 @@
 
 
 </ng-container>
-<ng-container *ngIf="!estaLogueado()">
+<ng-container *ngIf="!estaLogueado() || !cartData?.products">
   <div class="container mt-5 mb-5 ">
     <div class="row d-flex justify-content-center">
       <div class="col-md-8">

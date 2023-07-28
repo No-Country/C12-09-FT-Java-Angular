@@ -22,6 +22,9 @@ export class MercadoPagoServiceService {
     return this.httpClient.post<PreferenceDto>(this.authURL + 'create', product);
   }
 
+  createPreferenceProducts(products:ProductPayment[]): Observable<PreferenceDto>{
+    return this.httpClient.post<PreferenceDto>(this.authURL + 'createList', products);
+  }
   // Método para consumir el endpoint de tu backend y enviar los datos de la transacción
   sendTransactionData(): Observable<TransactionData> {
     return this.httpClient.get<TransactionData>(this.authURL + 'payment-response');

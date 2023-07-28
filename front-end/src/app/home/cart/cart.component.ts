@@ -7,6 +7,7 @@ import { TotalItemService } from 'src/app/services/total-item.service';
 import { CartResponse } from 'src/app/model/cart-response';
 import { TokenService } from 'src/app/services/token.service';
 import { TokenStoreService } from 'src/app/services/token-store.service';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ import { TokenStoreService } from 'src/app/services/token-store.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit, OnDestroy{
-  public product : any = [];
+
   public subTotal !: any;
   public grandTotal !: any;
   cartData!: CartResponse | null;
@@ -34,13 +35,7 @@ export class CartComponent implements OnInit, OnDestroy{
 
 
   ngOnInit(): void {
-    /*
-    this.cartService.getProduct()
-    .subscribe(res=>{
-      this.product = res;
-      this.subTotal = this.cartService.getTotalPrice();
-      this.grandTotal += this.subTotal + 132,0 ;
-    })*/
+
     this.getCartDetails();
 
   }
@@ -48,8 +43,31 @@ export class CartComponent implements OnInit, OnDestroy{
    return this.tokenService.isLoggued();
   }
 
-  deleteProduct(id:number){
-    alert("click");
+  deletedProduct(cartId:number, productId:number){
+    // Llamar al servicio para eliminar el producto del carrito
+    this.cartService.deletedProductCart(cartId, productId).subscribe(
+      response => {
+        // El producto se eliminó exitosamente
+        // Actualizar la lista local de productos
+      if (this.cartData) {
+        this.cartData.products = this.cartData.products.filter((product: any) => product.id !== productId);
+      }
+        this.tostr.success("Producto eliminado");
+        console.log('Producto eliminado del carrito:', response);
+        // Aquí podrías realizar alguna acción adicional si es necesario,
+        // por ejemplo, actualizar la lista de productos en el carrito.
+      },
+      error => {
+        // Manejo de errores en caso de que la eliminación falle
+        this.tostr.error("Error al eliminar el producto del carrito");
+        console.error('Error al eliminar el producto del carrito:', error);
+      }
+    );
+
+  }
+  comprar(products:Product[]){
+
+
   }
   getCartDetails(): void {
     this.subscription = this.cartService.cart$.subscribe(

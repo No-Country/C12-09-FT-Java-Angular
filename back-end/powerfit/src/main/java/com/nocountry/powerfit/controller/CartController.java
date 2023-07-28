@@ -42,7 +42,7 @@ public class CartController {
     public ResponseEntity<?> removeProductFromCart(@PathVariable Long cartId, @PathVariable Long productId) {
         try {
             cartService.removeProductFromCart(cartId, productId);
-            return ResponseEntity.ok().body("Producto eliminado del carrito exitosamente");
+            return ResponseEntity.ok().body("{\"message\": \"Producto eliminado exitosamente\"}");
         } catch (ResourceNotFoundException | CartNotFoundException e) {
             return ResponseEntity.notFound().build();
         }

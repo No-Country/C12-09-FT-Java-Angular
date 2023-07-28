@@ -29,6 +29,12 @@ export class CartService {
     return this.httpClient.put(url, null, { params: params });
   }
 
+  deletedProductCart(cartId:number, productId:number): Observable<any>{
+    const url = `${this.cartURL}${cartId}/product/${productId}`;
+    return this.httpClient.delete<any>(url);
+
+  }
+
   getCartById(cartId: number): void {
     const url = this.cartURL + cartId + '/products';
 
