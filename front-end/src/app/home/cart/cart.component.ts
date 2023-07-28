@@ -8,6 +8,8 @@ import { CartResponse } from 'src/app/model/cart-response';
 import { TokenService } from 'src/app/services/token.service';
 import { TokenStoreService } from 'src/app/services/token-store.service';
 import { Product } from 'src/app/model/product';
+import { ProductPayment } from 'src/app/model/product-payment';
+import { MercadoPagoServiceService } from 'src/app/services/mercado-pago-service.service';
 
 @Component({
   selector: 'app-cart',
@@ -22,10 +24,11 @@ export class CartComponent implements OnInit, OnDestroy{
   loading: boolean = true;
   error: boolean = false;
   public totalItem : number = 0;
+  paymentSandboxUrl!: string;
 
   constructor(private cartService : CartService, private authService:AuthService,
     private tostr:ToastrService, private totalItemService:TotalItemService,
-    private tokenService:TokenStoreService) { }
+    private tokenService:TokenStoreService, private mercadoPagoService:MercadoPagoServiceService) { }
 
    // Reemplaza esto con el ID del carrito que deseas mostrar
 
@@ -66,7 +69,36 @@ export class CartComponent implements OnInit, OnDestroy{
 
   }
   comprar(products:Product[]){
+    if(!this.tokenService.isLoggued()){
+      this.tostr.error("Debes estar logueado para comprar");
+      return;
+    }
+    const productsPayment: ProductPayment[] = [];
+    // Recorremos los productos recibidos como parámetro
+  for (const product of products) {
+    // Mapeamos cada producto al objeto ProductPayment y lo agregamos al array productsPayment
+    const productPayment = new ProductPayment(
+      product.id,
+      product.name,
+      product.description,
+      1, // Suponemos que siempre compramos una cantidad de 1 por producto
+      product.price,
+      product.imgList[0].fileUrl
+    );
+    productsPayment.push(productPayment);
+  }
 
+  this.mercadoPagoService.createPreferenceProducts(productsPayment).subscribe(
+    response =>{
+      console.log(response);
+      this.paymentSandboxUrl = response.initPoint;
+      window.location.href = this.paymentSandboxUrl;
+    },
+    err =>{
+      console.log(err.message);
+      this.tostr.error(err.error,"Error");
+    }
+  )
 
   }
   getCartDetails(): void {

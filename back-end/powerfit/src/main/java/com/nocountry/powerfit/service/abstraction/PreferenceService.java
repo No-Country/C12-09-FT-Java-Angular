@@ -11,5 +11,5 @@ public interface PreferenceService {
     Preference createPreference(PreferenceRequest request) throws MPException, MPApiException;
 
 
-    Preference createPreferenceList(List<PreferenceRequest> request);
+    Preference createPreferenceList(List<PreferenceRequest> request) throws MPException, MPApiException;
 }
