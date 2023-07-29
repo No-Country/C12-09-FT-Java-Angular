@@ -10,11 +10,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequiredArgsConstructor
 @Api(value = "Cart Controller")
 @RequestMapping("/api/v1/cart")
+@CrossOrigin(origins = "*")
 public class CartController {
 
     private final CartService cartService;
@@ -41,7 +42,7 @@ public class CartController {
     public ResponseEntity<?> removeProductFromCart(@PathVariable Long cartId, @PathVariable Long productId) {
         try {
             cartService.removeProductFromCart(cartId, productId);
-            return ResponseEntity.ok().body("Producto eliminado del carrito exitosamente");
+            return ResponseEntity.ok().body("{\"message\": \"Producto eliminado exitosamente\"}");
         } catch (ResourceNotFoundException | CartNotFoundException e) {
             return ResponseEntity.notFound().build();
         }

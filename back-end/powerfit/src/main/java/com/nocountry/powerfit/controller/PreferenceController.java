@@ -16,6 +16,9 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @Log4j2
 @RequiredArgsConstructor
 @RestController
@@ -29,6 +32,11 @@ public class PreferenceController {
     @PostMapping("/create")
     public ResponseEntity<Preference> createPreference(@RequestBody PreferenceRequest request) throws MPException, MPApiException {
         Preference response = preferenceService.createPreference(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+    @PostMapping("/createList")
+    public ResponseEntity<Preference> createPreferenceList(@RequestBody List<PreferenceRequest> request) throws MPException, MPApiException {
+        Preference response = preferenceService.createPreferenceList(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     @PostMapping("/notification")
