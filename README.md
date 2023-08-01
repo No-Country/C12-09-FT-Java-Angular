@@ -1,7 +1,7 @@
 <h6 align="center">Cohorte 12 - Equipo 09 - Java - Angular</h1>
 
 # Power Fit E-commerce
-- Link deploy front-end: https://power-fit-v3.netlify.app/home
+- Link deploy front-end: https://power-fit-v3.netlify.app
 - Link deploy back-end: https://powerfit-app.azurewebsites.net/swagger-ui.html
 - Link al diseño en Figma: https://www.figma.com/file/yQZBpW6yRlUEzgfOYvue3D/Power-Fit?type=design&mode=design
 
